@@ -19,6 +19,7 @@
 		E70CF0151A935B46005DD7D5 /* Conversation.m in Sources */ = {isa = PBXBuildFile; fileRef = E70CF0141A935B46005DD7D5 /* Conversation.m */; };
 		E70CF0181A935B47005DD7D5 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = E70CF0171A935B47005DD7D5 /* Message.m */; };
 		E70CF01B1A935B47005DD7D5 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E70CF01A1A935B47005DD7D5 /* User.m */; };
+		E70CF08F1A94199E005DD7D5 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E70CF08E1A94199E005DD7D5 /* CoreDataTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		E70CF0171A935B47005DD7D5 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
 		E70CF0191A935B47005DD7D5 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		E70CF01A1A935B47005DD7D5 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		E70CF08D1A94199E005DD7D5 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		E70CF08E1A94199E005DD7D5 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +99,8 @@
 			children = (
 				007A4B311A8D775D00559027 /* AppDelegate.h */,
 				007A4B321A8D775D00559027 /* AppDelegate.m */,
+				E70CF08D1A94199E005DD7D5 /* CoreDataTableViewController.h */,
+				E70CF08E1A94199E005DD7D5 /* CoreDataTableViewController.m */,
 				007A4B341A8D775D00559027 /* ViewController.h */,
 				007A4B351A8D775D00559027 /* ViewController.m */,
 				E70CF0101A934DDE005DD7D5 /* Sent.xcdatamodeld */,
@@ -250,6 +255,7 @@
 			files = (
 				E70CF01B1A935B47005DD7D5 /* User.m in Sources */,
 				E70CF0151A935B46005DD7D5 /* Conversation.m in Sources */,
+				E70CF08F1A94199E005DD7D5 /* CoreDataTableViewController.m in Sources */,
 				007A4B361A8D775D00559027 /* ViewController.m in Sources */,
 				E70CF0121A934DDE005DD7D5 /* Sent.xcdatamodeld in Sources */,
 				E70CF0181A935B47005DD7D5 /* Message.m in Sources */,
