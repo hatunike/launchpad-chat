@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		001AFA401A9413DE00555324 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 001AFA3F1A9413DE00555324 /* CoreDataTableViewController.m */; };
 		007A4B301A8D775D00559027 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 007A4B2F1A8D775D00559027 /* main.m */; };
 		007A4B331A8D775D00559027 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 007A4B321A8D775D00559027 /* AppDelegate.m */; };
 		007A4B361A8D775D00559027 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 007A4B351A8D775D00559027 /* ViewController.m */; };
@@ -27,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		001AFA3E1A9413DE00555324 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		001AFA3F1A9413DE00555324 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		007A4B2A1A8D775D00559027 /* Launchpad-chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Launchpad-chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		007A4B2E1A8D775D00559027 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		007A4B2F1A8D775D00559027 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -85,6 +88,8 @@
 				007A4B321A8D775D00559027 /* AppDelegate.m */,
 				007A4B341A8D775D00559027 /* ViewController.h */,
 				007A4B351A8D775D00559027 /* ViewController.m */,
+				001AFA3E1A9413DE00555324 /* CoreDataTableViewController.h */,
+				001AFA3F1A9413DE00555324 /* CoreDataTableViewController.m */,
 				007A4B371A8D775D00559027 /* Main.storyboard */,
 				007A4B3A1A8D775D00559027 /* Images.xcassets */,
 				007A4B3C1A8D775D00559027 /* LaunchScreen.xib */,
@@ -221,6 +226,7 @@
 			files = (
 				007A4B361A8D775D00559027 /* ViewController.m in Sources */,
 				007A4B331A8D775D00559027 /* AppDelegate.m in Sources */,
+				001AFA401A9413DE00555324 /* CoreDataTableViewController.m in Sources */,
 				007A4B301A8D775D00559027 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +420,7 @@
 				007A4B4F1A8D775D00559027 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		007A4B501A8D775D00559027 /* Build configuration list for PBXNativeTarget "Launchpad-chatTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +429,7 @@
 				007A4B521A8D775D00559027 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
