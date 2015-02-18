@@ -17,6 +17,6 @@
 @property (nonatomic, retain) NSString * text;
 @property (nonatomic, retain) NSNumber * readOrUnreadState;
 @property (nonatomic, retain) Conversation *fromWhat;
-@property (nonatomic, retain) NSManagedObject *fromWho;
+@property (nonatomic, retain) User *fromWho;
 
 @end

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A0AF4659-63EA-4079-B6C0-A9C3D4FA5D32</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Launchpad-chat</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>055EC73730572F25996CDA5B166955721C841692</key>
+		<string>https://github.com/pablo57/launchpad.git</string>
+		<key>DE7ACAE9E970277F9A0D43E8FD1EA0D1194C5AB6</key>
+		<string>https://github.com/hatunike/launchpad-chat.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Launchpad-chat/Launchpad-chat.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>055EC73730572F25996CDA5B166955721C841692</key>
+		<string>../../../..</string>
+		<key>DE7ACAE9E970277F9A0D43E8FD1EA0D1194C5AB6</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/hatunike/launchpad-chat.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>DE7ACAE9E970277F9A0D43E8FD1EA0D1194C5AB6</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>055EC73730572F25996CDA5B166955721C841692</string>
+			<key>IDESourceControlWCCName</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DE7ACAE9E970277F9A0D43E8FD1EA0D1194C5AB6</string>
+			<key>IDESourceControlWCCName</key>
+			<string>launchpad-chat</string>
+		</dict>
+	</array>
+</dict>
+</plist>

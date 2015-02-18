@@ -7,6 +7,8 @@
 //
 
 #import "Conversation.h"
+#import "User.h"
+#import "Message.h"
 
 
 @implementation Conversation

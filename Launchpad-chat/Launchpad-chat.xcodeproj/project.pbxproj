@@ -14,6 +14,11 @@
 		007A4B3B1A8D775D00559027 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 007A4B3A1A8D775D00559027 /* Images.xcassets */; };
 		007A4B3E1A8D775D00559027 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007A4B3C1A8D775D00559027 /* LaunchScreen.xib */; };
 		007A4B4A1A8D775D00559027 /* Launchpad_chatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 007A4B491A8D775D00559027 /* Launchpad_chatTests.m */; };
+		E70CF00F1A8D8482005DD7D5 /* Launchpad_chat.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = E70CF00E1A8D8482005DD7D5 /* Launchpad_chat.xcdatamodel */; };
+		E70CF0121A934DDE005DD7D5 /* Sent.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E70CF0101A934DDE005DD7D5 /* Sent.xcdatamodeld */; };
+		E70CF0151A935B46005DD7D5 /* Conversation.m in Sources */ = {isa = PBXBuildFile; fileRef = E70CF0141A935B46005DD7D5 /* Conversation.m */; };
+		E70CF0181A935B47005DD7D5 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = E70CF0171A935B47005DD7D5 /* Message.m */; };
+		E70CF01B1A935B47005DD7D5 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E70CF01A1A935B47005DD7D5 /* User.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,14 @@
 		007A4B431A8D775D00559027 /* Launchpad-chatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Launchpad-chatTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		007A4B481A8D775D00559027 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		007A4B491A8D775D00559027 /* Launchpad_chatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Launchpad_chatTests.m; sourceTree = "<group>"; };
+		E70CF00E1A8D8482005DD7D5 /* Launchpad_chat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Launchpad_chat.xcdatamodel; sourceTree = "<group>"; };
+		E70CF0111A934DDE005DD7D5 /* Sent.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sent.xcdatamodel; sourceTree = "<group>"; };
+		E70CF0131A935B46005DD7D5 /* Conversation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conversation.h; sourceTree = "<group>"; };
+		E70CF0141A935B46005DD7D5 /* Conversation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Conversation.m; sourceTree = "<group>"; };
+		E70CF0161A935B47005DD7D5 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		E70CF0171A935B47005DD7D5 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		E70CF0191A935B47005DD7D5 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		E70CF01A1A935B47005DD7D5 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,9 +98,12 @@
 				007A4B321A8D775D00559027 /* AppDelegate.m */,
 				007A4B341A8D775D00559027 /* ViewController.h */,
 				007A4B351A8D775D00559027 /* ViewController.m */,
+				E70CF0101A934DDE005DD7D5 /* Sent.xcdatamodeld */,
+				E70CF0511A940678005DD7D5 /* generatedModel */,
 				007A4B371A8D775D00559027 /* Main.storyboard */,
 				007A4B3A1A8D775D00559027 /* Images.xcassets */,
 				007A4B3C1A8D775D00559027 /* LaunchScreen.xib */,
+				E70CF00E1A8D8482005DD7D5 /* Launchpad_chat.xcdatamodel */,
 				007A4B2D1A8D775D00559027 /* Supporting Files */,
 			);
 			path = "Launchpad-chat";
@@ -117,6 +133,19 @@
 				007A4B481A8D775D00559027 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E70CF0511A940678005DD7D5 /* generatedModel */ = {
+			isa = PBXGroup;
+			children = (
+				E70CF0191A935B47005DD7D5 /* User.h */,
+				E70CF01A1A935B47005DD7D5 /* User.m */,
+				E70CF0161A935B47005DD7D5 /* Message.h */,
+				E70CF0171A935B47005DD7D5 /* Message.m */,
+				E70CF0131A935B46005DD7D5 /* Conversation.h */,
+				E70CF0141A935B46005DD7D5 /* Conversation.m */,
+			);
+			name = generatedModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,7 +248,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E70CF01B1A935B47005DD7D5 /* User.m in Sources */,
+				E70CF0151A935B46005DD7D5 /* Conversation.m in Sources */,
 				007A4B361A8D775D00559027 /* ViewController.m in Sources */,
+				E70CF0121A934DDE005DD7D5 /* Sent.xcdatamodeld in Sources */,
+				E70CF0181A935B47005DD7D5 /* Message.m in Sources */,
+				E70CF00F1A8D8482005DD7D5 /* Launchpad_chat.xcdatamodel in Sources */,
 				007A4B331A8D775D00559027 /* AppDelegate.m in Sources */,
 				007A4B301A8D775D00559027 /* main.m in Sources */,
 			);
@@ -414,6 +448,7 @@
 				007A4B4F1A8D775D00559027 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		007A4B501A8D775D00559027 /* Build configuration list for PBXNativeTarget "Launchpad-chatTests" */ = {
 			isa = XCConfigurationList;
@@ -422,8 +457,22 @@
 				007A4B521A8D775D00559027 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E70CF0101A934DDE005DD7D5 /* Sent.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E70CF0111A934DDE005DD7D5 /* Sent.xcdatamodel */,
+			);
+			currentVersion = E70CF0111A934DDE005DD7D5 /* Sent.xcdatamodel */;
+			path = Sent.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 007A4B221A8D775D00559027 /* Project object */;
 }
