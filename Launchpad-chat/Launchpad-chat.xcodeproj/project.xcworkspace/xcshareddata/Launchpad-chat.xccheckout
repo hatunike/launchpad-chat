@@ -5,13 +5,11 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>75607B71-FBCB-4654-93B7-B391DA5B2F47</string>
+	<string>6E781F6F-2DF7-463C-884D-F2145ECBD0AB</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Launchpad-chat</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>47B221828049E9D64024EBA82211CC81D572B886</key>
-		<string>github.com:SaniT404/Launchpad.git</string>
 		<key>DE7ACAE9E970277F9A0D43E8FD1EA0D1194C5AB6</key>
 		<string>https://github.com/hatunike/launchpad-chat.git</string>
 	</dict>
@@ -19,8 +17,6 @@
 	<string>Launchpad-chat/Launchpad-chat.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>47B221828049E9D64024EBA82211CC81D572B886</key>
-		<string>../../../..</string>
 		<key>DE7ACAE9E970277F9A0D43E8FD1EA0D1194C5AB6</key>
 		<string>../../..</string>
 	</dict>
@@ -32,14 +28,6 @@
 	<string>DE7ACAE9E970277F9A0D43E8FD1EA0D1194C5AB6</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>47B221828049E9D64024EBA82211CC81D572B886</string>
-			<key>IDESourceControlWCCName</key>
-			<string></string>
-		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
