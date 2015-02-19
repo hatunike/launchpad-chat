@@ -10,11 +10,14 @@
 
 @interface UserIndexTableViewController ()
 
+@property (nonatomic, weak) NSMutableArray* userIndex; //Place holder for CoreData
+
 @end
 
 @implementation UserIndexTableViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     // Uncomment the following line to preserve selection between presentations.

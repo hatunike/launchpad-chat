@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		007A4B301A8D775D00559027 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 007A4B2F1A8D775D00559027 /* main.m */; };
 		007A4B331A8D775D00559027 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 007A4B321A8D775D00559027 /* AppDelegate.m */; };
-		007A4B361A8D775D00559027 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 007A4B351A8D775D00559027 /* ViewController.m */; };
 		007A4B391A8D775D00559027 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 007A4B371A8D775D00559027 /* Main.storyboard */; };
 		007A4B3B1A8D775D00559027 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 007A4B3A1A8D775D00559027 /* Images.xcassets */; };
 		007A4B3E1A8D775D00559027 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007A4B3C1A8D775D00559027 /* LaunchScreen.xib */; };
 		007A4B4A1A8D775D00559027 /* Launchpad_chatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 007A4B491A8D775D00559027 /* Launchpad_chatTests.m */; };
+		F09AAB101A8D83B400DC4ED0 /* UserIndexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F09AAB0F1A8D83B400DC4ED0 /* UserIndexTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +32,14 @@
 		007A4B2F1A8D775D00559027 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		007A4B311A8D775D00559027 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		007A4B321A8D775D00559027 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		007A4B341A8D775D00559027 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		007A4B351A8D775D00559027 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		007A4B381A8D775D00559027 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		007A4B3A1A8D775D00559027 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		007A4B3D1A8D775D00559027 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		007A4B431A8D775D00559027 /* Launchpad-chatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Launchpad-chatTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		007A4B481A8D775D00559027 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		007A4B491A8D775D00559027 /* Launchpad_chatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Launchpad_chatTests.m; sourceTree = "<group>"; };
+		F09AAB0E1A8D83B400DC4ED0 /* UserIndexTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserIndexTableViewController.h; sourceTree = "<group>"; };
+		F09AAB0F1A8D83B400DC4ED0 /* UserIndexTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserIndexTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +83,8 @@
 			children = (
 				007A4B311A8D775D00559027 /* AppDelegate.h */,
 				007A4B321A8D775D00559027 /* AppDelegate.m */,
-				007A4B341A8D775D00559027 /* ViewController.h */,
-				007A4B351A8D775D00559027 /* ViewController.m */,
+				F09AAB0E1A8D83B400DC4ED0 /* UserIndexTableViewController.h */,
+				F09AAB0F1A8D83B400DC4ED0 /* UserIndexTableViewController.m */,
 				007A4B371A8D775D00559027 /* Main.storyboard */,
 				007A4B3A1A8D775D00559027 /* Images.xcassets */,
 				007A4B3C1A8D775D00559027 /* LaunchScreen.xib */,
@@ -219,9 +219,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				007A4B361A8D775D00559027 /* ViewController.m in Sources */,
 				007A4B331A8D775D00559027 /* AppDelegate.m in Sources */,
 				007A4B301A8D775D00559027 /* main.m in Sources */,
+				F09AAB101A8D83B400DC4ED0 /* UserIndexTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +414,7 @@
 				007A4B4F1A8D775D00559027 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		007A4B501A8D775D00559027 /* Build configuration list for PBXNativeTarget "Launchpad-chatTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +423,7 @@
 				007A4B521A8D775D00559027 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
