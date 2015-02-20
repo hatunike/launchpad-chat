@@ -9,20 +9,25 @@
 /* Begin PBXBuildFile section */
 		007A4B301A8D775D00559027 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 007A4B2F1A8D775D00559027 /* main.m */; };
 		007A4B331A8D775D00559027 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 007A4B321A8D775D00559027 /* AppDelegate.m */; };
-		007A4B361A8D775D00559027 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 007A4B351A8D775D00559027 /* ViewController.m */; };
 		007A4B391A8D775D00559027 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 007A4B371A8D775D00559027 /* Main.storyboard */; };
 		007A4B3B1A8D775D00559027 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 007A4B3A1A8D775D00559027 /* Images.xcassets */; };
 		007A4B3E1A8D775D00559027 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007A4B3C1A8D775D00559027 /* LaunchScreen.xib */; };
 		007A4B4A1A8D775D00559027 /* Launchpad_chatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 007A4B491A8D775D00559027 /* Launchpad_chatTests.m */; };
-		E70CF0121A934DDE005DD7D5 /* Sent.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E70CF0101A934DDE005DD7D5 /* Sent.xcdatamodeld */; };
-		E70CF0151A935B46005DD7D5 /* Conversation.m in Sources */ = {isa = PBXBuildFile; fileRef = E70CF0141A935B46005DD7D5 /* Conversation.m */; };
-		E70CF0181A935B47005DD7D5 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = E70CF0171A935B47005DD7D5 /* Message.m */; };
-		E70CF01B1A935B47005DD7D5 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E70CF01A1A935B47005DD7D5 /* User.m */; };
-		E70CF08F1A94199E005DD7D5 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E70CF08E1A94199E005DD7D5 /* CoreDataTableViewController.m */; };
-		E743A5B21A95F8200023CEEC /* Message+Message_Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = E743A5B11A95F8200023CEEC /* Message+Message_Additions.m */; };
-		E743A5B51A9600870023CEEC /* User+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = E743A5B41A9600870023CEEC /* User+Additions.m */; };
-		E743A5B81A9600EB0023CEEC /* Conversation+Conversation_Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = E743A5B71A9600EB0023CEEC /* Conversation+Conversation_Additions.m */; };
-		E7C503B91A96A8DA008FE670 /* UserAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C503B81A96A8DA008FE670 /* UserAdditionsTests.m */; };
+		D7B905E21A942095004BC539 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B905E11A942095004BC539 /* LoginViewController.m */; };
+		E78320691A96BFF6000E3ABC /* UserAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E78320681A96BFF6000E3ABC /* UserAdditionsTests.m */; };
+		E783207E1A96C031000E3ABC /* Conversation.m in Sources */ = {isa = PBXBuildFile; fileRef = E783206B1A96C031000E3ABC /* Conversation.m */; };
+		E783207F1A96C031000E3ABC /* Conversation+Conversation_Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = E783206D1A96C031000E3ABC /* Conversation+Conversation_Additions.m */; };
+		E78320801A96C031000E3ABC /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E783206F1A96C031000E3ABC /* CoreDataTableViewController.m */; };
+		E78320811A96C031000E3ABC /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = E78320711A96C031000E3ABC /* Message.m */; };
+		E78320821A96C031000E3ABC /* Sent.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E78320721A96C031000E3ABC /* Sent.xcdatamodeld */; };
+		E78320831A96C031000E3ABC /* UIConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E78320751A96C031000E3ABC /* UIConversationViewController.m */; };
+		E78320841A96C031000E3ABC /* UIMessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E78320771A96C031000E3ABC /* UIMessagesViewController.m */; };
+		E78320851A96C031000E3ABC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E78320791A96C031000E3ABC /* User.m */; };
+		E78320861A96C031000E3ABC /* User+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = E783207B1A96C031000E3ABC /* User+Additions.m */; };
+		E78320871A96C031000E3ABC /* UserIndexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E783207D1A96C031000E3ABC /* UserIndexTableViewController.m */; };
+		E796D2961A96B78100FBC9E0 /* UINewMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E796D2951A96B78100FBC9E0 /* UINewMessageViewController.m */; };
+		E796D2991A96B7ED00FBC9E0 /* UINewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E796D2981A96B7ED00FBC9E0 /* UINewUserViewController.m */; };
+		E796D29C1A96BC0C00FBC9E0 /* UIMessageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E796D29B1A96BC0C00FBC9E0 /* UIMessageListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,30 +46,40 @@
 		007A4B2F1A8D775D00559027 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		007A4B311A8D775D00559027 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		007A4B321A8D775D00559027 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		007A4B341A8D775D00559027 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		007A4B351A8D775D00559027 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		007A4B381A8D775D00559027 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		007A4B3A1A8D775D00559027 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		007A4B3D1A8D775D00559027 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		007A4B431A8D775D00559027 /* Launchpad-chatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Launchpad-chatTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		007A4B481A8D775D00559027 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		007A4B491A8D775D00559027 /* Launchpad_chatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Launchpad_chatTests.m; sourceTree = "<group>"; };
-		E70CF0111A934DDE005DD7D5 /* Sent.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sent.xcdatamodel; sourceTree = "<group>"; };
-		E70CF0131A935B46005DD7D5 /* Conversation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conversation.h; sourceTree = "<group>"; };
-		E70CF0141A935B46005DD7D5 /* Conversation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Conversation.m; sourceTree = "<group>"; };
-		E70CF0161A935B47005DD7D5 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
-		E70CF0171A935B47005DD7D5 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
-		E70CF0191A935B47005DD7D5 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		E70CF01A1A935B47005DD7D5 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		E70CF08D1A94199E005DD7D5 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
-		E70CF08E1A94199E005DD7D5 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
-		E743A5B01A95F8200023CEEC /* Message+Message_Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Message+Message_Additions.h"; path = "../Message+Message_Additions.h"; sourceTree = "<group>"; };
-		E743A5B11A95F8200023CEEC /* Message+Message_Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Message+Message_Additions.m"; path = "../Message+Message_Additions.m"; sourceTree = "<group>"; };
-		E743A5B31A9600870023CEEC /* User+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+Additions.h"; sourceTree = "<group>"; };
-		E743A5B41A9600870023CEEC /* User+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+Additions.m"; sourceTree = "<group>"; };
-		E743A5B61A9600EB0023CEEC /* Conversation+Conversation_Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Conversation+Conversation_Additions.h"; sourceTree = "<group>"; };
-		E743A5B71A9600EB0023CEEC /* Conversation+Conversation_Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Conversation+Conversation_Additions.m"; sourceTree = "<group>"; };
-		E7C503B81A96A8DA008FE670 /* UserAdditionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAdditionsTests.m; sourceTree = "<group>"; };
+		D7B905E01A942095004BC539 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		D7B905E11A942095004BC539 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		E78320681A96BFF6000E3ABC /* UserAdditionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAdditionsTests.m; sourceTree = "<group>"; };
+		E783206A1A96C031000E3ABC /* Conversation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conversation.h; sourceTree = "<group>"; };
+		E783206B1A96C031000E3ABC /* Conversation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Conversation.m; sourceTree = "<group>"; };
+		E783206C1A96C031000E3ABC /* Conversation+Conversation_Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Conversation+Conversation_Additions.h"; sourceTree = "<group>"; };
+		E783206D1A96C031000E3ABC /* Conversation+Conversation_Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Conversation+Conversation_Additions.m"; sourceTree = "<group>"; };
+		E783206E1A96C031000E3ABC /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		E783206F1A96C031000E3ABC /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		E78320701A96C031000E3ABC /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		E78320711A96C031000E3ABC /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		E78320731A96C031000E3ABC /* Sent.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sent.xcdatamodel; sourceTree = "<group>"; };
+		E78320751A96C031000E3ABC /* UIConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIConversationViewController.m; sourceTree = "<group>"; };
+		E78320761A96C031000E3ABC /* UIMessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIMessagesViewController.h; sourceTree = "<group>"; };
+		E78320771A96C031000E3ABC /* UIMessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIMessagesViewController.m; sourceTree = "<group>"; };
+		E78320781A96C031000E3ABC /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		E78320791A96C031000E3ABC /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		E783207A1A96C031000E3ABC /* User+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+Additions.h"; sourceTree = "<group>"; };
+		E783207B1A96C031000E3ABC /* User+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+Additions.m"; sourceTree = "<group>"; };
+		E783207C1A96C031000E3ABC /* UserIndexTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserIndexTableViewController.h; sourceTree = "<group>"; };
+		E783207D1A96C031000E3ABC /* UserIndexTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserIndexTableViewController.m; sourceTree = "<group>"; };
+		E796D2911A96B72600FBC9E0 /* UIConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIConversationViewController.h; path = ../UIConversationViewController.h; sourceTree = "<group>"; };
+		E796D2941A96B78100FBC9E0 /* UINewMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UINewMessageViewController.h; sourceTree = "<group>"; };
+		E796D2951A96B78100FBC9E0 /* UINewMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UINewMessageViewController.m; sourceTree = "<group>"; };
+		E796D2971A96B7ED00FBC9E0 /* UINewUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UINewUserViewController.h; sourceTree = "<group>"; };
+		E796D2981A96B7ED00FBC9E0 /* UINewUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UINewUserViewController.m; sourceTree = "<group>"; };
+		E796D29A1A96BC0C00FBC9E0 /* UIMessageListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIMessageListViewController.h; path = ../UIMessageListViewController.h; sourceTree = "<group>"; };
+		E796D29B1A96BC0C00FBC9E0 /* UIMessageListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIMessageListViewController.m; path = ../UIMessageListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,14 +121,35 @@
 		007A4B2C1A8D775D00559027 /* Launchpad-chat */ = {
 			isa = PBXGroup;
 			children = (
+				E796D29A1A96BC0C00FBC9E0 /* UIMessageListViewController.h */,
+				E796D29B1A96BC0C00FBC9E0 /* UIMessageListViewController.m */,
 				007A4B311A8D775D00559027 /* AppDelegate.h */,
 				007A4B321A8D775D00559027 /* AppDelegate.m */,
-				E70CF08D1A94199E005DD7D5 /* CoreDataTableViewController.h */,
-				E70CF08E1A94199E005DD7D5 /* CoreDataTableViewController.m */,
-				007A4B341A8D775D00559027 /* ViewController.h */,
-				007A4B351A8D775D00559027 /* ViewController.m */,
-				E70CF0101A934DDE005DD7D5 /* Sent.xcdatamodeld */,
-				E7C503B71A96A7BE008FE670 /* Model */,
+				D7B905E01A942095004BC539 /* LoginViewController.h */,
+				D7B905E11A942095004BC539 /* LoginViewController.m */,
+				E796D2971A96B7ED00FBC9E0 /* UINewUserViewController.h */,
+				E796D2981A96B7ED00FBC9E0 /* UINewUserViewController.m */,
+				E796D2941A96B78100FBC9E0 /* UINewMessageViewController.h */,
+				E796D2951A96B78100FBC9E0 /* UINewMessageViewController.m */,
+				E783206A1A96C031000E3ABC /* Conversation.h */,
+				E783206B1A96C031000E3ABC /* Conversation.m */,
+				E783206C1A96C031000E3ABC /* Conversation+Conversation_Additions.h */,
+				E783206D1A96C031000E3ABC /* Conversation+Conversation_Additions.m */,
+				E783206E1A96C031000E3ABC /* CoreDataTableViewController.h */,
+				E783206F1A96C031000E3ABC /* CoreDataTableViewController.m */,
+				E78320701A96C031000E3ABC /* Message.h */,
+				E78320711A96C031000E3ABC /* Message.m */,
+				E78320721A96C031000E3ABC /* Sent.xcdatamodeld */,
+				E796D2911A96B72600FBC9E0 /* UIConversationViewController.h */,
+				E78320751A96C031000E3ABC /* UIConversationViewController.m */,
+				E78320761A96C031000E3ABC /* UIMessagesViewController.h */,
+				E78320771A96C031000E3ABC /* UIMessagesViewController.m */,
+				E78320781A96C031000E3ABC /* User.h */,
+				E78320791A96C031000E3ABC /* User.m */,
+				E783207A1A96C031000E3ABC /* User+Additions.h */,
+				E783207B1A96C031000E3ABC /* User+Additions.m */,
+				E783207C1A96C031000E3ABC /* UserIndexTableViewController.h */,
+				E783207D1A96C031000E3ABC /* UserIndexTableViewController.m */,
 				007A4B371A8D775D00559027 /* Main.storyboard */,
 				007A4B3A1A8D775D00559027 /* Images.xcassets */,
 				007A4B3C1A8D775D00559027 /* LaunchScreen.xib */,
@@ -135,7 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				007A4B491A8D775D00559027 /* Launchpad_chatTests.m */,
-				E7C503B81A96A8DA008FE670 /* UserAdditionsTests.m */,
+				E78320681A96BFF6000E3ABC /* UserAdditionsTests.m */,
 				007A4B471A8D775D00559027 /* Supporting Files */,
 			);
 			path = "Launchpad-chatTests";
@@ -147,41 +183,6 @@
 				007A4B481A8D775D00559027 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E70CF0511A940678005DD7D5 /* generatedModel */ = {
-			isa = PBXGroup;
-			children = (
-				E70CF0191A935B47005DD7D5 /* User.h */,
-				E70CF01A1A935B47005DD7D5 /* User.m */,
-				E70CF0161A935B47005DD7D5 /* Message.h */,
-				E70CF0171A935B47005DD7D5 /* Message.m */,
-				E70CF0131A935B46005DD7D5 /* Conversation.h */,
-				E70CF0141A935B46005DD7D5 /* Conversation.m */,
-			);
-			name = generatedModel;
-			sourceTree = "<group>";
-		};
-		E7C503B61A96A7B5008FE670 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				E743A5B31A9600870023CEEC /* User+Additions.h */,
-				E743A5B41A9600870023CEEC /* User+Additions.m */,
-				E743A5B01A95F8200023CEEC /* Message+Message_Additions.h */,
-				E743A5B11A95F8200023CEEC /* Message+Message_Additions.m */,
-				E743A5B61A9600EB0023CEEC /* Conversation+Conversation_Additions.h */,
-				E743A5B71A9600EB0023CEEC /* Conversation+Conversation_Additions.m */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		E7C503B71A96A7BE008FE670 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				E7C503B61A96A7B5008FE670 /* Model */,
-				E70CF0511A940678005DD7D5 /* generatedModel */,
-			);
-			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,17 +285,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E70CF01B1A935B47005DD7D5 /* User.m in Sources */,
-				E743A5B51A9600870023CEEC /* User+Additions.m in Sources */,
-				E70CF0151A935B46005DD7D5 /* Conversation.m in Sources */,
-				E743A5B81A9600EB0023CEEC /* Conversation+Conversation_Additions.m in Sources */,
-				E70CF08F1A94199E005DD7D5 /* CoreDataTableViewController.m in Sources */,
-				007A4B361A8D775D00559027 /* ViewController.m in Sources */,
-				E70CF0121A934DDE005DD7D5 /* Sent.xcdatamodeld in Sources */,
-				E70CF0181A935B47005DD7D5 /* Message.m in Sources */,
+				E783207F1A96C031000E3ABC /* Conversation+Conversation_Additions.m in Sources */,
+				E796D2991A96B7ED00FBC9E0 /* UINewUserViewController.m in Sources */,
+				E78320821A96C031000E3ABC /* Sent.xcdatamodeld in Sources */,
+				E78320861A96C031000E3ABC /* User+Additions.m in Sources */,
+				D7B905E21A942095004BC539 /* LoginViewController.m in Sources */,
+				E78320851A96C031000E3ABC /* User.m in Sources */,
+				E78320801A96C031000E3ABC /* CoreDataTableViewController.m in Sources */,
+				E78320841A96C031000E3ABC /* UIMessagesViewController.m in Sources */,
+				E78320831A96C031000E3ABC /* UIConversationViewController.m in Sources */,
 				007A4B331A8D775D00559027 /* AppDelegate.m in Sources */,
+				E783207E1A96C031000E3ABC /* Conversation.m in Sources */,
+				E78320871A96C031000E3ABC /* UserIndexTableViewController.m in Sources */,
+				E796D2961A96B78100FBC9E0 /* UINewMessageViewController.m in Sources */,
+				E796D29C1A96BC0C00FBC9E0 /* UIMessageListViewController.m in Sources */,
+				E78320811A96C031000E3ABC /* Message.m in Sources */,
 				007A4B301A8D775D00559027 /* main.m in Sources */,
-				E743A5B21A95F8200023CEEC /* Message+Message_Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,7 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7C503B91A96A8DA008FE670 /* UserAdditionsTests.m in Sources */,
+				E78320691A96BFF6000E3ABC /* UserAdditionsTests.m in Sources */,
 				007A4B4A1A8D775D00559027 /* Launchpad_chatTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -502,12 +508,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		E70CF0101A934DDE005DD7D5 /* Sent.xcdatamodeld */ = {
+		E78320721A96C031000E3ABC /* Sent.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				E70CF0111A934DDE005DD7D5 /* Sent.xcdatamodel */,
+				E78320731A96C031000E3ABC /* Sent.xcdatamodel */,
 			);
-			currentVersion = E70CF0111A934DDE005DD7D5 /* Sent.xcdatamodel */;
+			currentVersion = E78320731A96C031000E3ABC /* Sent.xcdatamodel */;
 			path = Sent.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
