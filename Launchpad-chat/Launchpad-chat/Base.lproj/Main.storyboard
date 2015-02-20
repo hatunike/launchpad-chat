@@ -149,10 +149,10 @@
             </objects>
             <point key="canvasLocation" x="304.5" y="1355.5"/>
         </scene>
-        <!--Messages View Controller-->
+        <!--Message List View Controller-->
         <scene sceneID="5vO-wp-Kcw">
             <objects>
-                <viewController id="LFh-gV-nsP" customClass="UIMessagesViewController" sceneMemberID="viewController">
+                <viewController id="LFh-gV-nsP" customClass="UIMessageListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="U2I-rA-DBF"/>
                         <viewControllerLayoutGuide type="bottom" id="3jE-v5-SkG"/>
@@ -443,7 +443,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xh9-vk-bPv"/>
-        <segue reference="KWJ-DR-ZJS"/>
+        <segue reference="JlS-Pa-PG6"/>
+        <segue reference="vm9-iT-MAM"/>
     </inferredMetricsTieBreakers>
 </document>
