@@ -15,6 +15,12 @@
 		007A4B3E1A8D775D00559027 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007A4B3C1A8D775D00559027 /* LaunchScreen.xib */; };
 		007A4B4A1A8D775D00559027 /* Launchpad_chatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 007A4B491A8D775D00559027 /* Launchpad_chatTests.m */; };
 		D7B905E21A942095004BC539 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B905E11A942095004BC539 /* LoginViewController.m */; };
+		D7B905EE1A96B179004BC539 /* Conversation.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B905E41A96B179004BC539 /* Conversation.m */; };
+		D7B905EF1A96B179004BC539 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B905E61A96B179004BC539 /* CoreDataTableViewController.m */; };
+		D7B905F01A96B179004BC539 /* Launchpad_chat.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = D7B905E71A96B179004BC539 /* Launchpad_chat.xcdatamodel */; };
+		D7B905F11A96B179004BC539 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B905E91A96B179004BC539 /* Message.m */; };
+		D7B905F21A96B179004BC539 /* Sent.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D7B905EA1A96B179004BC539 /* Sent.xcdatamodeld */; };
+		D7B905F31A96B179004BC539 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B905ED1A96B179004BC539 /* User.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +49,16 @@
 		007A4B491A8D775D00559027 /* Launchpad_chatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Launchpad_chatTests.m; sourceTree = "<group>"; };
 		D7B905E01A942095004BC539 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		D7B905E11A942095004BC539 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		D7B905E31A96B179004BC539 /* Conversation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conversation.h; sourceTree = "<group>"; };
+		D7B905E41A96B179004BC539 /* Conversation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Conversation.m; sourceTree = "<group>"; };
+		D7B905E51A96B179004BC539 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		D7B905E61A96B179004BC539 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		D7B905E71A96B179004BC539 /* Launchpad_chat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Launchpad_chat.xcdatamodel; sourceTree = "<group>"; };
+		D7B905E81A96B179004BC539 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		D7B905E91A96B179004BC539 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		D7B905EB1A96B179004BC539 /* Sent.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sent.xcdatamodel; sourceTree = "<group>"; };
+		D7B905EC1A96B179004BC539 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		D7B905ED1A96B179004BC539 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +100,16 @@
 		007A4B2C1A8D775D00559027 /* Launchpad-chat */ = {
 			isa = PBXGroup;
 			children = (
+				D7B905E31A96B179004BC539 /* Conversation.h */,
+				D7B905E41A96B179004BC539 /* Conversation.m */,
+				D7B905E51A96B179004BC539 /* CoreDataTableViewController.h */,
+				D7B905E61A96B179004BC539 /* CoreDataTableViewController.m */,
+				D7B905E71A96B179004BC539 /* Launchpad_chat.xcdatamodel */,
+				D7B905E81A96B179004BC539 /* Message.h */,
+				D7B905E91A96B179004BC539 /* Message.m */,
+				D7B905EA1A96B179004BC539 /* Sent.xcdatamodeld */,
+				D7B905EC1A96B179004BC539 /* User.h */,
+				D7B905ED1A96B179004BC539 /* User.m */,
 				007A4B311A8D775D00559027 /* AppDelegate.h */,
 				007A4B321A8D775D00559027 /* AppDelegate.m */,
 				007A4B341A8D775D00559027 /* ViewController.h */,
@@ -224,8 +250,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7B905F31A96B179004BC539 /* User.m in Sources */,
+				D7B905EE1A96B179004BC539 /* Conversation.m in Sources */,
+				D7B905F11A96B179004BC539 /* Message.m in Sources */,
 				D7B905E21A942095004BC539 /* LoginViewController.m in Sources */,
+				D7B905F21A96B179004BC539 /* Sent.xcdatamodeld in Sources */,
+				D7B905EF1A96B179004BC539 /* CoreDataTableViewController.m in Sources */,
 				007A4B361A8D775D00559027 /* ViewController.m in Sources */,
+				D7B905F01A96B179004BC539 /* Launchpad_chat.xcdatamodel in Sources */,
 				007A4B331A8D775D00559027 /* AppDelegate.m in Sources */,
 				007A4B301A8D775D00559027 /* main.m in Sources */,
 			);
@@ -432,6 +464,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D7B905EA1A96B179004BC539 /* Sent.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D7B905EB1A96B179004BC539 /* Sent.xcdatamodel */,
+			);
+			currentVersion = D7B905EB1A96B179004BC539 /* Sent.xcdatamodel */;
+			path = Sent.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 007A4B221A8D775D00559027 /* Project object */;
 }

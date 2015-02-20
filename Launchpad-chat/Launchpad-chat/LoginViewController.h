@@ -1,5 +1,5 @@
 //
-//  LoginViewController.h
+//  LoginViewController.
 //  Launchpad-chat
 //
 //  Created by STUDENT #3 on 2/12/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewController : UICollectionViewController
+@interface LoginViewController : UIViewController
 
 @end
