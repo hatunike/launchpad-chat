@@ -77,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="304.5" y="386.5"/>
         </scene>
-        <!--View Controller-->
+        <!--New User View Controller-->
         <scene sceneID="ps5-2W-Cmc">
             <objects>
-                <viewController id="2sr-sH-Ggk" sceneMemberID="viewController">
+                <viewController id="2sr-sH-Ggk" customClass="UINewUserViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qpm-SE-0cc"/>
                         <viewControllerLayoutGuide type="bottom" id="Y8C-ck-lLo"/>
@@ -149,10 +149,10 @@
             </objects>
             <point key="canvasLocation" x="304.5" y="1355.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Messages View Controller-->
         <scene sceneID="5vO-wp-Kcw">
             <objects>
-                <viewController id="LFh-gV-nsP" sceneMemberID="viewController">
+                <viewController id="LFh-gV-nsP" customClass="UIMessagesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="U2I-rA-DBF"/>
                         <viewControllerLayoutGuide type="bottom" id="3jE-v5-SkG"/>
@@ -221,10 +221,10 @@
             </objects>
             <point key="canvasLocation" x="1128.5" y="386.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Conversation View Controller-->
         <scene sceneID="Y6i-ev-O5u">
             <objects>
-                <viewController id="0IR-z2-mo3" sceneMemberID="viewController">
+                <viewController id="0IR-z2-mo3" customClass="UIConversationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6mR-qH-GPp"/>
                         <viewControllerLayoutGuide type="bottom" id="SY8-c3-pp7"/>
@@ -368,10 +368,10 @@
             </objects>
             <point key="canvasLocation" x="1128.5" y="1355.5"/>
         </scene>
-        <!--View Controller-->
+        <!--New Message View Controller-->
         <scene sceneID="HGc-hN-7Id">
             <objects>
-                <viewController id="cD5-ya-yR0" sceneMemberID="viewController">
+                <viewController id="cD5-ya-yR0" customClass="UINewMessageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CXg-Ha-uEa"/>
                         <viewControllerLayoutGuide type="bottom" id="hWb-gP-ySf"/>
@@ -443,7 +443,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="JlS-Pa-PG6"/>
-        <segue reference="vm9-iT-MAM"/>
+        <segue reference="xh9-vk-bPv"/>
+        <segue reference="KWJ-DR-ZJS"/>
     </inferredMetricsTieBreakers>
 </document>
