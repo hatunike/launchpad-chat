@@ -14,12 +14,15 @@
 		007A4B3B1A8D775D00559027 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 007A4B3A1A8D775D00559027 /* Images.xcassets */; };
 		007A4B3E1A8D775D00559027 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007A4B3C1A8D775D00559027 /* LaunchScreen.xib */; };
 		007A4B4A1A8D775D00559027 /* Launchpad_chatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 007A4B491A8D775D00559027 /* Launchpad_chatTests.m */; };
-		E70CF00F1A8D8482005DD7D5 /* Launchpad_chat.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = E70CF00E1A8D8482005DD7D5 /* Launchpad_chat.xcdatamodel */; };
 		E70CF0121A934DDE005DD7D5 /* Sent.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E70CF0101A934DDE005DD7D5 /* Sent.xcdatamodeld */; };
 		E70CF0151A935B46005DD7D5 /* Conversation.m in Sources */ = {isa = PBXBuildFile; fileRef = E70CF0141A935B46005DD7D5 /* Conversation.m */; };
 		E70CF0181A935B47005DD7D5 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = E70CF0171A935B47005DD7D5 /* Message.m */; };
 		E70CF01B1A935B47005DD7D5 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E70CF01A1A935B47005DD7D5 /* User.m */; };
 		E70CF08F1A94199E005DD7D5 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E70CF08E1A94199E005DD7D5 /* CoreDataTableViewController.m */; };
+		E743A5B21A95F8200023CEEC /* Message+Message_Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = E743A5B11A95F8200023CEEC /* Message+Message_Additions.m */; };
+		E743A5B51A9600870023CEEC /* User+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = E743A5B41A9600870023CEEC /* User+Additions.m */; };
+		E743A5B81A9600EB0023CEEC /* Conversation+Conversation_Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = E743A5B71A9600EB0023CEEC /* Conversation+Conversation_Additions.m */; };
+		E7C503B91A96A8DA008FE670 /* UserAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C503B81A96A8DA008FE670 /* UserAdditionsTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +49,6 @@
 		007A4B431A8D775D00559027 /* Launchpad-chatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Launchpad-chatTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		007A4B481A8D775D00559027 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		007A4B491A8D775D00559027 /* Launchpad_chatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Launchpad_chatTests.m; sourceTree = "<group>"; };
-		E70CF00E1A8D8482005DD7D5 /* Launchpad_chat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Launchpad_chat.xcdatamodel; sourceTree = "<group>"; };
 		E70CF0111A934DDE005DD7D5 /* Sent.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sent.xcdatamodel; sourceTree = "<group>"; };
 		E70CF0131A935B46005DD7D5 /* Conversation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conversation.h; sourceTree = "<group>"; };
 		E70CF0141A935B46005DD7D5 /* Conversation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Conversation.m; sourceTree = "<group>"; };
@@ -56,6 +58,13 @@
 		E70CF01A1A935B47005DD7D5 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		E70CF08D1A94199E005DD7D5 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
 		E70CF08E1A94199E005DD7D5 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		E743A5B01A95F8200023CEEC /* Message+Message_Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Message+Message_Additions.h"; path = "../Message+Message_Additions.h"; sourceTree = "<group>"; };
+		E743A5B11A95F8200023CEEC /* Message+Message_Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Message+Message_Additions.m"; path = "../Message+Message_Additions.m"; sourceTree = "<group>"; };
+		E743A5B31A9600870023CEEC /* User+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+Additions.h"; sourceTree = "<group>"; };
+		E743A5B41A9600870023CEEC /* User+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+Additions.m"; sourceTree = "<group>"; };
+		E743A5B61A9600EB0023CEEC /* Conversation+Conversation_Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Conversation+Conversation_Additions.h"; sourceTree = "<group>"; };
+		E743A5B71A9600EB0023CEEC /* Conversation+Conversation_Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Conversation+Conversation_Additions.m"; sourceTree = "<group>"; };
+		E7C503B81A96A8DA008FE670 /* UserAdditionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAdditionsTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,11 +113,10 @@
 				007A4B341A8D775D00559027 /* ViewController.h */,
 				007A4B351A8D775D00559027 /* ViewController.m */,
 				E70CF0101A934DDE005DD7D5 /* Sent.xcdatamodeld */,
-				E70CF0511A940678005DD7D5 /* generatedModel */,
+				E7C503B71A96A7BE008FE670 /* Model */,
 				007A4B371A8D775D00559027 /* Main.storyboard */,
 				007A4B3A1A8D775D00559027 /* Images.xcassets */,
 				007A4B3C1A8D775D00559027 /* LaunchScreen.xib */,
-				E70CF00E1A8D8482005DD7D5 /* Launchpad_chat.xcdatamodel */,
 				007A4B2D1A8D775D00559027 /* Supporting Files */,
 			);
 			path = "Launchpad-chat";
@@ -127,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				007A4B491A8D775D00559027 /* Launchpad_chatTests.m */,
+				E7C503B81A96A8DA008FE670 /* UserAdditionsTests.m */,
 				007A4B471A8D775D00559027 /* Supporting Files */,
 			);
 			path = "Launchpad-chatTests";
@@ -151,6 +160,28 @@
 				E70CF0141A935B46005DD7D5 /* Conversation.m */,
 			);
 			name = generatedModel;
+			sourceTree = "<group>";
+		};
+		E7C503B61A96A7B5008FE670 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E743A5B31A9600870023CEEC /* User+Additions.h */,
+				E743A5B41A9600870023CEEC /* User+Additions.m */,
+				E743A5B01A95F8200023CEEC /* Message+Message_Additions.h */,
+				E743A5B11A95F8200023CEEC /* Message+Message_Additions.m */,
+				E743A5B61A9600EB0023CEEC /* Conversation+Conversation_Additions.h */,
+				E743A5B71A9600EB0023CEEC /* Conversation+Conversation_Additions.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E7C503B71A96A7BE008FE670 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E7C503B61A96A7B5008FE670 /* Model */,
+				E70CF0511A940678005DD7D5 /* generatedModel */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,14 +285,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				E70CF01B1A935B47005DD7D5 /* User.m in Sources */,
+				E743A5B51A9600870023CEEC /* User+Additions.m in Sources */,
 				E70CF0151A935B46005DD7D5 /* Conversation.m in Sources */,
+				E743A5B81A9600EB0023CEEC /* Conversation+Conversation_Additions.m in Sources */,
 				E70CF08F1A94199E005DD7D5 /* CoreDataTableViewController.m in Sources */,
 				007A4B361A8D775D00559027 /* ViewController.m in Sources */,
 				E70CF0121A934DDE005DD7D5 /* Sent.xcdatamodeld in Sources */,
 				E70CF0181A935B47005DD7D5 /* Message.m in Sources */,
-				E70CF00F1A8D8482005DD7D5 /* Launchpad_chat.xcdatamodel in Sources */,
 				007A4B331A8D775D00559027 /* AppDelegate.m in Sources */,
 				007A4B301A8D775D00559027 /* main.m in Sources */,
+				E743A5B21A95F8200023CEEC /* Message+Message_Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7C503B91A96A8DA008FE670 /* UserAdditionsTests.m in Sources */,
 				007A4B4A1A8D775D00559027 /* Launchpad_chatTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

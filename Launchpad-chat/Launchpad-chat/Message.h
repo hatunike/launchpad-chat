@@ -10,6 +10,7 @@
 #import <CoreData/CoreData.h>
 
 @class Conversation;
+@class User;
 
 @interface Message : NSManagedObject
 
