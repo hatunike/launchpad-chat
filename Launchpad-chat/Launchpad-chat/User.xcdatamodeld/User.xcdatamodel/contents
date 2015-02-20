@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Avatar" representedClassName="Avatar" syncable="YES">
+        <attribute name="picture" optional="YES" attributeType="Binary" syncable="YES"/>
+    </entity>
+    <entity name="ConversationList" representedClassName="ConversationList" syncable="YES">
+        <attribute name="list" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="messages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MessageList" syncable="YES"/>
+    </entity>
+    <entity name="ID" representedClassName="ID" syncable="YES">
+        <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="conversations" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ConversationList" syncable="YES"/>
+        <relationship name="picture" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Avatar" syncable="YES"/>
+        <relationship name="status" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Status" syncable="YES"/>
+        <relationship name="userName" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserName" syncable="YES"/>
+    </entity>
+    <entity name="MessageList" representedClassName="MessageList" syncable="YES">
+        <attribute name="list" optional="YES" attributeType="Binary" syncable="YES"/>
+    </entity>
+    <entity name="Status" representedClassName="Status" syncable="YES">
+        <attribute name="online" optional="YES" attributeType="Boolean" syncable="YES"/>
+    </entity>
+    <entity name="UserName" representedClassName="UserName" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ID" positionX="52" positionY="-207" width="128" height="118"/>
+        <element name="MessageList" positionX="-243" positionY="-99" width="128" height="58"/>
+        <element name="UserName" positionX="-90" positionY="-27" width="128" height="58"/>
+        <element name="Avatar" positionX="54" positionY="-27" width="128" height="58"/>
+        <element name="Status" positionX="196" positionY="-27" width="128" height="58"/>
+        <element name="ConversationList" positionX="-245" positionY="-208" width="128" height="73"/>
+    </elements>
+</model>

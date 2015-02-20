@@ -30,7 +30,6 @@
     
     NSLog(@"Context = %@",self.context);
     
-    
     [self.context performBlockAndWait:^{
         
         User* newUser = [[User alloc] initWithEntity:[NSEntityDescription entityForName:@"User" inManagedObjectContext:self.context] insertIntoManagedObjectContext:self.context];
