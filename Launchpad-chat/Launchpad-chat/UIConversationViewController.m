@@ -1,18 +1,18 @@
 //
-//  LoginViewController.m
+//  UIConversationViewController.m
 //  Launchpad-chat
 //
-//  Created by STUDENT #3 on 2/12/15.
+//  Created by STUDENT #6 on 2/19/15.
 //  Copyright (c) 2015 lernu. All rights reserved.
 //
 
-#import "LoginViewController.h"
+#import "UIConversationViewController.h"
 
-@interface LoginViewController ()
+@interface UIConversationViewController ()
 
 @end
 
-@implementation LoginViewController
+@implementation UIConversationViewController
 
 static NSString * const reuseIdentifier = @"Cell";
 
@@ -46,11 +46,13 @@ static NSString * const reuseIdentifier = @"Cell";
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+#warning Incomplete method implementation -- Return the number of sections
     return 0;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+#warning Incomplete method implementation -- Return the number of items in the section
     return 0;
 }
 
