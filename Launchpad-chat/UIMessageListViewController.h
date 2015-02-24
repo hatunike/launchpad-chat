@@ -1,5 +1,5 @@
 //
-//  UIConversationViewController.h
+//  UIMessageListViewController.h
 //  Launchpad-chat
 //
 //  Created by STUDENT #6 on 2/19/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIConversationViewController : UICollectionViewController
+@interface UIMessageListViewController : UIViewController
 
 @end

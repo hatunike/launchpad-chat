@@ -1,18 +1,18 @@
 //
-//  UIConversationViewController.m
+//  UIMessageListViewController.m
 //  Launchpad-chat
 //
 //  Created by STUDENT #6 on 2/19/15.
 //  Copyright (c) 2015 lernu. All rights reserved.
 //
 
-#import "UIConversationViewController.h"
+#import "UIMessageListViewController.h"
 
-@interface UIConversationViewController ()
+@interface UIMessageListViewController ()
 
 @end
 
-@implementation UIConversationViewController
+@implementation UIMessageListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
