@@ -42,4 +42,12 @@
     return fetchRequest;
 }
 
++ (NSFetchRequest *)requestUsersOrderedByStatusAndName
+{
+    NSFetchRequest* fr = [NSFetchRequest fetchRequestWithEntityName:@"User"];
+    fr.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"onlineStatus" ascending:NO],[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
+    
+    return fr;
+}
+
 @end
