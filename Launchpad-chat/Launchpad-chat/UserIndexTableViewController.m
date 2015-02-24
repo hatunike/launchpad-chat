@@ -22,7 +22,7 @@
     [super viewDidLoad];
 
     // grab all the users in core data and put them in userArray
-    self.userArray = [];
+    self.userArray = [self.fetchedResultsController ];
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,13 +50,24 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"user" forIndexPath:indexPath];
     
-    // Configure the cell...
-    // grab each user
-    User* user = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    User* user = nil;//[self.userArray objectAtIndexPath:indexPath.row];
     
-    // find out if they're online
+    NSString* userName = user.name;
+    
+    NSString* message = nil;//[Message getLatestMessageWithUsername:userName];
+    
+    NSDate* latestMessageDate = nil;//message.date;
+    UIImage* userProfilePicture = nil;
     
     bool onlineStatus = user.onlineStatus;
+    if (onlineStatus)
+    {
+        // display the green dot
+    }
+    else
+    {
+        // display the red dot
+    }
     
     
     return cell;

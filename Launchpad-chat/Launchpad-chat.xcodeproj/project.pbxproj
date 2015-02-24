@@ -18,6 +18,11 @@
 		E796D2931A96B72600FBC9E0 /* UIConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E796D2921A96B72600FBC9E0 /* UIConversationViewController.m */; };
 		E796D2961A96B78100FBC9E0 /* UINewMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E796D2951A96B78100FBC9E0 /* UINewMessageViewController.m */; };
 		E796D2991A96B7ED00FBC9E0 /* UINewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E796D2981A96B7ED00FBC9E0 /* UINewUserViewController.m */; };
+		F050DAB91A96BA7D004D9E73 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F050DAB01A96BA7D004D9E73 /* CoreDataTableViewController.m */; };
+		F050DABA1A96BA7D004D9E73 /* Sent.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F050DAB11A96BA7D004D9E73 /* Sent.xcdatamodeld */; };
+		F050DABB1A96BA7D004D9E73 /* UIConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F050DAB41A96BA7D004D9E73 /* UIConversationViewController.m */; };
+		F050DABC1A96BA7D004D9E73 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = F050DAB61A96BA7D004D9E73 /* User.m */; };
+		F050DABD1A96BA7D004D9E73 /* UserIndexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F050DAB81A96BA7D004D9E73 /* UserIndexTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +57,15 @@
 		E796D2951A96B78100FBC9E0 /* UINewMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UINewMessageViewController.m; sourceTree = "<group>"; };
 		E796D2971A96B7ED00FBC9E0 /* UINewUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UINewUserViewController.h; sourceTree = "<group>"; };
 		E796D2981A96B7ED00FBC9E0 /* UINewUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UINewUserViewController.m; sourceTree = "<group>"; };
+		F050DAAF1A96BA7D004D9E73 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		F050DAB01A96BA7D004D9E73 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		F050DAB21A96BA7D004D9E73 /* Sent.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sent.xcdatamodel; sourceTree = "<group>"; };
+		F050DAB31A96BA7D004D9E73 /* UIConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIConversationViewController.h; sourceTree = "<group>"; };
+		F050DAB41A96BA7D004D9E73 /* UIConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIConversationViewController.m; sourceTree = "<group>"; };
+		F050DAB51A96BA7D004D9E73 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		F050DAB61A96BA7D004D9E73 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		F050DAB71A96BA7D004D9E73 /* UserIndexTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserIndexTableViewController.h; sourceTree = "<group>"; };
+		F050DAB81A96BA7D004D9E73 /* UserIndexTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserIndexTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +107,15 @@
 		007A4B2C1A8D775D00559027 /* Launchpad-chat */ = {
 			isa = PBXGroup;
 			children = (
+				F050DAAF1A96BA7D004D9E73 /* CoreDataTableViewController.h */,
+				F050DAB01A96BA7D004D9E73 /* CoreDataTableViewController.m */,
+				F050DAB11A96BA7D004D9E73 /* Sent.xcdatamodeld */,
+				F050DAB31A96BA7D004D9E73 /* UIConversationViewController.h */,
+				F050DAB41A96BA7D004D9E73 /* UIConversationViewController.m */,
+				F050DAB51A96BA7D004D9E73 /* User.h */,
+				F050DAB61A96BA7D004D9E73 /* User.m */,
+				F050DAB71A96BA7D004D9E73 /* UserIndexTableViewController.h */,
+				F050DAB81A96BA7D004D9E73 /* UserIndexTableViewController.m */,
 				007A4B311A8D775D00559027 /* AppDelegate.h */,
 				007A4B321A8D775D00559027 /* AppDelegate.m */,
 				D7B905E01A942095004BC539 /* LoginViewController.h */,
@@ -241,11 +264,16 @@
 			files = (
 				E796D2991A96B7ED00FBC9E0 /* UINewUserViewController.m in Sources */,
 				E796D2931A96B72600FBC9E0 /* UIConversationViewController.m in Sources */,
+				F050DAB91A96BA7D004D9E73 /* CoreDataTableViewController.m in Sources */,
+				F050DABA1A96BA7D004D9E73 /* Sent.xcdatamodeld in Sources */,
 				D7B905E21A942095004BC539 /* LoginViewController.m in Sources */,
+				F050DABB1A96BA7D004D9E73 /* UIConversationViewController.m in Sources */,
+				F050DABC1A96BA7D004D9E73 /* User.m in Sources */,
 				007A4B331A8D775D00559027 /* AppDelegate.m in Sources */,
 				E796D2961A96B78100FBC9E0 /* UINewMessageViewController.m in Sources */,
 				E796D28D1A96B46F00FBC9E0 /* UIMessagesViewController.m in Sources */,
 				007A4B301A8D775D00559027 /* main.m in Sources */,
+				F050DABD1A96BA7D004D9E73 /* UserIndexTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +478,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F050DAB11A96BA7D004D9E73 /* Sent.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F050DAB21A96BA7D004D9E73 /* Sent.xcdatamodel */,
+			);
+			currentVersion = F050DAB21A96BA7D004D9E73 /* Sent.xcdatamodel */;
+			path = Sent.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 007A4B221A8D775D00559027 /* Project object */;
 }
