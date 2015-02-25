@@ -29,7 +29,6 @@
 		E796D2961A96B78100FBC9E0 /* UINewMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E796D2951A96B78100FBC9E0 /* UINewMessageViewController.m */; };
 		E796D2991A96B7ED00FBC9E0 /* UINewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E796D2981A96B7ED00FBC9E0 /* UINewUserViewController.m */; };
 		E796D29C1A96BC0C00FBC9E0 /* UIMessageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E796D29B1A96BC0C00FBC9E0 /* UIMessageListViewController.m */; };
-		EF411DF11A9700A100BA14B9 /* IDAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF411DF01A9700A100BA14B9 /* IDAdditionsTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +83,6 @@
 		E796D2981A96B7ED00FBC9E0 /* UINewUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UINewUserViewController.m; sourceTree = "<group>"; };
 		E796D29A1A96BC0C00FBC9E0 /* UIMessageListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIMessageListViewController.h; path = ../UIMessageListViewController.h; sourceTree = "<group>"; };
 		E796D29B1A96BC0C00FBC9E0 /* UIMessageListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIMessageListViewController.m; path = ../UIMessageListViewController.m; sourceTree = "<group>"; };
-		EF411DF01A9700A100BA14B9 /* IDAdditionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDAdditionsTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +148,6 @@
 		007A4B461A8D775D00559027 /* Launchpad-chatTests */ = {
 			isa = PBXGroup;
 			children = (
-				EF411DF01A9700A100BA14B9 /* IDAdditionsTests.m */,
 				007A4B491A8D775D00559027 /* Launchpad_chatTests.m */,
 				E78320681A96BFF6000E3ABC /* UserAdditionsTests.m */,
 				007A4B471A8D775D00559027 /* Supporting Files */,
@@ -342,7 +339,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E78320691A96BFF6000E3ABC /* UserAdditionsTests.m in Sources */,
-				EF411DF11A9700A100BA14B9 /* IDAdditionsTests.m in Sources */,
 				007A4B4A1A8D775D00559027 /* Launchpad_chatTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,6 +18,6 @@
 
 + (NSFetchRequest *)requestUsersWithRecentUploads;
 + (NSFetchRequest *)requestUserWithName:(NSString*)name;
-
++ (NSFetchRequest *)requestUsersOrderedByStatusAndName;
 
 @end
