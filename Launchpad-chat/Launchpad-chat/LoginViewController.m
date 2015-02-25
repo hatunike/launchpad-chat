@@ -7,10 +7,12 @@
 //
 
 #import "LoginViewController.h"
+#import "UIMessageListViewController.h"
 
 @interface LoginViewController ()
 @property (nonatomic, retain)IBOutlet UITextField *usernameField;
 @property (nonatomic, retain)IBOutlet UITextField *passwordField;
+@property (nonatomic, strong)NSString *userName;
 @end
 
 @implementation LoginViewController
@@ -27,7 +29,12 @@ static NSString * const reuseIdentifier = @"Cell";
 
 
 - (IBAction)btn_login_submit:(id)sender {
+<<<<<<< .merge_file_VDyKcO
     if([self.usernameField.text isEqual:@"Launchpad"] && [self.passwordField.text isEqual:@"Launchpad"]){
+=======
+    if([self.usernameField.text isEqualToString:@"1"] && [self.passwordField.text isEqualToString:@"2"]){
+        self.userName = self.usernameField.text;
+>>>>>>> .merge_file_y1svFW
         [self performSegueWithIdentifier:@"LoginToUser" sender:nil];
     }
     else{
@@ -57,6 +64,18 @@ static NSString * const reuseIdentifier = @"Cell";
     return cell;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"LoginToUser"])
+    {
+        UIMessageListViewController* vc = [segue destinationViewController];
+        vc.userName = self.userName;
+    }
+    else
+    {
+        
+    }
+}
 
 
 @end

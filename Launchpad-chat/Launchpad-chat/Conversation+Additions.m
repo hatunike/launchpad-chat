@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 lernu. All rights reserved.
 //
 
-#import "Conversation+Conversation_Additions.h"
+#import "Conversation+Additions.h"
 
-@implementation Conversation (Conversation_Additions)
+@implementation Conversation (Additions)
 
 @end
