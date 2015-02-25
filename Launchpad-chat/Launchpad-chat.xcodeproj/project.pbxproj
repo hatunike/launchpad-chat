@@ -13,6 +13,7 @@
 		007A4B3B1A8D775D00559027 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 007A4B3A1A8D775D00559027 /* Images.xcassets */; };
 		007A4B3E1A8D775D00559027 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007A4B3C1A8D775D00559027 /* LaunchScreen.xib */; };
 		007A4B4A1A8D775D00559027 /* Launchpad_chatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 007A4B491A8D775D00559027 /* Launchpad_chatTests.m */; };
+		CF4982511A9D49CB00278DB4 /* ConversationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4982501A9D49CB00278DB4 /* ConversationTableViewController.m */; };
 		D7B905E21A942095004BC539 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B905E11A942095004BC539 /* LoginViewController.m */; };
 		E78320691A96BFF6000E3ABC /* UserAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E78320681A96BFF6000E3ABC /* UserAdditionsTests.m */; };
 		E783207E1A96C031000E3ABC /* Conversation.m in Sources */ = {isa = PBXBuildFile; fileRef = E783206B1A96C031000E3ABC /* Conversation.m */; };
@@ -53,6 +54,8 @@
 		007A4B431A8D775D00559027 /* Launchpad-chatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Launchpad-chatTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		007A4B481A8D775D00559027 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		007A4B491A8D775D00559027 /* Launchpad_chatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Launchpad_chatTests.m; sourceTree = "<group>"; };
+		CF49824F1A9D49CB00278DB4 /* ConversationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationTableViewController.h; sourceTree = "<group>"; };
+		CF4982501A9D49CB00278DB4 /* ConversationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationTableViewController.m; sourceTree = "<group>"; };
 		D7B905E01A942095004BC539 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		D7B905E11A942095004BC539 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		E78320681A96BFF6000E3ABC /* UserAdditionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAdditionsTests.m; sourceTree = "<group>"; };
@@ -192,6 +195,8 @@
 		EF411DD61A96F97800BA14B9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CF49824F1A9D49CB00278DB4 /* ConversationTableViewController.h */,
+				CF4982501A9D49CB00278DB4 /* ConversationTableViewController.m */,
 				E796D2911A96B72600FBC9E0 /* UIConversationViewController.h */,
 				E78320751A96C031000E3ABC /* UIConversationViewController.m */,
 				E78320761A96C031000E3ABC /* UIMessagesViewController.h */,
@@ -314,6 +319,7 @@
 			files = (
 				E783207F1A96C031000E3ABC /* Conversation+Conversation_Additions.m in Sources */,
 				E796D2991A96B7ED00FBC9E0 /* UINewUserViewController.m in Sources */,
+				CF4982511A9D49CB00278DB4 /* ConversationTableViewController.m in Sources */,
 				E78320821A96C031000E3ABC /* Sent.xcdatamodeld in Sources */,
 				E78320861A96C031000E3ABC /* User+Additions.m in Sources */,
 				D7B905E21A942095004BC539 /* LoginViewController.m in Sources */,
