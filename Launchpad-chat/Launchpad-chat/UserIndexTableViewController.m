@@ -8,12 +8,13 @@
 
 #import "UserIndexTableViewController.h"
 #import "User.h"
-#import "Message+Message_Additions.h"
+#import "Message+Additions.h"
 #import "User+Additions.h"
+#import "AppDelegate.h"
 
 @interface UserIndexTableViewController ()
 
-@property (nonatomic, weak) NSMutableArray* userArray;
+@property (nonatomic, strong) NSManagedObjectContext* context;
 
 @end
 
@@ -22,10 +23,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // grab all the users in core data and put them in userArray
+    self.context = [(AppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
     
-    [self setFetchedResultsController:[[NSFetchedResultsController alloc] initWithFetchRequest:[User requestUsersOrderedByStatusAndName] managedObjectContext:nil sectionNameKeyPath:nil cacheName:nil]];
+    // grab all the users in core data and put them in userArray
+    [User createUserWithName:@"testingA" onlineStatus:YES inContext:self.context];
+    
+    [self setFetchedResultsController:[[NSFetchedResultsController alloc] initWithFetchRequest:[User requestUsersOrderedByStatusAndName] managedObjectContext:self.context sectionNameKeyPath:nil cacheName:nil]];
     
     
 }
@@ -37,16 +40,6 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [[[self fetchedResultsController] fetchedObjects] count];
-}
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -56,6 +49,7 @@
     
     NSString* userName = user.name;
     
+    cell.textLabel.text = userName;
     //Message* message = [Message getLatestMessageWithUsername:userName];
     
     //NSDate* latestMessageDate = message.date;

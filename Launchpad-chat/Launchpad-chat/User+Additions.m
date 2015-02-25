@@ -10,6 +10,20 @@
 
 @implementation User (Additions)
 
++ (void)createUserWithName:(NSString*)name onlineStatus:(BOOL)status inContext:(NSManagedObjectContext*)context
+{
+    
+    [context performBlockAndWait:^{
+        
+        User* newUser1 = [[User alloc] initWithEntity:[NSEntityDescription entityForName:@"User" inManagedObjectContext:context] insertIntoManagedObjectContext:context];
+        newUser1.name = @"testA";
+        newUser1.onlineStatus = [NSNumber numberWithBool:status];
+        
+    }];
+    
+    [context save:nil];
+    
+}
 + (NSFetchRequest *)requestUsersWithRecentUploads
 {
     // NSSortDescriptor
