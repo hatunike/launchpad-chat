@@ -9,6 +9,7 @@
 #import "UserIndexTableViewController.h"
 #import "User.h"
 #import "Message+Message_Additions.h"
+#import "User+Additions.h"
 
 @interface UserIndexTableViewController ()
 
@@ -24,7 +25,7 @@
 
     // grab all the users in core data and put them in userArray
     
-    [self setFetchedResultsController:[[NSFetchedResultsController alloc] initWithFetchRequest:[User fetchRequestForAllUsersSortedByStatusThenName] managedObjectContext:nil sectionNameKeyPath:nil cacheName:nil]];
+    [self setFetchedResultsController:[[NSFetchedResultsController alloc] initWithFetchRequest:[User requestUsersOrderedByStatusAndName] managedObjectContext:nil sectionNameKeyPath:nil cacheName:nil]];
     
     
 }
@@ -55,10 +56,12 @@
     
     NSString* userName = user.name;
     
-    Message* message = [Message getLatestMessageWithUsername:userName];
+    //Message* message = [Message getLatestMessageWithUsername:userName];
     
-    NSDate* latestMessageDate = message.date;
-    UIImage* userAvatar = user.avatar;
+    //NSDate* latestMessageDate = message.date;
+    //UIImage* userAvatar = user.avatar; //outlet must be made somewhere
+    
+    //cell.userAvatar.image = user.avatar;
     
     bool onlineStatus = user.onlineStatus;
     if (onlineStatus)
