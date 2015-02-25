@@ -7,10 +7,12 @@
 //
 
 #import "UserIndexTableViewController.h"
+#import "User.h"
+#import "Message+Message_Additions.h"
 
 @interface UserIndexTableViewController ()
 
-@property (nonatomic, weak) NSMutableArray* userIndex; //Place holder for CoreData
+@property (nonatomic, weak) NSMutableArray* userArray;
 
 @end
 
@@ -19,42 +21,59 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    // grab all the users in core data and put them in userArray
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    [self setFetchedResultsController:[[NSFetchedResultsController alloc] initWithFetchRequest:[User fetchRequestForAllUsersSortedByStatusThenName] managedObjectContext:nil sectionNameKeyPath:nil cacheName:nil]];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [[[self fetchedResultsController] fetchedObjects] count];
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"user" forIndexPath:indexPath];
     
-    // Configure the cell...
+    User* user = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    NSString* userName = user.name;
+    
+    Message* message = [Message getLatestMessageWithUsername:userName];
+    
+    NSDate* latestMessageDate = message.date;
+    UIImage* userAvatar = user.avatar;
+    
+    bool onlineStatus = user.onlineStatus;
+    if (onlineStatus)
+    {
+        // display the green dot
+    }
+    else
+    {
+        // display the red dot
+    }
+    
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

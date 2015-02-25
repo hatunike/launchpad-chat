@@ -8,7 +8,7 @@
 
 #import "Message.h"
 
-@interface Message (Message_Additions)
+@interface Message (Additions)
 
 - (NSFetchRequest *)requestMessagesFromUser:(NSString *) userName inManagedObjectContext:(NSManagedObjectContext *)context;
 

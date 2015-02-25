@@ -10,4 +10,6 @@
 
 @interface UIMessageListViewController : UIViewController
 
+@property (nonatomic, strong)NSString* userName;
+
 @end

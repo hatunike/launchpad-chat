@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 lernu. All rights reserved.
 //
 
-#import "Message+Message_Additions.h"
+#import "Message+Additions.h"
 
-@implementation Message (Message_Additions)
+@implementation Message (Additions)
 
 - (NSFetchRequest *)requestMessagesFromUser:(NSString *)userName inManagedObjectContext:(NSManagedObjectContext *)context
 {
