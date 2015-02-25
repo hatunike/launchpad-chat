@@ -6,19 +6,19 @@
 //  Copyright (c) 2015 lernu. All rights reserved.
 //
 
-#import "UserIndexTableViewController.h"
+#import "UserTableViewController.h"
 #import "User.h"
 #import "Message+Additions.h"
 #import "User+Additions.h"
 #import "AppDelegate.h"
 
-@interface UserIndexTableViewController ()
+@interface UserTableViewController ()
 
 @property (nonatomic, strong) NSManagedObjectContext* context;
 
 @end
 
-@implementation UserIndexTableViewController
+@implementation UserTableViewController
 
 - (void)viewDidLoad
 {
@@ -44,7 +44,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"user" forIndexPath:indexPath];
-    
+
     User* user = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     NSString* userName = user.name;
