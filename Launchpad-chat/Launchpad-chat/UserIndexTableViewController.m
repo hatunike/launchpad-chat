@@ -8,6 +8,7 @@
 
 #import "UserIndexTableViewController.h"
 #import "User.h"
+#import "Message+Message_Additions.h"
 
 @interface UserIndexTableViewController ()
 
@@ -22,7 +23,10 @@
     [super viewDidLoad];
 
     // grab all the users in core data and put them in userArray
-    self.userArray = [self.fetchedResultsController ];
+    
+    [self setFetchedResultsController:[[NSFetchedResultsController alloc] initWithFetchRequest:[User fetchRequestForAllUsersSortedByStatusThenName] managedObjectContext:nil sectionNameKeyPath:nil cacheName:nil]];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -34,15 +38,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    return [self.userArray count];
+    return [[[self fetchedResultsController] fetchedObjects] count];
 }
 
 
@@ -50,14 +51,14 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"user" forIndexPath:indexPath];
     
-    User* user = nil;//[self.userArray objectAtIndexPath:indexPath.row];
+    User* user = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     NSString* userName = user.name;
     
-    NSString* message = nil;//[Message getLatestMessageWithUsername:userName];
+    Message* message = [Message getLatestMessageWithUsername:userName];
     
-    NSDate* latestMessageDate = nil;//message.date;
-    UIImage* userProfilePicture = nil;
+    NSDate* latestMessageDate = message.date;
+    UIImage* userAvatar = user.avatar;
     
     bool onlineStatus = user.onlineStatus;
     if (onlineStatus)
