@@ -8,6 +8,7 @@
 
 #import "Conversation.h"
 
-@interface Conversation (Conversation_Additions)
+@interface Conversation (Additions)
+
 
 @end

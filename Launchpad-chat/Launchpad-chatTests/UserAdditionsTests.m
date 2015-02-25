@@ -32,9 +32,22 @@
     
     [self.context performBlockAndWait:^{
         
-        User* newUser = [[User alloc] initWithEntity:[NSEntityDescription entityForName:@"User" inManagedObjectContext:self.context] insertIntoManagedObjectContext:self.context];
-        newUser.name = @"test1";
-        newUser.onlineStatus = @YES;
+        User* newUser1 = [[User alloc] initWithEntity:[NSEntityDescription entityForName:@"User" inManagedObjectContext:self.context] insertIntoManagedObjectContext:self.context];
+        newUser1.name = @"testA";
+        newUser1.onlineStatus = @YES;
+        
+        User* newUser2 = [[User alloc] initWithEntity:[NSEntityDescription entityForName:@"User" inManagedObjectContext:self.context] insertIntoManagedObjectContext:self.context];
+        newUser2.name = @"Beta";
+        newUser2.onlineStatus = @NO;
+        
+        User* newUser3 = [[User alloc] initWithEntity:[NSEntityDescription entityForName:@"User" inManagedObjectContext:self.context] insertIntoManagedObjectContext:self.context];
+        newUser3.name = @"testB";
+        newUser3.onlineStatus = @YES;
+        
+        User* newUser4 = [[User alloc] initWithEntity:[NSEntityDescription entityForName:@"User" inManagedObjectContext:self.context] insertIntoManagedObjectContext:self.context];
+        newUser4.name = @"Alpha";
+        newUser4.onlineStatus = @NO;
+        
         
     }];
 
@@ -65,25 +78,26 @@
     
     NSError* error = nil;
     
-    NSArray* users = [self.context executeFetchRequest:[User requestUserWithName:@"test1"] error:&error];
+    NSArray* users = [self.context executeFetchRequest:[User requestUserWithName:@"testA"] error:&error];
     
     
     XCTAssert(error == nil, @"Error requesting users = %@",[error localizedDescription]);
     XCTAssert(users.count == 1, @"Users should be equal to 1");
 }
 
-- (void)testUserFetchRequest
-{
 
+- (void)testAllUsersSortedByStatusAndName
+{
     NSError* error = nil;
     
-    NSArray* users = [self.context executeFetchRequest:[User requestUsersWithRecentUploads] error:&error];
+    NSArray* users = [self.context executeFetchRequest:[User requestUsersOrderedByStatusAndName] error:&error];
     
-    XCTAssert(error == nil, @"Error requesting users = %@",[error localizedDescription]);
-    XCTAssert(users.count == 3, @"Users should be equal to 3");
+    XCTAssert([[users[0] name] isEqualToString:@"testA"], @"users should be sorted by status THEN name");
+    XCTAssert([[users[1] name] isEqualToString:@"testB"], @"users should be sorted by status THEN name");
+    XCTAssert([[users[2] name] isEqualToString:@"Alpha"], @"users should be sorted by status THEN name");
+    XCTAssert([[users[3] name] isEqualToString:@"Beta"], @"users should be sorted by status THEN name");
+ 
 }
-
-
 
 
 - (void)testExample {
