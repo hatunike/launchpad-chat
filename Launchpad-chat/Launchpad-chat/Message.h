@@ -12,6 +12,7 @@
 #import "Conversation.h"
 
 @class Conversation;
+@class User;
 
 @interface Message : NSManagedObject
 
