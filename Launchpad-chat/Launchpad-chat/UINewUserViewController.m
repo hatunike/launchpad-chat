@@ -12,6 +12,9 @@
 
 @property (nonatomic, retain)IBOutlet UITextField *usernameField;
 @property (nonatomic, retain)IBOutlet UITextField *passwordField;
+@property (nonatomic, retain)IBOutlet UITextField *passwordField2;
+@property (nonatomic, strong)NSString *userName;
+@property (nonatomic, strong)NSString *passWord;
 @end
 
 @implementation UINewUserViewController
@@ -27,13 +30,24 @@ static NSString * const reuseIdentifier = @"Cell";
 
 
 
-- (IBAction)btn_login_submit:(id)sender {
-    if([self.usernameField.text isEqual:@"Launchpad"] && [self.passwordField.text isEqual:@"Launchpad"]){
-        [self performSegueWithIdentifier:@"LoginToUser" sender:nil];
+- (IBAction)btn_create_account:(id)sender {
+    if([self.usernameField.text isEqual:@"1"] && [self.passwordField.text isEqual:@"2"] && [self.passwordField2.text isEqual:@"2"])
+    {
+        [self performSegueWithIdentifier:@"returnToLogin" sender:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Yay"
+                                                        message:@"Your account have been created"
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
     }
-    else{
+    else
+    {
+        self.userName = self.usernameField.text;
+        self.passWord = self.passwordField.text;
+        
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Incorrect"
-                                                        message:@"Please enter the correct usename and password"
+                                                        message:@"There is a problem with your credentials, please try again"
                                                        delegate:self
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];

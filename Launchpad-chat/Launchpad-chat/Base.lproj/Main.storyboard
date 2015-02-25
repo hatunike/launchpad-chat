@@ -142,13 +142,19 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="CXm-ku-5Fm" kind="show" id="KWJ-DR-ZJS"/>
+                                    <action selector="btn_create_account:" destination="2sr-sH-Ggk" eventType="touchUpInside" id="PW6-cm-rjB"/>
+                                    <segue destination="CXm-ku-5Fm" kind="show" identifier="returnToLogin" id="KWJ-DR-ZJS"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="passwordField" destination="5gk-mW-tli" id="kc5-TG-4NA"/>
+                        <outlet property="passwordField2" destination="BAt-NK-gsG" id="8WW-zR-V3F"/>
+                        <outlet property="usernameField" destination="2PM-Rm-9zY" id="ozf-m2-rK9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EDt-uW-sue" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -448,7 +454,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vm9-iT-MAM"/>
+        <segue reference="KWJ-DR-ZJS"/>
         <segue reference="lWI-He-dbk"/>
     </inferredMetricsTieBreakers>
 </document>
