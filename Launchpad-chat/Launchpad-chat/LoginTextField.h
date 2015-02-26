@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+IB_DESIGNABLE
 @interface LoginTextField : UITextField
+
+@property (nonatomic, strong) IBInspectable UIColor* borderColor;
+@property (nonatomic) IBInspectable CGFloat borderWidth;
+@property (nonatomic) IBInspectable CGFloat cornerRadius;
 
 @end

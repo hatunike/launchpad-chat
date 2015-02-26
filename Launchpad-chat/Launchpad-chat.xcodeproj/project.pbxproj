@@ -29,6 +29,7 @@
 		E78320871A96C031000E3ABC /* UserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E783207D1A96C031000E3ABC /* UserTableViewController.m */; };
 		E796D2961A96B78100FBC9E0 /* UINewMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E796D2951A96B78100FBC9E0 /* UINewMessageViewController.m */; };
 		E796D2991A96B7ED00FBC9E0 /* UINewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E796D2981A96B7ED00FBC9E0 /* UINewUserViewController.m */; };
+		E79D13EE1A9D57A600D9E880 /* LoginTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E79D13ED1A9D57A600D9E880 /* LoginTextField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,8 @@
 		E796D2951A96B78100FBC9E0 /* UINewMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UINewMessageViewController.m; sourceTree = "<group>"; };
 		E796D2971A96B7ED00FBC9E0 /* UINewUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UINewUserViewController.h; sourceTree = "<group>"; };
 		E796D2981A96B7ED00FBC9E0 /* UINewUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UINewUserViewController.m; sourceTree = "<group>"; };
+		E79D13EC1A9D57A600D9E880 /* LoginTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginTextField.h; sourceTree = "<group>"; };
+		E79D13ED1A9D57A600D9E880 /* LoginTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTextField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,7 @@
 				EF411DD41A96F92700BA14B9 /* Model */,
 				007A4B311A8D775D00559027 /* AppDelegate.h */,
 				007A4B321A8D775D00559027 /* AppDelegate.m */,
+				E79D13EB1A9D578A00D9E880 /* Views */,
 				007A4B371A8D775D00559027 /* Main.storyboard */,
 				007A4B3A1A8D775D00559027 /* Images.xcassets */,
 				007A4B3C1A8D775D00559027 /* LaunchScreen.xib */,
@@ -161,6 +165,15 @@
 				007A4B481A8D775D00559027 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E79D13EB1A9D578A00D9E880 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E79D13EC1A9D57A600D9E880 /* LoginTextField.h */,
+				E79D13ED1A9D57A600D9E880 /* LoginTextField.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		EF411DD41A96F92700BA14B9 /* Model */ = {
@@ -329,6 +342,7 @@
 				E783207E1A96C031000E3ABC /* Conversation.m in Sources */,
 				E78320871A96C031000E3ABC /* UserTableViewController.m in Sources */,
 				E796D2961A96B78100FBC9E0 /* UINewMessageViewController.m in Sources */,
+				E79D13EE1A9D57A600D9E880 /* LoginTextField.m in Sources */,
 				E78320811A96C031000E3ABC /* Message.m in Sources */,
 				007A4B301A8D775D00559027 /* main.m in Sources */,
 			);
