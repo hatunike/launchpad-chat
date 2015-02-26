@@ -468,7 +468,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="JlS-Pa-PG6"/>
         <segue reference="vm9-iT-MAM"/>
+        <segue reference="DA1-RA-pnb"/>
     </inferredMetricsTieBreakers>
 </document>
