@@ -10,6 +10,22 @@
 
 @implementation Message (Additions)
 
++ (void)createMessageWithText:(NSString*)text onDate:(NSDate*)date withState:(BOOL)readOrUnreadState inContext:(NSManagedObjectContext*)context;
+{
+    
+    [context performBlockAndWait:^{
+        
+        Message* newMessage1 = [[Message alloc] initWithEntity:[NSEntityDescription entityForName:@"Message" inManagedObjectContext:context] insertIntoManagedObjectContext:context];
+        newMessage1.text = text;
+        newMessage1.date = date;
+        newMessage1.readOrUnreadState = [NSNumber numberWithBool:readOrUnreadState];
+        
+    }];
+    
+    [context save:nil];
+    
+}
+
 - (NSFetchRequest *)requestMessagesFromUser:(NSString *)userName inManagedObjectContext:(NSManagedObjectContext *)context
 {
     // NSSortDescriptor

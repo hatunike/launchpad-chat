@@ -2,7 +2,7 @@
 //  User.m
 //  Launchpad-chat
 //
-//  Created by STUDENT #1 on 2/17/15.
+//  Created by STUDENT #1 on 2/26/15.
 //  Copyright (c) 2015 lernu. All rights reserved.
 //
 
@@ -13,8 +13,8 @@
 
 @implementation User
 
-@dynamic name;
 @dynamic avatar;
+@dynamic name;
 @dynamic onlineStatus;
 @dynamic conversations;
 @dynamic messages;

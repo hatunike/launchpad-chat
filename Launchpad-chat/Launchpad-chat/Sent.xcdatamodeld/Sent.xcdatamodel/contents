@@ -3,7 +3,7 @@
     <entity name="Conversation" representedClassName="Conversation" syncable="YES">
         <attribute name="lastMessageDate" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="messages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Message" inverseName="fromWhat" inverseEntity="Message" syncable="YES"/>
-        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="conversations" inverseEntity="User" syncable="YES"/>
+        <relationship name="user" optional="YES" toMany="YES" minCount="2" maxCount="2" deletionRule="Nullify" destinationEntity="User" inverseName="conversations" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="Message" representedClassName="Message" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
@@ -20,8 +20,8 @@
         <relationship name="messages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Message" inverseName="fromWho" inverseEntity="Message" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Message" positionX="-155" positionY="14" width="128" height="118"/>
-        <element name="User" positionX="-164" positionY="-126" width="128" height="73"/>
         <element name="Conversation" positionX="-380" positionY="-73" width="128" height="88"/>
+        <element name="Message" positionX="-155" positionY="14" width="128" height="118"/>
+        <element name="User" positionX="-353" positionY="107" width="128" height="118"/>
     </elements>
 </model>
