@@ -500,7 +500,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="DA1-RA-pnb"/>
         <segue reference="vm9-iT-MAM"/>
-        <segue reference="JlS-Pa-PG6"/>
     </inferredMetricsTieBreakers>
 </document>
