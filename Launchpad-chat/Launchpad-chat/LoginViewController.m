@@ -19,6 +19,13 @@
 static NSString * const reuseIdentifier = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:@"currentUserName"]){
+            [self performSegueWithIdentifier:@"LoginToUser" sender:self];
+        }
+    });
+    
 }
 
 - (void)didReceiveMemoryWarning {

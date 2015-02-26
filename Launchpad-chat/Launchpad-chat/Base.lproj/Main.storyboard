@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="99x-LT-KCr">
             <objects>
-                <viewController id="CXm-ku-5Fm" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="CXm-ku-5Fm" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rag-qa-was"/>
                         <viewControllerLayoutGuide type="bottom" id="7Nc-U9-itk"/>
@@ -60,7 +60,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="LFh-gV-nsP" kind="show" id="JlS-Pa-PG6"/>
+                                    <action selector="btn_login_submit:" destination="CXm-ku-5Fm" eventType="touchUpInside" id="JHW-ju-Iyd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ti4-KE-VgG">
@@ -72,7 +72,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2sr-sH-Ggk" kind="show" id="FMH-vV-wBb"/>
+                                    <segue destination="2sr-sH-Ggk" kind="show" id="fu8-3I-q6f"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password..." minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="L0K-a0-gSB" customClass="LoginTextField">
@@ -95,10 +95,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="passwordField" destination="L0K-a0-gSB" id="GQf-2x-KN6"/>
+                        <outlet property="usernameField" destination="NS4-tr-jbQ" id="rBW-na-YOb"/>
+                        <segue destination="LFh-gV-nsP" kind="custom" identifier="LoginToUser" id="Sqh-5s-wkG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ae-Oo-4Wp" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="194.5" y="267.5"/>
+            <point key="canvasLocation" x="168.5" y="235.5"/>
         </scene>
         <!--New User View Controller-->
         <scene sceneID="ps5-2W-Cmc">
@@ -160,7 +165,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="CXm-ku-5Fm" kind="show" id="KWJ-DR-ZJS"/>
+                                    <action selector="btn_create_account:" destination="2sr-sH-Ggk" eventType="touchUpInside" id="9Kt-3a-kDx"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKb-ay-Udx">
@@ -177,10 +182,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="passwordField" destination="5gk-mW-tli" id="cPb-fB-q3u"/>
+                        <outlet property="passwordField2" destination="BAt-NK-gsG" id="jX5-CR-SyD"/>
+                        <outlet property="usernameField" destination="2PM-Rm-9zY" id="0hY-qe-yVt"/>
+                        <segue destination="CXm-ku-5Fm" kind="custom" identifier="newUserToLogin" id="YZQ-td-BUR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EDt-uW-sue" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="304.5" y="1453.5"/>
+            <point key="canvasLocation" x="202.5" y="1355.5"/>
         </scene>
         <!--User Table View Controller-->
         <scene sceneID="eiE-sD-y68">
@@ -239,7 +250,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="CXm-ku-5Fm" kind="show" id="vm9-iT-MAM"/>
+                                    <action selector="logoutButtonpressed:" destination="LFh-gV-nsP" eventType="touchUpInside" id="twV-u1-beU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6l-Qo-iwC">
@@ -500,7 +511,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vm9-iT-MAM"/>
-        <segue reference="JlS-Pa-PG6"/>
+        <segue reference="YZQ-td-BUR"/>
+        <segue reference="Sqh-5s-wkG"/>
     </inferredMetricsTieBreakers>
 </document>

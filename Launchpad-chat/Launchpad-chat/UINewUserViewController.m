@@ -44,6 +44,7 @@ static NSString * const reuseIdentifier = @"Cell";
         self.userName = self.usernameField.text;
         self.passWord = self.passwordField.text;
         [User createUserWithName:self.userName onlineStatus:YES inContext:self.context];
+        [[NSUserDefaults standardUserDefaults] setObject:self.userName forKey:@"currentUserName"];
 
         
         [self performSegueWithIdentifier:@"newUserToLogin" sender:nil];
