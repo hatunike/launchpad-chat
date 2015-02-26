@@ -26,7 +26,7 @@
 		E78320841A96C031000E3ABC /* UIMessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E78320771A96C031000E3ABC /* UIMessagesViewController.m */; };
 		E78320851A96C031000E3ABC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E78320791A96C031000E3ABC /* User.m */; };
 		E78320861A96C031000E3ABC /* User+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = E783207B1A96C031000E3ABC /* User+Additions.m */; };
-		E78320871A96C031000E3ABC /* UserIndexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E783207D1A96C031000E3ABC /* UserIndexTableViewController.m */; };
+		E78320871A96C031000E3ABC /* UserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E783207D1A96C031000E3ABC /* UserTableViewController.m */; };
 		E796D2961A96B78100FBC9E0 /* UINewMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E796D2951A96B78100FBC9E0 /* UINewMessageViewController.m */; };
 		E796D2991A96B7ED00FBC9E0 /* UINewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E796D2981A96B7ED00FBC9E0 /* UINewUserViewController.m */; };
 /* End PBXBuildFile section */
@@ -77,8 +77,8 @@
 		E78320791A96C031000E3ABC /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		E783207A1A96C031000E3ABC /* User+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+Additions.h"; sourceTree = "<group>"; };
 		E783207B1A96C031000E3ABC /* User+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+Additions.m"; sourceTree = "<group>"; };
-		E783207C1A96C031000E3ABC /* UserIndexTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserIndexTableViewController.h; sourceTree = "<group>"; };
-		E783207D1A96C031000E3ABC /* UserIndexTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserIndexTableViewController.m; sourceTree = "<group>"; };
+		E783207C1A96C031000E3ABC /* UserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTableViewController.h; sourceTree = "<group>"; };
+		E783207D1A96C031000E3ABC /* UserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTableViewController.m; sourceTree = "<group>"; };
 		E796D2941A96B78100FBC9E0 /* UINewMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UINewMessageViewController.h; sourceTree = "<group>"; };
 		E796D2951A96B78100FBC9E0 /* UINewMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UINewMessageViewController.m; sourceTree = "<group>"; };
 		E796D2971A96B7ED00FBC9E0 /* UINewUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UINewUserViewController.h; sourceTree = "<group>"; };
@@ -198,8 +198,8 @@
 				E78320751A96C031000E3ABC /* UIConversationViewController.m */,
 				E78320761A96C031000E3ABC /* UIMessagesViewController.h */,
 				E78320771A96C031000E3ABC /* UIMessagesViewController.m */,
-				E783207C1A96C031000E3ABC /* UserIndexTableViewController.h */,
-				E783207D1A96C031000E3ABC /* UserIndexTableViewController.m */,
+				E783207C1A96C031000E3ABC /* UserTableViewController.h */,
+				E783207D1A96C031000E3ABC /* UserTableViewController.m */,
 				D7B905E01A942095004BC539 /* LoginViewController.h */,
 				D7B905E11A942095004BC539 /* LoginViewController.m */,
 				E796D2971A96B7ED00FBC9E0 /* UINewUserViewController.h */,
@@ -327,7 +327,7 @@
 				E78320831A96C031000E3ABC /* UIConversationViewController.m in Sources */,
 				007A4B331A8D775D00559027 /* AppDelegate.m in Sources */,
 				E783207E1A96C031000E3ABC /* Conversation.m in Sources */,
-				E78320871A96C031000E3ABC /* UserIndexTableViewController.m in Sources */,
+				E78320871A96C031000E3ABC /* UserTableViewController.m in Sources */,
 				E796D2961A96B78100FBC9E0 /* UINewMessageViewController.m in Sources */,
 				E78320811A96C031000E3ABC /* Message.m in Sources */,
 				007A4B301A8D775D00559027 /* main.m in Sources */,

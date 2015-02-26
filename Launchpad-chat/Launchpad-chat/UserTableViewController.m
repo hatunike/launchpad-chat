@@ -6,25 +6,29 @@
 //  Copyright (c) 2015 lernu. All rights reserved.
 //
 
-#import "UserIndexTableViewController.h"
+#import "UserTableViewController.h"
 #import "User.h"
 #import "Message+Additions.h"
+#import "User+Additions.h"
+#import "AppDelegate.h"
 
-@interface UserIndexTableViewController ()
+@interface UserTableViewController ()
 
-@property (nonatomic, weak) NSMutableArray* userArray;
+@property (nonatomic, strong) NSManagedObjectContext* context;
 
 @end
 
-@implementation UserIndexTableViewController
+@implementation UserTableViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // grab all the users in core data and put them in userArray
+    self.context = [(AppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
     
-    //[self setFetchedResultsController:[[NSFetchedResultsController alloc] initWithFetchRequest:[User fetchRequestForAllUsersSortedByStatusThenName] managedObjectContext:nil sectionNameKeyPath:nil cacheName:nil]];
+    // grab all the users in core data and put them in userArray
+    [User createUserWithName:@"testingA" onlineStatus:YES inContext:self.context];
+    
+    [self setFetchedResultsController:[[NSFetchedResultsController alloc] initWithFetchRequest:[User requestUsersOrderedByStatusAndName] managedObjectContext:self.context sectionNameKeyPath:nil cacheName:nil]];
     
     
 }
@@ -36,29 +40,22 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [[[self fetchedResultsController] fetchedObjects] count];
-}
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"user" forIndexPath:indexPath];
-    
+
     User* user = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     NSString* userName = user.name;
     
+    cell.textLabel.text = userName;
     //Message* message = [Message getLatestMessageWithUsername:userName];
     
     //NSDate* latestMessageDate = message.date;
-    UIImage* userAvatar = user.avatar;
+    //UIImage* userAvatar = user.avatar; //outlet must be made somewhere
+    
+    //cell.userAvatar.image = user.avatar;
     
     bool onlineStatus = user.onlineStatus;
     if (onlineStatus)
