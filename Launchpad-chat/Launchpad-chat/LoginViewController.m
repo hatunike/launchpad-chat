@@ -27,7 +27,7 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 - (IBAction)btn_login_submit:(id)sender {
-    if([self.usernameField.text isEqualToString:@"1"] && [self.passwordField.text isEqualToString:@"2"]){
+    if([self.usernameField.text isEqualToString:@""] && [self.passwordField.text isEqualToString:@""]){
         self.userName = self.usernameField.text;
         [self performSegueWithIdentifier:@"LoginToUser" sender:nil];
     }

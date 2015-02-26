@@ -7,6 +7,8 @@
 //
 
 #import "UINewUserViewController.h"
+#import "AppDelegate.h"
+#import "User+Additions.h"
 
 @interface UINewUserViewController ()
 
@@ -15,12 +17,15 @@
 @property (nonatomic, retain)IBOutlet UITextField *passwordField2;
 @property (nonatomic, strong)NSString *userName;
 @property (nonatomic, strong)NSString *passWord;
+@property (nonatomic, strong) NSManagedObjectContext* context;
 @end
 
 @implementation UINewUserViewController
 static NSString * const reuseIdentifier = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.context = [(AppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,14 +33,22 @@ static NSString * const reuseIdentifier = @"Cell";
     // Dispose of any resources that can be recreated.
 }
 
+- (void)createUser
+{
+}
 
 
 - (IBAction)btn_create_account:(id)sender {
-    if([self.usernameField.text isEqual:@"1"] && [self.passwordField.text isEqual:@"2"] && [self.passwordField2.text isEqual:@"2"])
+    if([self.usernameField.text length] > 0 &&  [self.passwordField.text isEqualToString:self.passwordField2.text])
     {
-        [self performSegueWithIdentifier:@"returnToLogin" sender:nil];
+        self.userName = self.usernameField.text;
+        self.passWord = self.passwordField.text;
+        [User createUserWithName:self.userName onlineStatus:YES inContext:self.context];
+
+        
+        [self performSegueWithIdentifier:@"newUserToLogin" sender:nil];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Yay"
-                                                        message:@"Your account have been created"
+                                                        message:@"Your account has been created"
                                                        delegate:self
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
@@ -43,9 +56,6 @@ static NSString * const reuseIdentifier = @"Cell";
     }
     else
     {
-        self.userName = self.usernameField.text;
-        self.passWord = self.passwordField.text;
-        
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Incorrect"
                                                         message:@"There is a problem with your credentials, please try again"
                                                        delegate:self
