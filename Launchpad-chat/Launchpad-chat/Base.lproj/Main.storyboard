@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CXm-ku-5Fm">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -149,6 +150,32 @@
             </objects>
             <point key="canvasLocation" x="304.5" y="1355.5"/>
         </scene>
+        <!--User Table View Controller-->
+        <scene sceneID="eiE-sD-y68">
+            <objects>
+                <tableViewController id="tcX-J3-Vc5" customClass="UserTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fxk-ud-wPL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="599"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="user" id="KSy-jw-ce4">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KSy-jw-ce4" id="ywO-Oh-Eni">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="tcX-J3-Vc5" id="Pbr-0D-WNh"/>
+                            <outlet property="delegate" destination="tcX-J3-Vc5" id="MWk-6b-9Px"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iCw-LQ-Vqr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1782.5" y="-382.5"/>
+        </scene>
         <!--Message List View Controller-->
         <scene sceneID="5vO-wp-Kcw">
             <objects>
@@ -161,25 +188,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="GZF-2e-F0r">
-                                <rect key="frame" x="0.0" y="65" width="375" height="602"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="userCell" id="vnj-1s-GEL">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vnj-1s-GEL" id="aEk-h6-Cvq">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="0IR-z2-mo3" kind="show" id="02f-KT-iI2"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLh-cf-yxJ">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gp-W3-m3m">
+                                <rect key="frame" x="0.0" y="68" width="375" height="599"/>
+                                <connections>
+                                    <segue destination="tcX-J3-Vc5" kind="embed" identifier="tableview" id="s7f-xU-kyH"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLh-cf-yxJ">
                                 <rect key="frame" x="6" y="23" width="102" height="37"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="RuF-bj-vkW"/>
+                                    <constraint firstAttribute="width" constant="102" id="gHJ-23-Fgn"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="22"/>
                                 <state key="normal" title="Logout">
                                     <color key="titleColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -189,9 +210,13 @@
                                     <segue destination="CXm-ku-5Fm" kind="show" id="vm9-iT-MAM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6l-Qo-iwC">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6l-Qo-iwC">
                                 <rect key="frame" x="302" y="23" width="57" height="37"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="ATv-G5-2tn"/>
+                                    <constraint firstAttribute="width" constant="57" id="LRn-7q-agv"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="22"/>
                                 <state key="normal" title="New">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -203,12 +228,23 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6gp-W3-m3m" firstAttribute="leading" secondItem="uqP-bl-L6B" secondAttribute="leadingMargin" constant="-16" id="2AQ-7v-JHi"/>
+                            <constraint firstItem="6gp-W3-m3m" firstAttribute="top" secondItem="b6l-Qo-iwC" secondAttribute="bottom" constant="8" id="5vX-UG-RqY"/>
+                            <constraint firstItem="b6l-Qo-iwC" firstAttribute="trailing" secondItem="uqP-bl-L6B" secondAttribute="trailingMargin" id="Gap-GG-CEw"/>
+                            <constraint firstItem="b6l-Qo-iwC" firstAttribute="top" secondItem="U2I-rA-DBF" secondAttribute="bottom" constant="3" id="N0H-rZ-jOC"/>
+                            <constraint firstItem="GLh-cf-yxJ" firstAttribute="leading" secondItem="uqP-bl-L6B" secondAttribute="leadingMargin" constant="-10" id="VYP-gh-lyl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6gp-W3-m3m" secondAttribute="trailing" constant="-16" id="bC5-SL-6oM"/>
+                            <constraint firstItem="3jE-v5-SkG" firstAttribute="top" secondItem="6gp-W3-m3m" secondAttribute="bottom" id="bH9-UB-7aF"/>
+                            <constraint firstAttribute="centerX" secondItem="6gp-W3-m3m" secondAttribute="centerX" id="ogM-d8-xqV"/>
+                            <constraint firstItem="GLh-cf-yxJ" firstAttribute="top" secondItem="U2I-rA-DBF" secondAttribute="bottom" constant="3" id="qNN-dJ-fQ3"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k0s-0z-C3D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1128.5" y="386.5"/>
+            <point key="canvasLocation" x="1000.5" y="-177.5"/>
         </scene>
         <!--Conversation View Controller-->
         <scene sceneID="Y6i-ev-O5u">
