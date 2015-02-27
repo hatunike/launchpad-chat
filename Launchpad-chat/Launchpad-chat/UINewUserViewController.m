@@ -7,17 +7,25 @@
 //
 
 #import "UINewUserViewController.h"
+#import "AppDelegate.h"
+#import "User+Additions.h"
 
 @interface UINewUserViewController ()
 
 @property (nonatomic, retain)IBOutlet UITextField *usernameField;
 @property (nonatomic, retain)IBOutlet UITextField *passwordField;
+@property (nonatomic, retain)IBOutlet UITextField *passwordField2;
+@property (nonatomic, strong)NSString *userName;
+@property (nonatomic, strong)NSString *passWord;
+@property (nonatomic, strong) NSManagedObjectContext* context;
 @end
 
 @implementation UINewUserViewController
 static NSString * const reuseIdentifier = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.context = [(AppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -25,15 +33,32 @@ static NSString * const reuseIdentifier = @"Cell";
     // Dispose of any resources that can be recreated.
 }
 
+- (void)createUser
+{
+}
 
 
-- (IBAction)btn_login_submit:(id)sender {
-    if([self.usernameField.text isEqual:@"Launchpad"] && [self.passwordField.text isEqual:@"Launchpad"]){
-        [self performSegueWithIdentifier:@"LoginToUser" sender:nil];
+- (IBAction)btn_create_account:(id)sender {
+    if([self.usernameField.text length] > 0 &&  [self.passwordField.text isEqualToString:self.passwordField2.text])
+    {
+        self.userName = self.usernameField.text;
+        self.passWord = self.passwordField.text;
+        [User createUserWithName:self.userName onlineStatus:YES inContext:self.context];
+        [[NSUserDefaults standardUserDefaults] setObject:self.userName forKey:@"currentUserName"];
+
+        
+        [self performSegueWithIdentifier:@"newUserToLogin" sender:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Yay"
+                                                        message:@"Your account has been created"
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
     }
-    else{
+    else
+    {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Incorrect"
-                                                        message:@"Please enter the correct usename and password"
+                                                        message:@"There is a problem with your credentials, please try again"
                                                        delegate:self
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];

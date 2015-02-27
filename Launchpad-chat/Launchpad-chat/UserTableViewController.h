@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CoreDataTableViewController.h"
 
-@interface UserIndexTableViewController : CoreDataTableViewController
+@interface UserTableViewController : CoreDataTableViewController
 
 
 @end

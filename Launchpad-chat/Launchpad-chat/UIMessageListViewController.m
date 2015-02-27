@@ -25,6 +25,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)logoutButtonpressed:(id)sender
+{
+    [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
+}
+
 /*
 #pragma mark - Navigation
 
