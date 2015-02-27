@@ -1,5 +1,5 @@
 //
-//  OnlineStatusView.h
+//  UserPictureImageView.h
 //  Launchpad-chat
 //
 //  Created by STUDENT #6 on 2/26/15.
@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 IB_DESIGNABLE
-@interface OnlineStatusView : UIView
+@interface UserPictureImageView : UIImageView
 
-@property (nonatomic) IBInspectable BOOL is_circle;
+@property (nonatomic) IBInspectable BOOL isCircle;
 
 @end
