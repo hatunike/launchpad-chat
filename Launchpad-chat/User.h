@@ -2,7 +2,7 @@
 //  User.h
 //  Launchpad-chat
 //
-//  Created by STUDENT #1 on 2/17/15.
+//  Created by STUDENT #5 on 2/26/15.
 //  Copyright (c) 2015 lernu. All rights reserved.
 //
 
@@ -13,9 +13,10 @@
 
 @interface User : NSManagedObject
 
-@property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSData * avatar;
+@property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * onlineStatus;
+@property (nonatomic, retain) NSDate * lastUploadDate;
 @property (nonatomic, retain) NSSet *conversations;
 @property (nonatomic, retain) NSSet *messages;
 @end

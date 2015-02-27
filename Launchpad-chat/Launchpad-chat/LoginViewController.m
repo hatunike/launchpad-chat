@@ -19,6 +19,13 @@
 static NSString * const reuseIdentifier = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:@"currentUserName"]){
+            [self performSegueWithIdentifier:@"LoginToUser" sender:self];
+        }
+    });
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,7 +34,7 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 - (IBAction)btn_login_submit:(id)sender {
-    if([self.usernameField.text isEqualToString:@"1"] && [self.passwordField.text isEqualToString:@"2"]){
+    if([self.usernameField.text isEqualToString:@""] && [self.passwordField.text isEqualToString:@""]){
         self.userName = self.usernameField.text;
         [self performSegueWithIdentifier:@"LoginToUser" sender:nil];
     }

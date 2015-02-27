@@ -19,6 +19,7 @@
 + (NSFetchRequest *)requestUsersWithRecentUploads;
 + (NSFetchRequest *)requestUserWithName:(NSString*)name;
 + (NSFetchRequest *)requestUsersOrderedByStatusAndName;
++ (NSFetchRequest *)requestUsersOrderedByStatusAndLastUploadDate;
 + (void)createUserWithName:(NSString*)name onlineStatus:(BOOL)status inContext:(NSManagedObjectContext*)context;
 
 @end

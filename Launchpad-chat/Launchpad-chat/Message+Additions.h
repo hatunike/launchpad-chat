@@ -12,4 +12,6 @@
 
 - (NSFetchRequest *)requestMessagesFromUser:(NSString *) userName inManagedObjectContext:(NSManagedObjectContext *)context;
 
++ (void)createMessageWithText:(NSString*)text onDate:(NSDate*)date withState:(BOOL)readOrUnreadState inContext:(NSManagedObjectContext*)context;
+
 @end
