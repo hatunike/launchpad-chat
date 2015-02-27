@@ -12,6 +12,8 @@
 	<dict>
 		<key>055EC73730572F25996CDA5B166955721C841692</key>
 		<string>https://github.com/pablo57/launchpad.git</string>
+		<key>47B221828049E9D64024EBA82211CC81D572B886</key>
+		<string>github.com:SaniT404/Launchpad.git</string>
 		<key>DE7ACAE9E970277F9A0D43E8FD1EA0D1194C5AB6</key>
 		<string>https://github.com/hatunike/launchpad-chat.git</string>
 	</dict>
@@ -21,6 +23,8 @@
 	<dict>
 		<key>055EC73730572F25996CDA5B166955721C841692</key>
 		<string>../../../..</string>
+		<key>47B221828049E9D64024EBA82211CC81D572B886</key>
+		<string>../../../../../..</string>
 		<key>DE7ACAE9E970277F9A0D43E8FD1EA0D1194C5AB6</key>
 		<string>../../..</string>
 	</dict>
@@ -39,6 +43,14 @@
 			<string>055EC73730572F25996CDA5B166955721C841692</string>
 			<key>IDESourceControlWCCName</key>
 			<string></string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>47B221828049E9D64024EBA82211CC81D572B886</string>
+			<key>IDESourceControlWCCName</key>
+			<string>..</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>

@@ -7,6 +7,7 @@
 //
 
 #import "UINewMessageViewController.h"
+#import "AppDelegate.h"
 
 @interface UINewMessageViewController ()
 
@@ -14,12 +15,27 @@
 
 @implementation UINewMessageViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+- (IBAction)buttonSendMessageTapped:(id)sender
+{
+    
 }
 
-- (void)didReceiveMemoryWarning {
+- (BOOL)sendNewMessage:(NSString*)newMessage toUser:(NSString *)username
+{
+    //create new message
+    return 0;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    [super viewDidLoad];
+    self.context = [(AppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
+}
+
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

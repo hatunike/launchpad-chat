@@ -461,6 +461,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="conversationToUsernameField" destination="Wc4-EJ-Sms" id="0hF-Mi-bPc"/>
+                        <outlet property="messageFieldToNewConversation" destination="oaH-CD-WIe" id="IPR-Of-2yj"/>
+                        <outlet property="sendNewMessageButton" destination="MxA-at-Gk5" id="gkM-Yj-TVG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Agf-OH-1HW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
