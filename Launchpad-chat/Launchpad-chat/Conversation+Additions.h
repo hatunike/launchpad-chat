@@ -10,5 +10,5 @@
 
 @interface Conversation (Additions)
 
-
++ (void)createConvertationWithUser1:(User*)name1 AndUser2:(User*)name2 lastMessage:(NSDate*)lastMessageDate inContext:(NSManagedObjectContext*)context;
 @end
