@@ -28,8 +28,7 @@
     // grab all the users in core data and put them in userArray
     [User createUserWithName:@"testingA" onlineStatus:YES inContext:self.context];
     
-    [self setFetchedResultsController:[[NSFetchedResultsController alloc] initWithFetchRequest:[User requestUsersOrderedByStatusAndName] managedObjectContext:self.context sectionNameKeyPath:nil cacheName:nil]];
-    
+    [self setFetchedResultsController:[[NSFetchedResultsController alloc] initWithFetchRequest:[User requestUsersWithoutCurrentUserOrderedByStatusAndName:nil] managedObjectContext:self.context sectionNameKeyPath:nil cacheName:nil]];
     
 }
 

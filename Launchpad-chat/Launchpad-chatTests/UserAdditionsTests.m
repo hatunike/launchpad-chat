@@ -87,10 +87,19 @@
     XCTAssert(users.count == 1, @"Users should be equal to 1");
 }
 
+- (void)testCurrentUserNotIncluded //Same fetch request as testUserSortByOnlineStatusAndLastUploadDate but passing testA as current user
+{
+    NSError *error;
+    NSArray *users = [self.context executeFetchRequest:[User requestUsersWithoutCurrentUserOrderedByStatusAndLastUploadDate:@"testA"] error:&error];
+    
+    XCTAssert(error == nil, @"Error requesting users = %@", [error localizedDescription]);
+    XCTAssert(![[users[0] name] isEqualToString:@"testA"], @"users should be sorted by status THEN lastUploadDate");
+}
+
 - (void)testUserSortByOnlineStatusAndLastUploadDate
 {
     NSError *error;
-    NSArray *users = [self.context executeFetchRequest:[User requestUsersOrderedByStatusAndLastUploadDate] error:&error];
+    NSArray *users = [self.context executeFetchRequest:[User requestUsersWithoutCurrentUserOrderedByStatusAndLastUploadDate:@"name"] error:&error];
     
     XCTAssert(error == nil, @"Error requesting users = %@", [error localizedDescription]);
     XCTAssert([[users[0] name] isEqualToString:@"testA"], @"users should be sorted by status THEN lastUploadDate");
@@ -103,14 +112,13 @@
 {
     NSError* error = nil;
     
-    NSArray* users = [self.context executeFetchRequest:[User requestUsersOrderedByStatusAndName] error:&error];
+    NSArray* users = [self.context executeFetchRequest:[User requestUsersWithoutCurrentUserOrderedByStatusAndName:nil] error:&error];
     
     XCTAssert([[users[0] name] isEqualToString:@"testA"], @"users should be sorted by status THEN name");
     XCTAssert([[users[1] name] isEqualToString:@"testB"], @"users should be sorted by status THEN name");
     XCTAssert([[users[2] name] isEqualToString:@"Alpha"], @"users should be sorted by status THEN name");
     XCTAssert([[users[3] name] isEqualToString:@"Beta"], @"users should be sorted by status THEN name");
 }
-
 
 - (void)testExample {
     // This is an example of a functional test case.
