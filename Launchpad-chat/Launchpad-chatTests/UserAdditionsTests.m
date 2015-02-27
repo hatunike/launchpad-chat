@@ -40,7 +40,7 @@
         User* newUser2 = [[User alloc] initWithEntity:[NSEntityDescription entityForName:@"User" inManagedObjectContext:self.context] insertIntoManagedObjectContext:self.context];
         newUser2.name = @"Beta";
         newUser2.onlineStatus = @NO;
-        newUser1.lastUploadDate = [NSDate dateWithTimeIntervalSinceNow:-30*60]; //Thirty Seconds ago and offline #3 by date
+        newUser1.lastUploadDate = [NSDate dateWithTimeIntervalSinceNow:-30]; //Thirty Seconds ago and offline #3 by date
         
         User* newUser3 = [[User alloc] initWithEntity:[NSEntityDescription entityForName:@"User" inManagedObjectContext:self.context] insertIntoManagedObjectContext:self.context];
         newUser3.name = @"testB";
