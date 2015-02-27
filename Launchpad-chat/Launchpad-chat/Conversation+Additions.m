@@ -10,4 +10,18 @@
 
 @implementation Conversation (Additions)
 
++ (void)createConvertationWithUser1:(User*)name1 AndUser2:(User*)name2 lastMessage:(NSDate*)lastMessageDate inContext:(NSManagedObjectContext*)context;
+{
+    
+    [context performBlockAndWait:^{
+        
+        Conversation* newConversation1 = [[Conversation alloc] initWithEntity:[NSEntityDescription entityForName:@"Conversation" inManagedObjectContext:context] insertIntoManagedObjectContext:context];
+        newConversation1.lastMessageDate = lastMessageDate;
+        
+        
+    }];
+    
+    [context save:nil];
+    
+}
 @end
