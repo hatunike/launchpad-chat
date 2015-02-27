@@ -35,19 +35,22 @@
         User* newUser1 = [[User alloc] initWithEntity:[NSEntityDescription entityForName:@"User" inManagedObjectContext:self.context] insertIntoManagedObjectContext:self.context];
         newUser1.name = @"testA";
         newUser1.onlineStatus = @YES;
+        newUser1.lastUploadDate = [NSDate dateWithTimeIntervalSinceNow:0]; //Exactly Now and online #1 by date
         
         User* newUser2 = [[User alloc] initWithEntity:[NSEntityDescription entityForName:@"User" inManagedObjectContext:self.context] insertIntoManagedObjectContext:self.context];
         newUser2.name = @"Beta";
         newUser2.onlineStatus = @NO;
+        newUser1.lastUploadDate = [NSDate dateWithTimeIntervalSinceNow:-30*60]; //Thirty Seconds ago and offline #3 by date
         
         User* newUser3 = [[User alloc] initWithEntity:[NSEntityDescription entityForName:@"User" inManagedObjectContext:self.context] insertIntoManagedObjectContext:self.context];
         newUser3.name = @"testB";
         newUser3.onlineStatus = @YES;
+        newUser1.lastUploadDate = [NSDate dateWithTimeIntervalSinceNow:-20]; //Twenty Seconds ago and online #2 by date
         
         User* newUser4 = [[User alloc] initWithEntity:[NSEntityDescription entityForName:@"User" inManagedObjectContext:self.context] insertIntoManagedObjectContext:self.context];
         newUser4.name = @"Alpha";
         newUser4.onlineStatus = @NO;
-        
+        newUser1.lastUploadDate = [NSDate dateWithTimeIntervalSinceNow:-40]; //Forty Seconds ago and offline #4 by date
         
     }];
 
@@ -80,11 +83,21 @@
     
     NSArray* users = [self.context executeFetchRequest:[User requestUserWithName:@"testA"] error:&error];
     
-    
     XCTAssert(error == nil, @"Error requesting users = %@",[error localizedDescription]);
     XCTAssert(users.count == 1, @"Users should be equal to 1");
 }
 
+- (void)testUserSortByOnlineStatusAndLastUploadDate
+{
+    NSError *error;
+    NSArray *users = [self.context executeFetchRequest:[User requestUsersOrderedByStatusAndLastUploadDate] error:&error];
+    
+    XCTAssert(error == nil, @"Error requesting users = %@", [error localizedDescription]);
+    XCTAssert([[users[0] name] isEqualToString:@"testA"], @"users should be sorted by status THEN lastUploadDate");
+    XCTAssert([[users[1] name] isEqualToString:@"testB"], @"users should be sorted by status THEN lastUploadDate");
+    XCTAssert([[users[2] name] isEqualToString:@"Beta"], @"users should be sorted by status THEN lastUploadDate");
+    XCTAssert([[users[3] name] isEqualToString:@"Alpha"], @"users should be sorted by status THEN lastUploadDate");
+}
 
 - (void)testAllUsersSortedByStatusAndName
 {
@@ -96,7 +109,6 @@
     XCTAssert([[users[1] name] isEqualToString:@"testB"], @"users should be sorted by status THEN name");
     XCTAssert([[users[2] name] isEqualToString:@"Alpha"], @"users should be sorted by status THEN name");
     XCTAssert([[users[3] name] isEqualToString:@"Beta"], @"users should be sorted by status THEN name");
- 
 }
 
 
