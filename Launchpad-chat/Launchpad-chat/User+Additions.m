@@ -57,21 +57,29 @@
     return fetchRequest;
 }
 
-+ (NSFetchRequest *)requestUsersOrderedByStatusAndName
++ (NSFetchRequest *)requestUsersWithoutCurrentUserOrderedByStatusAndName:(NSString *)currentUser
 {
     NSFetchRequest* fr = [NSFetchRequest fetchRequestWithEntityName:@"User"];
     fr.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"onlineStatus" ascending:NO],[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name != %@", currentUser];
+    
+    fr.predicate = predicate;
     
     return fr;
 }
 
-+ (NSFetchRequest *)requestUsersOrderedByStatusAndLastUploadDate
++ (NSFetchRequest *)requestUsersWithoutCurrentUserOrderedByStatusAndLastUploadDate:(NSString *)currentUser
 {
     //Fetch Users
     NSFetchRequest *fr = [NSFetchRequest fetchRequestWithEntityName:@"User"];
     
     //Sort by Online Status and Last Upload Date
     fr.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"onlineStatus" ascending:NO], [NSSortDescriptor sortDescriptorWithKey:@"lastUploadDate" ascending:NO]];
+    
+    //Predicate to filter out
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name != %@", currentUser];
+    
+    fr.predicate = predicate;
     
     return fr;
 }
