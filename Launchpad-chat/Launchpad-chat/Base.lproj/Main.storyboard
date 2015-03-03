@@ -51,7 +51,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BSv-NA-kWD">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BSv-NA-kWD" customClass="enterButton">
                                 <rect key="frame" x="201" y="399" width="135" height="60"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="28"/>
@@ -98,7 +98,7 @@
                     <connections>
                         <outlet property="passwordField" destination="L0K-a0-gSB" id="GQf-2x-KN6"/>
                         <outlet property="usernameField" destination="NS4-tr-jbQ" id="rBW-na-YOb"/>
-                        <segue destination="LFh-gV-nsP" kind="custom" identifier="LoginToUser" id="Sqh-5s-wkG"/>
+                        <segue destination="LFh-gV-nsP" kind="custom" identifier="LoginToUser" id="YFe-UD-0so"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ae-Oo-4Wp" sceneMemberID="firstResponder"/>
@@ -175,6 +175,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="cancelButtonPressed:" destination="2sr-sH-Ggk" eventType="touchUpInside" id="sfh-X4-ISj"/>
                                     <segue destination="CXm-ku-5Fm" kind="show" id="3IO-wF-R0I"/>
                                 </connections>
                             </button>
@@ -251,6 +252,7 @@
                                 </state>
                                 <connections>
                                     <action selector="logoutButtonpressed:" destination="LFh-gV-nsP" eventType="touchUpInside" id="twV-u1-beU"/>
+                                    <segue destination="CXm-ku-5Fm" kind="show" id="PAw-oi-eqX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6l-Qo-iwC">
@@ -310,6 +312,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="cancelButtonPressed:" destination="0IR-z2-mo3" eventType="touchUpInside" id="Iwb-V0-oMc"/>
                                     <segue destination="LFh-gV-nsP" kind="show" id="DA1-RA-pnb"/>
                                 </connections>
                             </button>
@@ -456,6 +459,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="cancelButtonpressed:" destination="cD5-ya-yR0" eventType="touchUpInside" id="YJo-yQ-xfy"/>
                                     <segue destination="LFh-gV-nsP" kind="show" id="xh9-vk-bPv"/>
                                 </connections>
                             </button>
@@ -511,7 +515,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="Izg-Yf-HxJ"/>
         <segue reference="YZQ-td-BUR"/>
-        <segue reference="Sqh-5s-wkG"/>
     </inferredMetricsTieBreakers>
 </document>
