@@ -20,6 +20,7 @@
 		E77ED7501A9FF67F00D1B227 /* OnlineStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = E77ED74D1A9FF67F00D1B227 /* OnlineStatusView.m */; };
 		E77ED7511A9FF67F00D1B227 /* ProfilePicturesImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E77ED74F1A9FF67F00D1B227 /* ProfilePicturesImageView.m */; };
 		E77F1E251A9FEA320012534A /* Conversation.m in Sources */ = {isa = PBXBuildFile; fileRef = E77F1E241A9FEA320012534A /* Conversation.m */; };
+		E77F1E281A9FF7970012534A /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E77F1E271A9FF7970012534A /* User.m */; };
 		E78320691A96BFF6000E3ABC /* UserAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E78320681A96BFF6000E3ABC /* UserAdditionsTests.m */; };
 		E783207F1A96C031000E3ABC /* Conversation+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = E783206D1A96C031000E3ABC /* Conversation+Additions.m */; };
 		E78320801A96C031000E3ABC /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E783206F1A96C031000E3ABC /* CoreDataTableViewController.m */; };
@@ -32,7 +33,6 @@
 		E796D2961A96B78100FBC9E0 /* UINewMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E796D2951A96B78100FBC9E0 /* UINewMessageViewController.m */; };
 		E796D2991A96B7ED00FBC9E0 /* UINewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E796D2981A96B7ED00FBC9E0 /* UINewUserViewController.m */; };
 		E79D13EE1A9D57A600D9E880 /* LoginTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E79D13ED1A9D57A600D9E880 /* LoginTextField.m */; };
-		EF3B0BCC1A9FEF36003F0F85 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3B0BCB1A9FEF36003F0F85 /* User.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +72,8 @@
 		E77ED74F1A9FF67F00D1B227 /* ProfilePicturesImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfilePicturesImageView.m; sourceTree = "<group>"; };
 		E77F1E231A9FEA320012534A /* Conversation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conversation.h; sourceTree = "<group>"; };
 		E77F1E241A9FEA320012534A /* Conversation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Conversation.m; sourceTree = "<group>"; };
+		E77F1E261A9FF7970012534A /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		E77F1E271A9FF7970012534A /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		E78320681A96BFF6000E3ABC /* UserAdditionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAdditionsTests.m; sourceTree = "<group>"; };
 		E783206C1A96C031000E3ABC /* Conversation+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Conversation+Additions.h"; sourceTree = "<group>"; };
 		E783206D1A96C031000E3ABC /* Conversation+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Conversation+Additions.m"; sourceTree = "<group>"; };
@@ -93,8 +95,6 @@
 		E796D2981A96B7ED00FBC9E0 /* UINewUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UINewUserViewController.m; sourceTree = "<group>"; };
 		E79D13EC1A9D57A600D9E880 /* LoginTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginTextField.h; sourceTree = "<group>"; };
 		E79D13ED1A9D57A600D9E880 /* LoginTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTextField.m; sourceTree = "<group>"; };
-		EF3B0BCA1A9FEF36003F0F85 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = ../User.h; sourceTree = "<group>"; };
-		EF3B0BCB1A9FEF36003F0F85 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = ../User.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,9 +200,9 @@
 		EF411DD51A96F92F00BA14B9 /* Messages */ = {
 			isa = PBXGroup;
 			children = (
+				E77F1E261A9FF7970012534A /* User.h */,
+				E77F1E271A9FF7970012534A /* User.m */,
 				E78320721A96C031000E3ABC /* Sent.xcdatamodeld */,
-				EF3B0BCA1A9FEF36003F0F85 /* User.h */,
-				EF3B0BCB1A9FEF36003F0F85 /* User.m */,
 				E783207A1A96C031000E3ABC /* User+Additions.h */,
 				E783207B1A96C031000E3ABC /* User+Additions.m */,
 				E78320701A96C031000E3ABC /* Message.h */,
@@ -359,7 +359,7 @@
 				007A4B331A8D775D00559027 /* AppDelegate.m in Sources */,
 				E78320871A96C031000E3ABC /* UserTableViewController.m in Sources */,
 				E796D2961A96B78100FBC9E0 /* UINewMessageViewController.m in Sources */,
-				EF3B0BCC1A9FEF36003F0F85 /* User.m in Sources */,
+				E77F1E281A9FF7970012534A /* User.m in Sources */,
 				E79D13EE1A9D57A600D9E880 /* LoginTextField.m in Sources */,
 				E78320811A96C031000E3ABC /* Message.m in Sources */,
 				007A4B301A8D775D00559027 /* main.m in Sources */,
