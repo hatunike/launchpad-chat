@@ -65,4 +65,15 @@
     return fr;
 }
 
++ (NSFetchRequest *)requestUsersOrderedByStatusAndLastUploadDate
+{
+    //Fetch Users
+    NSFetchRequest *fr = [NSFetchRequest fetchRequestWithEntityName:@"User"];
+    
+    //Sort by Online Status and Last Upload Date
+    fr.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"onlineStatus" ascending:NO], [NSSortDescriptor sortDescriptorWithKey:@"lastUploadDate" ascending:NO]];
+    
+    return fr;
+}
+
 @end
