@@ -23,6 +23,8 @@
 - (BOOL)sendNewMessage:(NSString*)newMessage toUser:(NSString *)username
 {
     //create new message
+    //send new message
+    
     return 0;
 }
 

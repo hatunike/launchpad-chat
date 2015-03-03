@@ -7,6 +7,7 @@
 //
 
 #import "UserTableViewController.h"
+#import "UIConversationViewController.h"
 #import "User.h"
 #import "Message+Additions.h"
 #import "User+Additions.h"
@@ -106,14 +107,25 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"open UIConversationViewController"])
+    {
+        UIConversationViewController* vc = [segue destinationViewController];
+        //vc.conversation = conversationWithUser;
+        
+        //Get user of selected row
+        User* selectedUser = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
+        
+        
+    }
+    
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end

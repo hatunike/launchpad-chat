@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CXm-ku-5Fm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="P5Q-0S-7FG">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -94,6 +94,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="LCY-xJ-cQG"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="passwordField" destination="L0K-a0-gSB" id="GQf-2x-KN6"/>
@@ -103,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ae-Oo-4Wp" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="168.5" y="235.5"/>
+            <point key="canvasLocation" x="454.5" y="303.5"/>
         </scene>
         <!--New User View Controller-->
         <scene sceneID="ps5-2W-Cmc">
@@ -174,9 +175,6 @@
                                 <state key="normal" title="Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="CXm-ku-5Fm" kind="show" id="3IO-wF-R0I"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -186,12 +184,11 @@
                         <outlet property="passwordField" destination="5gk-mW-tli" id="cPb-fB-q3u"/>
                         <outlet property="passwordField2" destination="BAt-NK-gsG" id="jX5-CR-SyD"/>
                         <outlet property="usernameField" destination="2PM-Rm-9zY" id="0hY-qe-yVt"/>
-                        <segue destination="CXm-ku-5Fm" kind="custom" identifier="newUserToLogin" id="YZQ-td-BUR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EDt-uW-sue" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="202.5" y="1355.5"/>
+            <point key="canvasLocation" x="114.5" y="1301.5"/>
         </scene>
         <!--User Table View Controller-->
         <scene sceneID="eiE-sD-y68">
@@ -242,6 +239,9 @@
                             <outlet property="delegate" destination="tcX-J3-Vc5" id="MWk-6b-9Px"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="0IR-z2-mo3" kind="show" id="8YA-RG-hoF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iCw-LQ-Vqr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -315,7 +315,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k0s-0z-C3D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="980.5" y="42.5"/>
+            <point key="canvasLocation" x="1792.5" y="42.5"/>
         </scene>
         <!--Conversation View Controller-->
         <scene sceneID="Y6i-ev-O5u">
@@ -389,7 +389,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5kQ-qf-u0k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1890.5" y="386.5"/>
+            <point key="canvasLocation" x="2702.5" y="386.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="76y-eZ-bca">
@@ -558,10 +558,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cA2-4I-hDE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1032" y="220"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="L1T-Wo-8ZJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="P5Q-0S-7FG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QGT-Mk-5gX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CXm-ku-5Fm" kind="relationship" relationship="rootViewController" id="Eov-kt-X6x"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ilx-26-hoR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-202" y="317"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YZQ-td-BUR"/>
         <segue reference="Sqh-5s-wkG"/>
     </inferredMetricsTieBreakers>
 </document>
