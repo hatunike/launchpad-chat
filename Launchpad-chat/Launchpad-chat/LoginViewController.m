@@ -20,21 +20,29 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     dispatch_async(dispatch_get_main_queue(), ^{
-        if ([[NSUserDefaults standardUserDefaults] objectForKey:@"currentUserName"]){
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:@"currentUserName"] && [[NSUserDefaults standardUserDefaults] valueForKey:@"password"]){
             [self performSegueWithIdentifier:@"LoginToUser" sender:self];
         }
     });
-    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.usernameField.text = [[NSUserDefaults standardUserDefaults] valueForKey:@"currentUserName"];
+    self.passwordField.text = [[NSUserDefaults standardUserDefaults] valueForKey:@"password"];
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-- (IBAction)btn_login_submit:(id)sender {
-    if([self.usernameField.text isEqualToString:@""] && [self.passwordField.text isEqualToString:@""]){
+- (IBAction)btn_login_submit:(id)sender{
+    if([self.usernameField.text isEqualToString:[[NSUserDefaults standardUserDefaults] objectForKey:@"currentUserName"]] && [self.passwordField.text isEqualToString:[[NSUserDefaults standardUserDefaults] valueForKey:@"password"]])
+    {
         self.userName = self.usernameField.text;
         [self performSegueWithIdentifier:@"LoginToUser" sender:nil];
     }

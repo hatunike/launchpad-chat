@@ -26,10 +26,10 @@
     self.context = [(AppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
     
     // grab all the users in core data and put them in userArray
-    [User createUserWithName:@"testingA" onlineStatus:YES inContext:self.context];
+    
+    //[self setFetchedResultsController:[[NSFetchedResultsController alloc] initWithFetchRequest:[User requestUsersWithoutCurrentUserOrderedByStatusAndName:[[NSUserDefaults standardUserDefaults] objectForKey:@"currentUserName"]] managedObjectContext:self.context sectionNameKeyPath:nil cacheName:nil]];
     
     [self setFetchedResultsController:[[NSFetchedResultsController alloc] initWithFetchRequest:[User requestUsersWithoutCurrentUserOrderedByStatusAndName:nil] managedObjectContext:self.context sectionNameKeyPath:nil cacheName:nil]];
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,8 +69,6 @@
     
     return cell;
 }
-
-
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
