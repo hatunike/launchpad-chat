@@ -20,6 +20,6 @@
 + (NSFetchRequest *)requestUserWithName:(NSString*)name;
 + (NSFetchRequest *)requestUsersWithoutCurrentUserOrderedByStatusAndName:(NSString *)currentUser;
 + (NSFetchRequest *)requestUsersWithoutCurrentUserOrderedByStatusAndLastUploadDate:(NSString *)currentUser;
-+ (void)createUserWithName:(NSString*)name onlineStatus:(BOOL)status inContext:(NSManagedObjectContext*)context;
++ (User *)createUserWithName:(NSString*)name onlineStatus:(BOOL)status inContext:(NSManagedObjectContext*)context;
 
 @end

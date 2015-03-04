@@ -10,23 +10,25 @@
 
 @implementation Message (Additions)
 
-+ (void)createMessageWithText:(NSString*)text onDate:(NSDate*)date withState:(BOOL)readOrUnreadState inContext:(NSManagedObjectContext*)context;
++ (Message *)createMessageWithText:(NSString*)text onDate:(NSDate*)date fromUser:(User*)user inConversation:(Conversation*)conversation withState:(BOOL)readOrUnreadState inContext:(NSManagedObjectContext*)context
 {
-    
+    __block Message *newMessage1 = nil;
     [context performBlockAndWait:^{
         
-        Message* newMessage1 = [[Message alloc] initWithEntity:[NSEntityDescription entityForName:@"Message" inManagedObjectContext:context] insertIntoManagedObjectContext:context];
+        newMessage1 = [[Message alloc] initWithEntity:[NSEntityDescription entityForName:@"Message" inManagedObjectContext:context] insertIntoManagedObjectContext:context];
         newMessage1.text = text;
         newMessage1.date = date;
         newMessage1.readOrUnreadState = [NSNumber numberWithBool:readOrUnreadState];
-        
+        newMessage1.fromWho = user;
+        newMessage1.fromWhat = conversation;
+        [context save:nil];
     }];
     
-    [context save:nil];
+    return newMessage1;
     
 }
 
-- (NSFetchRequest *)requestMessagesFromUser:(NSString *)userName inManagedObjectContext:(NSManagedObjectContext *)context
++ (NSFetchRequest *)requestMessagesFromUser:(NSString *)userName inManagedObjectContext:(NSManagedObjectContext *)context
 {
     // NSSortDescriptor
     NSSortDescriptor *sortByDate = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES];
