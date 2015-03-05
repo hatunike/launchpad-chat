@@ -31,18 +31,16 @@
 + (NSFetchRequest *)requestMessagesFromUser:(NSString *)userName inManagedObjectContext:(NSManagedObjectContext *)context
 {
     // NSSortDescriptor
-    NSSortDescriptor *sortByDate = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES];
+    //NSSortDescriptor *sortByDate = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES];
     
     // NSPredicate
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"userName like %@", userName];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"fromWho.name == %@", userName];
     
     // NSFetchRequest
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    //fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Message"];
-    fetchRequest.entity = [NSEntityDescription entityForName:@"Message" inManagedObjectContext:context];
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Message"];
 //    fetchRequest.fetchBatchSize = 20;
 //    fetchRequest.fetchLimit = 100;
-    fetchRequest.sortDescriptors = [NSArray arrayWithObject:sortByDate];
+    //fetchRequest.sortDescriptors = [NSArray arrayWithObject:sortByDate];
     fetchRequest.predicate = predicate;
     
     return fetchRequest;

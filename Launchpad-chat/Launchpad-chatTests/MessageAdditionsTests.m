@@ -56,7 +56,7 @@
         {
             [self.context deleteObject:user];
         }
-        [self.context save:nil];
+        //[self.context save:nil];
         
         NSFetchRequest* fr2 = [NSFetchRequest fetchRequestWithEntityName:@"Message"];
         NSArray* allMessages = [self.context executeFetchRequest:fr2 error:nil];
@@ -64,7 +64,7 @@
         {
             [self.context deleteObject:message];
         }
-        [self.context save:nil];
+        //[self.context save:nil];
         
         NSFetchRequest* fr3 = [NSFetchRequest fetchRequestWithEntityName:@"Conversation"];
         NSArray* allConversations = [self.context executeFetchRequest:fr3 error:nil];
