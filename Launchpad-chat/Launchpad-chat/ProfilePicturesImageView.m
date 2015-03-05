@@ -13,7 +13,6 @@
 - (void)setIs_circle:(BOOL) isCircle
 {
     self.layer.cornerRadius = self.frame.size.width/2;
-    self.backgroundColor = [UIColor redColor];
     _isCircle = isCircle;
 }
 

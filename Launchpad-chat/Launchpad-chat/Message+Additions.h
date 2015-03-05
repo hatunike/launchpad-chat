@@ -10,8 +10,8 @@
 
 @interface Message (Additions)
 
-- (NSFetchRequest *)requestMessagesFromUser:(NSString *) userName inManagedObjectContext:(NSManagedObjectContext *)context;
++ (NSFetchRequest *)requestMessagesFromUser:(NSString *) userName inManagedObjectContext:(NSManagedObjectContext *)context;
 
-+ (void)createMessageWithText:(NSString*)text onDate:(NSDate*)date withState:(BOOL)readOrUnreadState inContext:(NSManagedObjectContext*)context;
++ (Message *)createMessageWithText:(NSString*)text onDate:(NSDate*)date fromUser:(User*)user inConversation:(Conversation*)conversation withState:(BOOL)readOrUnreadState inContext:(NSManagedObjectContext*)context;
 
 @end

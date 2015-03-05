@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 IB_DESIGNABLE
-@interface ProfilePicturesImageView : UIView
+@interface ProfilePicturesImageView : UIImageView
 
 @property (nonatomic) IBInspectable BOOL isCircle;
 
