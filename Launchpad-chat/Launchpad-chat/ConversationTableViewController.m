@@ -7,8 +7,10 @@
 //
 
 #import "ConversationTableViewController.h"
+#import "UserTableViewController.h"
 
 @interface ConversationTableViewController ()
+
 
 @end
 
@@ -16,6 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UILabel *userNameHeader;
+    userNameHeader.text = self.userName;
+    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -27,6 +32,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)dismissConversationViewController:(id)sender
+{
+    [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Table view data source

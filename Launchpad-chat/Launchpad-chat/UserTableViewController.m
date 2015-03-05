@@ -7,11 +7,12 @@
 //
 
 #import "UserTableViewController.h"
-#import "UIConversationViewController.h"
+#import "ConversationTableViewController.h"
 #import "User.h"
 #import "Message+Additions.h"
 #import "User+Additions.h"
 #import "AppDelegate.h"
+#import "conversation.h"
 
 @interface UserTableViewController ()
 
@@ -25,6 +26,7 @@
 {
     [super viewDidLoad];
     self.context = [(AppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
+    
     
     // grab all the users in core data and put them in userArray
     
@@ -71,6 +73,11 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"open ConversationTableViewController" sender:self];
+    
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -114,17 +121,21 @@
 {
     if ([[segue identifier] isEqualToString:@"open UIConversationViewController"])
     {
-        UIConversationViewController* vc = [segue destinationViewController];
-        //vc.conversation = conversationWithUser;
+        ConversationTableViewController* vc = [segue destinationViewController];
+        
         
         //Get user of selected row
         User* selectedUser = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
         
-        
+        //vc.view = selectedUser.name;
+        vc.userName = selectedUser.name;
     }
     
     // Pass the selected object to the new view controller.
 }
+
+
+
 
 
 @end

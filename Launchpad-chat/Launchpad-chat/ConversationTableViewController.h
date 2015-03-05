@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ConversationTableViewController : UITableViewController
+@interface ConversationTableViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UILabel *userNameHeader;
+@property (nonatomic, strong) NSString *userName;
+
 
 @end
