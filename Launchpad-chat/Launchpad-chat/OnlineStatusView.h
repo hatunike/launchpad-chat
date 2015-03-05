@@ -12,5 +12,6 @@ IB_DESIGNABLE
 @interface OnlineStatusView : UIView
 
 @property (nonatomic) IBInspectable BOOL is_circle;
+@property (nonatomic) IBInspectable BOOL is_online;
 
 @end

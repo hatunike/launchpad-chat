@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CXm-ku-5Fm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CXm-ku-5Fm">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -208,9 +208,12 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KSy-jw-ce4" id="ywO-Oh-Eni">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ipm-Kr-rPu" customClass="ProfilePicturesImageView">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-md" translatesAutoresizingMaskIntoConstraints="NO" id="ipm-Kr-rPu" customClass="ProfilePicturesImageView">
                                             <rect key="frame" x="8" y="8" width="75" height="75"/>
-                                            <color key="backgroundColor" red="0.0" green="1" blue="0.92976369130000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="75" id="Zfy-m7-WMl"/>
+                                                <constraint firstAttribute="height" constant="75" id="jvV-jA-Gb2"/>
+                                            </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="is_circle" value="YES"/>
                                             </userDefinedRuntimeAttributes>
@@ -235,6 +238,10 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ipm-Kr-rPu" firstAttribute="leading" secondItem="ywO-Oh-Eni" secondAttribute="leadingMargin" id="P1h-UR-YlW"/>
+                                        <constraint firstItem="ipm-Kr-rPu" firstAttribute="top" secondItem="ywO-Oh-Eni" secondAttribute="topMargin" id="d4Q-dn-Uz6"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="latestMessageTextLabel" destination="2zs-gd-qX0" id="bv7-x1-isP"/>
@@ -548,6 +555,9 @@
             <point key="canvasLocation" x="1822.5" y="1371.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="placeholder-md" width="298" height="282"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Izg-Yf-HxJ"/>
         <segue reference="PAw-oi-eqX"/>
