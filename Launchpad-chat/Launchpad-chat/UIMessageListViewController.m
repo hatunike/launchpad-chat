@@ -27,8 +27,8 @@
 
 - (IBAction)logoutButtonpressed:(id)sender
 {
-    [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"currentUserName"];
-    [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"password"];
+    //[[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"currentUserName"];
+    //[[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"password"];
     [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
     //self.usernameField.text = nil;
     //self.passwordField.text = nil;
