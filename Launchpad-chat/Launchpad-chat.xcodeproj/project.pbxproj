@@ -13,6 +13,7 @@
 		007A4B3B1A8D775D00559027 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 007A4B3A1A8D775D00559027 /* Images.xcassets */; };
 		007A4B3E1A8D775D00559027 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007A4B3C1A8D775D00559027 /* LaunchScreen.xib */; };
 		007A4B4A1A8D775D00559027 /* Launchpad_chatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 007A4B491A8D775D00559027 /* Launchpad_chatTests.m */; };
+		3D3178831AA67C7A0072EC26 /* UIUserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3178821AA67C7A0072EC26 /* UIUserTableViewCell.m */; };
 		CFC71E231A9FDFAB0083E005 /* ConversationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC71E221A9FDFAB0083E005 /* ConversationTableViewController.m */; };
 		D7B905E21A942095004BC539 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B905E11A942095004BC539 /* LoginViewController.m */; };
 		E703FEE31A9D4B730073FE56 /* UIMessageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E703FEE21A9D4B730073FE56 /* UIMessageListViewController.m */; };
@@ -58,6 +59,8 @@
 		007A4B431A8D775D00559027 /* Launchpad-chatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Launchpad-chatTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		007A4B481A8D775D00559027 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		007A4B491A8D775D00559027 /* Launchpad_chatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Launchpad_chatTests.m; sourceTree = "<group>"; };
+		3D3178811AA67C7A0072EC26 /* UIUserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIUserTableViewCell.h; sourceTree = "<group>"; };
+		3D3178821AA67C7A0072EC26 /* UIUserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIUserTableViewCell.m; sourceTree = "<group>"; };
 		CFC71E211A9FDFAB0083E005 /* ConversationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationTableViewController.h; sourceTree = "<group>"; };
 		CFC71E221A9FDFAB0083E005 /* ConversationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationTableViewController.m; sourceTree = "<group>"; };
 		D7B905E01A942095004BC539 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -182,6 +185,8 @@
 		E79D13EB1A9D578A00D9E880 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3D3178811AA67C7A0072EC26 /* UIUserTableViewCell.h */,
+				3D3178821AA67C7A0072EC26 /* UIUserTableViewCell.m */,
 				E79D13EC1A9D57A600D9E880 /* LoginTextField.h */,
 				E79D13ED1A9D57A600D9E880 /* LoginTextField.m */,
 				E77ED74C1A9FF67F00D1B227 /* OnlineStatusView.h */,
@@ -361,6 +366,7 @@
 				E78320831A96C031000E3ABC /* UIConversationViewController.m in Sources */,
 				007A4B331A8D775D00559027 /* AppDelegate.m in Sources */,
 				E78320871A96C031000E3ABC /* UserTableViewController.m in Sources */,
+				3D3178831AA67C7A0072EC26 /* UIUserTableViewCell.m in Sources */,
 				E796D2961A96B78100FBC9E0 /* UINewMessageViewController.m in Sources */,
 				E77F1E281A9FF7970012534A /* User.m in Sources */,
 				E79D13EE1A9D57A600D9E880 /* LoginTextField.m in Sources */,
