@@ -15,7 +15,9 @@
 
 @interface ConversationAdditionsTests : XCTestCase
 
-@property NSManagedObjectContext *context;
+@property (nonatomic, strong) NSManagedObjectContext *context;
+@property (nonatomic, strong) User *user1;
+@property (nonatomic, strong) User *user2;
 
 @end
 
@@ -30,13 +32,13 @@
     
     NSLog(@"Context = %@",self.context);
     
-    User *newUser1 = [User createUserWithName:@"User1" onlineStatus:YES inContext:self.context];
+    self.user1 = [User createUserWithName:@"User1" onlineStatus:YES inContext:self.context];
     
-    User *newUser2 = [User createUserWithName:@"User2" onlineStatus:YES inContext:self.context];
+    self.user2 = [User createUserWithName:@"User2" onlineStatus:YES inContext:self.context];
     
-    Conversation *newConversation1 = [Conversation createConvertationWithUser1:newUser1 AndUser2:newUser2 lastMessage:[NSDate dateWithTimeIntervalSince1970:0] inContext:self.context];
+    Conversation *newConversation1 = [Conversation createConvertationWithUser1:self.user1 AndUser2:self.user2 lastMessage:[NSDate dateWithTimeIntervalSince1970:0] inContext:self.context];
     
-    Message *newMessage1 = [Message createMessageWithText:@"testing" onDate:[NSDate dateWithTimeIntervalSince1970:0] fromUser:newUser1 inConversation:newConversation1 withState:YES inContext:self.context];
+    Message * __unused newMessage1 = [Message createMessageWithText:@"testing" onDate:[NSDate dateWithTimeIntervalSince1970:0] fromUser:self.user1 inConversation:newConversation1 withState:YES inContext:self.context];
     
     [self.context save:nil];
     
@@ -76,11 +78,19 @@
 - (void)testsConversationFetchRequestWithTwoUsers
 {
     NSError *error = nil;
-    NSArray *conversations = [self.context executeFetchRequest:[Conversation requestConversationWithTwoUsers:@"User1" AndUser2:@"User2"] error:&error];
+    NSArray *conversations = [self.context executeFetchRequest:[Conversation requestConversationWithTwoUsers:self.user1 AndUser2:self.user2] error:&error];
     
     XCTAssert(error == nil, @"Error requesting conversation = %@", [error localizedDescription]);
     XCTAssert(conversations.count == 1, @"Conversation count should be 1");
-    NSArray *users = [[conversations objectAtIndex:0] user];
+    
+    Conversation* conversation = conversations[0];
+    XCTAssert([conversation isKindOfClass:[Conversation class]]);
+    
+    NSSet* users = conversation.user;
+    XCTAssert(users.count == 2);
+    
+    XCTAssert([users containsObject:self.user1]);
+    XCTAssert([users containsObject:self.user2]);
 }
 
 @end
