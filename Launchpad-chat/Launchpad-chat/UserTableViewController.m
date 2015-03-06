@@ -12,8 +12,7 @@
 #import "Message+Additions.h"
 #import "User+Additions.h"
 #import "AppDelegate.h"
-#import "conversation.h"
-
+#import "UIUserTableViewCell.h"
 @interface UserTableViewController ()
 
 @property (nonatomic, strong) NSManagedObjectContext* context;
@@ -45,29 +44,25 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"user" forIndexPath:indexPath];
+    UIUserTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"user" forIndexPath:indexPath];
 
     User* user = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    
+    cell.userProfileImageView.image = [UIImage imageNamed:@"placeholder-md"];
     NSString* userName = user.name;
     
-    cell.textLabel.text = userName;
+    cell.userNameTextLabel.text = userName;
+    //Conversation* conversation = [Conversation getConversationWithName:ownID andOtherName:user.name];
+
     //Message* message = [Message getLatestMessageWithUsername:userName];
+    cell.latestMessageTextLabel.text = @"";
     
     //NSDate* latestMessageDate = message.date;
     //UIImage* userAvatar = user.avatar; //outlet must be made somewhere
     
     //cell.userAvatar.image = user.avatar;
     
-    bool onlineStatus = user.onlineStatus;
-    if (onlineStatus)
-    {
-        // display the green dot
-    }
-    else
-    {
-        // display the red dot
-    }
+    cell.userStatusCircleView.is_online = user.onlineStatus.boolValue;
+
     
     
     return cell;
@@ -75,7 +70,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"open ConversationTableViewController" sender:self];
+    [self performSegueWithIdentifier:@"open UIConversationViewController" sender:self];
     
 }
 
@@ -133,9 +128,6 @@
     
     // Pass the selected object to the new view controller.
 }
-
-
-
 
 
 @end

@@ -18,8 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UILabel *userNameHeader;
-    userNameHeader.text = self.userName;
+
+    self.userNameHeader.text = self.userName;
     
     
     // Uncomment the following line to preserve selection between presentations.

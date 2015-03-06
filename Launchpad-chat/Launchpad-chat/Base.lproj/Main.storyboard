@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CXm-ku-5Fm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kFl-62-tBC">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -94,16 +94,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="v7g-ai-Swi"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="passwordField" destination="L0K-a0-gSB" id="GQf-2x-KN6"/>
                         <outlet property="usernameField" destination="NS4-tr-jbQ" id="rBW-na-YOb"/>
-                        <segue destination="LFh-gV-nsP" kind="custom" identifier="LoginToUser" id="YFe-UD-0so"/>
+                        <segue destination="LFh-gV-nsP" kind="push" identifier="LoginToUser" id="YFe-UD-0so"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ae-Oo-4Wp" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="168.5" y="235.5"/>
+            <point key="canvasLocation" x="980.5" y="235.5"/>
         </scene>
         <!--New User View Controller-->
         <scene sceneID="ps5-2W-Cmc">
@@ -176,7 +177,7 @@
                                 </state>
                                 <connections>
                                     <action selector="cancelButtonPressed:" destination="2sr-sH-Ggk" eventType="touchUpInside" id="sfh-X4-ISj"/>
-                                    <segue destination="CXm-ku-5Fm" kind="show" id="3IO-wF-R0I"/>
+                                    <segue destination="kFl-62-tBC" kind="show" id="3IO-wF-R0I"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -187,12 +188,12 @@
                         <outlet property="passwordField" destination="5gk-mW-tli" id="cPb-fB-q3u"/>
                         <outlet property="passwordField2" destination="BAt-NK-gsG" id="jX5-CR-SyD"/>
                         <outlet property="usernameField" destination="2PM-Rm-9zY" id="0hY-qe-yVt"/>
-                        <segue destination="CXm-ku-5Fm" kind="custom" identifier="newUserToLogin" id="YZQ-td-BUR"/>
+                        <segue destination="kFl-62-tBC" kind="custom" identifier="newUserToLogin" id="YZQ-td-BUR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EDt-uW-sue" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="202.5" y="1355.5"/>
+            <point key="canvasLocation" x="174.5" y="1379.5"/>
         </scene>
         <!--User Table View Controller-->
         <scene sceneID="eiE-sD-y68">
@@ -208,9 +209,12 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KSy-jw-ce4" id="ywO-Oh-Eni">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ipm-Kr-rPu" customClass="ProfilePicturesImageView">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-md" translatesAutoresizingMaskIntoConstraints="NO" id="ipm-Kr-rPu" customClass="ProfilePicturesImageView">
                                             <rect key="frame" x="8" y="8" width="75" height="75"/>
-                                            <color key="backgroundColor" red="0.0" green="1" blue="0.92976369130000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="75" id="Zfy-m7-WMl"/>
+                                                <constraint firstAttribute="height" constant="75" id="jvV-jA-Gb2"/>
+                                            </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="is_circle" value="YES"/>
                                             </userDefinedRuntimeAttributes>
@@ -235,13 +239,16 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ipm-Kr-rPu" firstAttribute="leading" secondItem="ywO-Oh-Eni" secondAttribute="leadingMargin" id="P1h-UR-YlW"/>
+                                        <constraint firstItem="ipm-Kr-rPu" firstAttribute="top" secondItem="ywO-Oh-Eni" secondAttribute="topMargin" id="d4Q-dn-Uz6"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="latestMessageTextLabel" destination="2zs-gd-qX0" id="bv7-x1-isP"/>
                                     <outlet property="userNameTextLabel" destination="Clh-4k-E6n" id="TBW-xF-oEO"/>
                                     <outlet property="userProfileImageView" destination="ipm-Kr-rPu" id="0pz-gC-KvG"/>
                                     <outlet property="userStatusCircleView" destination="MrF-j1-ZLK" id="tmg-gu-G0Y"/>
-                                    <segue destination="0IR-z2-mo3" kind="show" identifier="open ConversationTableViewController" id="oJ6-aA-GEk"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -250,10 +257,13 @@
                             <outlet property="delegate" destination="tcX-J3-Vc5" id="MWk-6b-9Px"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="0IR-z2-mo3" kind="show" identifier="open UIConversationViewController" id="bpW-eF-1aP"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iCw-LQ-Vqr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1782.5" y="-388.5"/>
+            <point key="canvasLocation" x="2594.5" y="-388.5"/>
         </scene>
         <!--Message List View Controller-->
         <scene sceneID="5vO-wp-Kcw">
@@ -287,7 +297,6 @@
                                 </state>
                                 <connections>
                                     <action selector="logoutButtonpressed:" destination="LFh-gV-nsP" eventType="touchUpInside" id="twV-u1-beU"/>
-                                    <segue destination="CXm-ku-5Fm" kind="show" id="PAw-oi-eqX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6l-Qo-iwC">
@@ -320,11 +329,12 @@
                             <constraint firstItem="GLh-cf-yxJ" firstAttribute="top" secondItem="U2I-rA-DBF" secondAttribute="bottom" constant="3" id="qNN-dJ-fQ3"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="UVf-9b-5cy"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k0s-0z-C3D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="980.5" y="42.5"/>
+            <point key="canvasLocation" x="1792.5" y="42.5"/>
         </scene>
         <!--Conversation Table View Controller-->
         <scene sceneID="Y6i-ev-O5u">
@@ -348,7 +358,6 @@
                                 </state>
                                 <connections>
                                     <action selector="dismissConversationViewController:" destination="0IR-z2-mo3" eventType="touchUpInside" id="Qhw-zB-kMQ"/>
-                                    <segue destination="LFh-gV-nsP" kind="show" id="DA1-RA-pnb"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Message..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JXf-US-Tw3">
@@ -396,10 +405,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="userNameHeader" destination="MtB-TN-nXl" id="777-Tj-cfH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5kQ-qf-u0k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1890.5" y="386.5"/>
+            <point key="canvasLocation" x="2702.5" y="386.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="76y-eZ-bca">
@@ -548,9 +560,31 @@
             </objects>
             <point key="canvasLocation" x="1822.5" y="1371.5"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1HA-a8-Mdt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="kFl-62-tBC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qxe-Dy-xaU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CXm-ku-5Fm" kind="relationship" relationship="rootViewController" id="pbN-oh-jdH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5hG-r1-X3k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="168" y="235"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="placeholder-md" width="298" height="282"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xh9-vk-bPv"/>
-        <segue reference="PAw-oi-eqX"/>
+        <segue reference="YZQ-td-BUR"/>
+        <segue reference="YFe-UD-0so"/>
     </inferredMetricsTieBreakers>
 </document>
