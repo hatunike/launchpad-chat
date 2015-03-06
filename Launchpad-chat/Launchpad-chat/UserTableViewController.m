@@ -70,7 +70,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"open ConversationTableViewController" sender:self];
+    [self performSegueWithIdentifier:@"open UIConversationViewController" sender:self];
     
 }
 
