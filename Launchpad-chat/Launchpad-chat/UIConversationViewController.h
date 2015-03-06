@@ -10,4 +10,6 @@
 
 @interface UIConversationViewController : UICollectionViewController
 
+@property (nonatomic, strong) NSString* userName;
+
 @end

@@ -7,11 +7,12 @@
 //
 
 #import "UserTableViewController.h"
+#import "ConversationTableViewController.h"
 #import "User.h"
 #import "Message+Additions.h"
 #import "User+Additions.h"
 #import "AppDelegate.h"
-
+#import "UIUserTableViewCell.h"
 @interface UserTableViewController ()
 
 @property (nonatomic, strong) NSManagedObjectContext* context;
@@ -24,6 +25,7 @@
 {
     [super viewDidLoad];
     self.context = [(AppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
+    
     
     // grab all the users in core data and put them in userArray
     
@@ -42,33 +44,36 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"user" forIndexPath:indexPath];
+    UIUserTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"user" forIndexPath:indexPath];
 
     User* user = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    
+    cell.userProfileImageView.image = [UIImage imageNamed:@"placeholder-md"];
     NSString* userName = user.name;
     
-    cell.textLabel.text = userName;
+    cell.userNameTextLabel.text = userName;
+    //Conversation* conversation = [Conversation getConversationWithName:ownID andOtherName:user.name];
+
     //Message* message = [Message getLatestMessageWithUsername:userName];
+    cell.latestMessageTextLabel.text = @"";
     
     //NSDate* latestMessageDate = message.date;
     //UIImage* userAvatar = user.avatar; //outlet must be made somewhere
     
     //cell.userAvatar.image = user.avatar;
     
-    bool onlineStatus = user.onlineStatus;
-    if (onlineStatus)
-    {
-        // display the green dot
-    }
-    else
-    {
-        // display the red dot
-    }
+    cell.userStatusCircleView.is_online = user.onlineStatus.boolValue;
+
     
     
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"open ConversationTableViewController" sender:self];
+    
+}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -103,14 +108,26 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"open UIConversationViewController"])
+    {
+        ConversationTableViewController* vc = [segue destinationViewController];
+        
+        
+        //Get user of selected row
+        User* selectedUser = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
+        
+        //vc.view = selectedUser.name;
+        vc.userName = selectedUser.name;
+    }
+    
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end
