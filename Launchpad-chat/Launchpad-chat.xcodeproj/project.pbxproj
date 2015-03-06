@@ -35,6 +35,7 @@
 		E796D2961A96B78100FBC9E0 /* UINewMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E796D2951A96B78100FBC9E0 /* UINewMessageViewController.m */; };
 		E796D2991A96B7ED00FBC9E0 /* UINewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E796D2981A96B7ED00FBC9E0 /* UINewUserViewController.m */; };
 		E79D13EE1A9D57A600D9E880 /* LoginTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E79D13ED1A9D57A600D9E880 /* LoginTextField.m */; };
+		EF17FCDD1AA92413006D236D /* ConversationAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF17FCDC1AA92413006D236D /* ConversationAdditionsTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		E796D2981A96B7ED00FBC9E0 /* UINewUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UINewUserViewController.m; sourceTree = "<group>"; };
 		E79D13EC1A9D57A600D9E880 /* LoginTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginTextField.h; sourceTree = "<group>"; };
 		E79D13ED1A9D57A600D9E880 /* LoginTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTextField.m; sourceTree = "<group>"; };
+		EF17FCDC1AA92413006D236D /* ConversationAdditionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConversationAdditionsTests.m; path = "Launchpad-chatTests/ConversationAdditionsTests.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 		007A4B461A8D775D00559027 /* Launchpad-chatTests */ = {
 			isa = PBXGroup;
 			children = (
+				EF17FCDC1AA92413006D236D /* ConversationAdditionsTests.m */,
 				007A4B491A8D775D00559027 /* Launchpad_chatTests.m */,
 				E78320681A96BFF6000E3ABC /* UserAdditionsTests.m */,
 				E78B153B1AA67ADB0007028C /* MessageAdditionsTests.m */,
@@ -379,6 +382,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF17FCDD1AA92413006D236D /* ConversationAdditionsTests.m in Sources */,
 				E78320691A96BFF6000E3ABC /* UserAdditionsTests.m in Sources */,
 				E78B153C1AA67ADB0007028C /* MessageAdditionsTests.m in Sources */,
 				007A4B4A1A8D775D00559027 /* Launchpad_chatTests.m in Sources */,

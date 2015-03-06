@@ -26,4 +26,16 @@
     
     
 }
+
++ (NSFetchRequest *)requestConversationWithTwoUsers:(User*)user1 AndUser2:(User*)user2
+{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"ANY user.name == %@ AND ANY user.name == %@", user1, user2];
+    
+    NSFetchRequest *fr = [NSFetchRequest fetchRequestWithEntityName:@"Conversation"];
+    
+    fr.predicate = predicate;
+    
+    return fr;
+}
+
 @end
