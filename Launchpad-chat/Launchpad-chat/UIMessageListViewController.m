@@ -29,7 +29,7 @@
 {
     //[[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"currentUserName"];
     //[[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"password"];
-    [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
     //self.usernameField.text = nil;
     //self.passwordField.text = nil;
 }

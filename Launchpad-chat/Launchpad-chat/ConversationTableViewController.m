@@ -18,8 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UILabel *userNameHeader;
-    userNameHeader.text = self.userName;
+
+    self.userNameHeader.text = self.userName;
     
     
     // Uncomment the following line to preserve selection between presentations.
@@ -35,7 +35,7 @@
 }
 - (IBAction)dismissConversationViewController:(id)sender
 {
-    [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - Table view data source
