@@ -12,7 +12,6 @@
 #import "AppDelegate.h"
 #import <CoreData/CoreData.h>
 
-
 @interface UserAdditionsTests : XCTestCase
 
 @property (nonatomic, strong) NSManagedObjectContext* context;

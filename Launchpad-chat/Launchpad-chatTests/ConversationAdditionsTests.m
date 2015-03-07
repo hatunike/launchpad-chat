@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSManagedObjectContext *context;
 @property (nonatomic, strong) User *user1;
 @property (nonatomic, strong) User *user2;
+@property (nonatomic, strong) Message *message1;
 
 @end
 
@@ -38,7 +39,7 @@
     
     Conversation *newConversation1 = [Conversation createConvertationWithUser1:self.user1 AndUser2:self.user2 lastMessage:[NSDate dateWithTimeIntervalSince1970:0] inContext:self.context];
     
-    Message * __unused newMessage1 = [Message createMessageWithText:@"testing" onDate:[NSDate dateWithTimeIntervalSince1970:0] fromUser:self.user1 inConversation:newConversation1 withState:YES inContext:self.context];
+    self.message1 = [Message createMessageWithText:@"testing" onDate:[NSDate dateWithTimeIntervalSince1970:0] fromUser:self.user1 inConversation:newConversation1 withState:YES inContext:self.context];
     
     [self.context save:nil];
     
@@ -80,17 +81,25 @@
     NSError *error = nil;
     NSArray *conversations = [self.context executeFetchRequest:[Conversation requestConversationWithTwoUsers:self.user1 AndUser2:self.user2] error:&error];
     
+    //Check fetch request
     XCTAssert(error == nil, @"Error requesting conversation = %@", [error localizedDescription]);
     XCTAssert(conversations.count == 1, @"Conversation count should be 1");
     
+    //Check to see if conversation is a Conversation
     Conversation* conversation = conversations[0];
-    XCTAssert([conversation isKindOfClass:[Conversation class]]);
+    XCTAssert([conversation isKindOfClass:[Conversation class]], @"conversation should be a Conversation object");
     
-    NSSet* users = conversation.user;
-    XCTAssert(users.count == 2);
+    //Check User count
+    NSSet *users = conversation.user;
+    XCTAssert(users.count == 2, @"User count on conversation should equal 2");
     
-    XCTAssert([users containsObject:self.user1]);
-    XCTAssert([users containsObject:self.user2]);
+    //Check Users
+    XCTAssert([users containsObject:self.user1], @"Conversation should contain user1");
+    XCTAssert([users containsObject:self.user2], @"Conversation should contain user2");
+    
+    //Check messages for created message
+    NSSet *messages = conversation.messages;
+    XCTAssert([messages containsObject:self.message1], @"Messages should contain message 'Testing'");
 }
 
 @end
