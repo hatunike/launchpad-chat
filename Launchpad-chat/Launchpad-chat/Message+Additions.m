@@ -28,7 +28,7 @@
     
 }
 
-+ (NSFetchRequest *)requestMessagesFromUser:(NSString *)userName inManagedObjectContext:(NSManagedObjectContext *)context
++ (NSFetchRequest *)requestMessagesFromUser:(NSString *)userName
 {
     // NSSortDescriptor
     //NSSortDescriptor *sortByDate = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES];

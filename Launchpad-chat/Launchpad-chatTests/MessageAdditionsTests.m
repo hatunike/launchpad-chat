@@ -80,7 +80,7 @@
 {
     NSError *error = nil;
     
-    NSArray *messages = [self.context executeFetchRequest:[Message requestMessagesFromUser:@"User1" inManagedObjectContext:self.context] error:&error];
+    NSArray *messages = [self.context executeFetchRequest:[Message requestMessagesFromUser:@"User1"] error:&error];
     
     XCTAssert(error == nil, @"Error requesting Message = %@",[error localizedDescription]);
     XCTAssert(messages.count == 1, @"Messages should be equal to 1");
