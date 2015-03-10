@@ -31,7 +31,7 @@
     
     //[self setFetchedResultsController:[[NSFetchedResultsController alloc] initWithFetchRequest:[User requestUsersWithoutCurrentUserOrderedByStatusAndName:[[NSUserDefaults standardUserDefaults] objectForKey:@"currentUserName"]] managedObjectContext:self.context sectionNameKeyPath:nil cacheName:nil]];
     
-    [self setFetchedResultsController:[[NSFetchedResultsController alloc] initWithFetchRequest:[User requestUsersWithoutCurrentUserOrderedByStatusAndName:nil] managedObjectContext:self.context sectionNameKeyPath:nil cacheName:nil]];
+    [self setFetchedResultsController:[[NSFetchedResultsController alloc] initWithFetchRequest:[User requestUsersOrderedByStatusAndNameWithoutCurrentUser:nil] managedObjectContext:self.context sectionNameKeyPath:nil cacheName:nil]];
 }
 
 - (void)didReceiveMemoryWarning

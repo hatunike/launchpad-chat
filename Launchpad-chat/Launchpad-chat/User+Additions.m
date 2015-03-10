@@ -57,7 +57,7 @@
     return fetchRequest;
 }
 
-+ (NSFetchRequest *)requestUsersWithoutCurrentUserOrderedByStatusAndName:(NSString *)currentUser
++ (NSFetchRequest *)requestUsersOrderedByStatusAndNameWithoutCurrentUser:(NSString *)currentUser
 {
     NSFetchRequest* fr = [NSFetchRequest fetchRequestWithEntityName:@"User"];
     fr.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"onlineStatus" ascending:NO],[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
@@ -68,7 +68,7 @@
     return fr;
 }
 
-+ (NSFetchRequest *)requestUsersWithoutCurrentUserOrderedByStatusAndLastUploadDate:(NSString *)currentUser
++ (NSFetchRequest *)requestUsersOrderedByStatusAndLastUploadDateWithoutCurrentUser:(NSString *)currentUser
 {
     //Fetch Users
     NSFetchRequest *fr = [NSFetchRequest fetchRequestWithEntityName:@"User"];
