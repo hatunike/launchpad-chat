@@ -18,6 +18,10 @@
 
 @property (nonatomic, strong) NSManagedObjectContext* context;
 
+@property (nonatomic, strong) Conversation *conversation1;
+@property (nonatomic, strong) Message *message1;
+@property (nonatomic, strong) Message *message2;
+
 @end
 
 @implementation MessageAdditionsTests
@@ -35,13 +39,13 @@
     
     User *newUser2 = [User createUserWithName:@"User2" onlineStatus:YES inContext:self.context];
     
-    Conversation *newConversation1 = [Conversation createConvertationWithUser1:newUser1 AndUser2:newUser2 lastMessage:[NSDate dateWithTimeIntervalSince1970:0] inContext:self.context];
+    self.conversation1 = [Conversation createConvertationWithUser1:newUser1 AndUser2:newUser2 lastMessage:[NSDate dateWithTimeIntervalSince1970:0] inContext:self.context];
     
-    Message *newMessage1 = [Message createMessageWithText:@"testing" onDate:[NSDate dateWithTimeIntervalSince1970:0] fromUser:newUser1 inConversation:newConversation1 withState:YES inContext:self.context];
+    self.message1 = [Message createMessageWithText:@"testing" onDate:[NSDate dateWithTimeIntervalSince1970:0] fromUser:newUser1 inConversation:self.conversation1 withState:YES inContext:self.context];
+    
+    self.message2 = [Message createMessageWithText:@"a message" onDate:[NSDate dateWithTimeIntervalSince1970:30] fromUser:newUser1 inConversation:self.conversation1 withState:YES inContext:self.context];
 
-    
     [self.context save:nil];
-    
     
 }
 
@@ -83,8 +87,29 @@
     NSArray *messages = [self.context executeFetchRequest:[Message requestMessagesFromUser:@"User1"] error:&error];
     
     XCTAssert(error == nil, @"Error requesting Message = %@",[error localizedDescription]);
-    XCTAssert(messages.count == 1, @"Messages should be equal to 1");
+    XCTAssert(messages.count == 2, @"Messages should be equal to 1");
     
+}
+
+- (void)testMessageFetchRequestByConversationSortedByDate
+{
+    NSError *error = nil;
+    
+    NSArray *messages = [self.context executeFetchRequest:[Message requestMessagesFromConversation:self.conversation1] error:&error];
+    
+    XCTAssert(messages.count == 2, @"There should be 1 conversations");
+    XCTAssert([messages containsObject:self.message1], @"Messages should contain message1");
+    XCTAssert([messages containsObject:self.message1], @"Messages should contain message2");
+    
+    //Test first message
+    Message *message0 = messages[0];
+    XCTAssert([message0 isKindOfClass:[Message class]], @"Message should be of class Message");
+    XCTAssert([message0.text isEqualToString:@"testing"], @"Message Should contain 'Testing'"); //Mesage was created first
+    
+    //Test first message
+    Message *message1 = messages[1];
+    XCTAssert([message1 isKindOfClass:[Message class]], @"Message should be of class Message");
+    XCTAssert([message1.text isEqualToString:@"a message"], @"Message Should contain 'Testing'"); //Message was created last
 }
 
 - (void)testExample {

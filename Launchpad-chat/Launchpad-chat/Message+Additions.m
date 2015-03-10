@@ -46,4 +46,20 @@
     return fetchRequest;
 }
 
++ (NSFetchRequest *)requestMessagesFromConversation:(Conversation *)conversation
+{
+    //Sort using fromWhat (Conversation)
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"fromWhat == %@", conversation];
+    
+    //Request Messages
+    NSFetchRequest *fr = [NSFetchRequest fetchRequestWithEntityName:@"Message"];
+    
+    //Sort by date
+    fr.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES]];
+    
+    fr.predicate = predicate;
+    
+    return fr;
+}
+
 @end
