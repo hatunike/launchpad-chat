@@ -46,7 +46,7 @@
     return fetchRequest;
 }
 
-+ (NSFetchRequest *)requestMessagesFromConversation:(Conversation *)conversation
++ (NSFetchRequest *)requestMessagesOrderedByDateFromConversation:(Conversation *)conversation
 {
     //Sort using fromWhat (Conversation)
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"fromWhat == %@", conversation];

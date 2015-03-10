@@ -95,7 +95,7 @@
 {
     NSError *error = nil;
     
-    NSArray *messages = [self.context executeFetchRequest:[Message requestMessagesFromConversation:self.conversation1] error:&error];
+    NSArray *messages = [self.context executeFetchRequest:[Message requestMessagesOrderedByDateFromConversation:self.conversation1] error:&error];
     
     XCTAssert(messages.count == 2, @"There should be 1 conversations");
     XCTAssert([messages containsObject:self.message1], @"Messages should contain message1");
