@@ -15,11 +15,10 @@
 //fetchRequestAllOnline
 //fetchRequestAllOffline
 
-
 + (NSFetchRequest *)requestUsersWithRecentUploads;
 + (NSFetchRequest *)requestUserWithName:(NSString*)name;
-+ (NSFetchRequest *)requestUsersWithoutCurrentUserOrderedByStatusAndName:(NSString *)currentUser;
-+ (NSFetchRequest *)requestUsersWithoutCurrentUserOrderedByStatusAndLastUploadDate:(NSString *)currentUser;
++ (NSFetchRequest *)requestUsersOrderedByStatusAndNameWithoutCurrentUser:(NSString *)currentUser;
++ (NSFetchRequest *)requestUsersOrderedByStatusAndLastUploadDateWithoutCurrentUser:(NSString *)currentUser;
 + (User *)createUserWithName:(NSString*)name onlineStatus:(BOOL)status inContext:(NSManagedObjectContext*)context;
 
 @end
