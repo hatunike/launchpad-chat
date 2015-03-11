@@ -57,7 +57,7 @@
 }
 - (IBAction)cancelButtonpressed:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
 }
 /*
 #pragma mark - Navigation

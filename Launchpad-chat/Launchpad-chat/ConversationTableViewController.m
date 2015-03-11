@@ -16,7 +16,7 @@
 @interface ConversationTableViewController ()
 
 @property (strong, nonatomic) IBOutlet UITextField *messageTextField;
-
+@property (nonatomic, strong) DialogTableViewController* messagesVC;
 @end
 
 @implementation ConversationTableViewController
@@ -29,13 +29,28 @@
     self.messageTextField.delegate = self;
 
 }
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self scrollToBottom];
+}
 - (IBAction)sendMessageButtonPressed:(id)sender
 {
     User* currentUser = [[self.context executeFetchRequest:[User requestUserWithName:self.userName] error:nil] lastObject];
     
     [Message createMessageWithText:self.messageTextField.text onDate:[NSDate date] fromUser:currentUser inConversation:nil withState:YES inContext:self.context];
     self.messageTextField.text = @"";
-    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self scrollToBottom];
+        });
+    });
+}
+
+- (void)scrollToBottom
+{
+    [self.messagesVC.tableView  scrollRectToVisible:CGRectMake(0, self.messagesVC.tableView.contentSize.height - self.messagesVC.tableView.bounds.size.height, self.messagesVC.tableView.bounds.size.width, self.messagesVC.tableView.bounds.size.height) animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,6 +86,7 @@
         NSFetchedResultsController *frc = [[NSFetchedResultsController alloc] initWithFetchRequest:fr managedObjectContext:self.context sectionNameKeyPath:nil cacheName:nil];
         
         [vc setFetchedResultsController:frc];
+        self.messagesVC = vc;
     }
     
 }
