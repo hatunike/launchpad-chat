@@ -23,8 +23,6 @@
         
     }];
     return newConversation1;
-    
-    
 }
 
 + (NSFetchRequest *)requestConversationWithTwoUsers:(User*)user1 AndUser2:(User*)user2
