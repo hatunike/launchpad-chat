@@ -23,8 +23,6 @@
         
     }];
     return newConversation1;
-    
-    
 }
 
 + (NSFetchRequest *)requestConversationWithTwoUsers:(User*)user1 AndUser2:(User*)user2
@@ -34,6 +32,20 @@
     NSFetchRequest *fr = [NSFetchRequest fetchRequestWithEntityName:@"Conversation"];
     
     fr.predicate = predicate;
+    
+    return fr;
+}
+
++ (NSFetchRequest *)requestConversationsForUser:(User*)user
+{
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"ANY user == %@", user];
+    
+    NSFetchRequest *fr = [NSFetchRequest fetchRequestWithEntityName:@"Conversation"];
+    
+    fr.predicate = predicate;
+    
+    fr.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"lastMessageDate" ascending:YES]];
     
     return fr;
 }
