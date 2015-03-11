@@ -12,5 +12,6 @@
 
 + (Conversation *)createConvertationWithUser1:(User*)user1 AndUser2:(User*)user2 lastMessage:(NSDate*)lastMessageDate inContext:(NSManagedObjectContext*)context;
 + (NSFetchRequest *)requestConversationWithTwoUsers:(User*)user1 AndUser2:(User*)user2;
++ (NSFetchRequest *)requestConversationsForUser:(User*)user;
 
 @end

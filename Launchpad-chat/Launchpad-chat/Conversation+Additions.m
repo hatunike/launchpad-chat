@@ -38,4 +38,18 @@
     return fr;
 }
 
++ (NSFetchRequest *)requestConversationsForUser:(User*)user
+{
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"ANY user == %@", user];
+    
+    NSFetchRequest *fr = [NSFetchRequest fetchRequestWithEntityName:@"Conversation"];
+    
+    fr.predicate = predicate;
+    
+    fr.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"lastMessageDate" ascending:YES]];
+    
+    return fr;
+}
+
 @end
