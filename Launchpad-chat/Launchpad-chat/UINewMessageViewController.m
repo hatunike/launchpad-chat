@@ -8,6 +8,9 @@
 
 #import "UINewMessageViewController.h"
 #import "AppDelegate.h"
+#import "User+Additions.h"
+#import "Message+Additions.h"
+#import "Conversation+Additions.h"
 
 @interface UINewMessageViewController ()
 
@@ -17,13 +20,24 @@
 
 - (IBAction)buttonSendMessageTapped:(id)sender
 {
-    
+    [self sendNewMessage:self.messageFieldToNewConversation.text toUser:self.conversationToUsernameField.text];
 }
 
 - (BOOL)sendNewMessage:(NSString*)newMessage toUser:(NSString *)username
 {
-    //create new message
-    //send new message
+    //Create User (if doesn't exist)
+    User* me = [[self.context executeFetchRequest:[User requestUserWithName:[[NSUserDefaults standardUserDefaults] valueForKey:@"currentUserName"]] error:nil] lastObject];
+    
+    User* otherGuy = [[self.context executeFetchRequest:[User requestUserWithName:username] error:nil] lastObject];
+    if (otherGuy == nil)
+    {
+        otherGuy = [User createUserWithName:username onlineStatus:NO inContext:self.context];
+    }
+    
+    Conversation* convo = [Conversation createConvertationWithUser1:me AndUser2:otherGuy lastMessage:[NSDate date] inContext:self.context];
+    [Message createMessageWithText:newMessage onDate:[NSDate date] fromUser:me inConversation:convo withState:NO inContext:self.context];
+    
+    [self.navigationController popViewControllerAnimated:YES];
     
     return 0;
 }
