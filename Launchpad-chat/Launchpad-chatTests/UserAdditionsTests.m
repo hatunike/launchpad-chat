@@ -15,6 +15,7 @@
 @interface UserAdditionsTests : XCTestCase
 
 @property (nonatomic, strong) NSManagedObjectContext* context;
+@property (nonatomic, strong) User *user1;
 
 @end
 
@@ -31,25 +32,25 @@
     
     [self.context performBlockAndWait:^{
         
-        User* newUser1 = [[User alloc] initWithEntity:[NSEntityDescription entityForName:@"User" inManagedObjectContext:self.context] insertIntoManagedObjectContext:self.context];
-        newUser1.name = @"testA";
-        newUser1.onlineStatus = @YES;
-        newUser1.lastUploadDate = [NSDate dateWithTimeIntervalSinceNow:0]; //Exactly Now and online #1 by date
+        self.user1 = [[User alloc] initWithEntity:[NSEntityDescription entityForName:@"User" inManagedObjectContext:self.context] insertIntoManagedObjectContext:self.context];
+        self.user1.name = @"testA";
+        self.user1.onlineStatus = @YES;
+        self.user1.lastUploadDate = [NSDate dateWithTimeIntervalSinceNow:0]; //Exactly Now and online #1 by date
         
         User* newUser2 = [[User alloc] initWithEntity:[NSEntityDescription entityForName:@"User" inManagedObjectContext:self.context] insertIntoManagedObjectContext:self.context];
         newUser2.name = @"Beta";
         newUser2.onlineStatus = @NO;
-        newUser1.lastUploadDate = [NSDate dateWithTimeIntervalSinceNow:-30]; //Thirty Seconds ago and offline #3 by date
+        newUser2.lastUploadDate = [NSDate dateWithTimeIntervalSinceNow:-30]; //Thirty Seconds ago and offline #3 by date
         
         User* newUser3 = [[User alloc] initWithEntity:[NSEntityDescription entityForName:@"User" inManagedObjectContext:self.context] insertIntoManagedObjectContext:self.context];
         newUser3.name = @"testB";
         newUser3.onlineStatus = @YES;
-        newUser1.lastUploadDate = [NSDate dateWithTimeIntervalSinceNow:-20]; //Twenty Seconds ago and online #2 by date
+        newUser3.lastUploadDate = [NSDate dateWithTimeIntervalSinceNow:-20]; //Twenty Seconds ago and online #2 by date
         
         User* newUser4 = [[User alloc] initWithEntity:[NSEntityDescription entityForName:@"User" inManagedObjectContext:self.context] insertIntoManagedObjectContext:self.context];
         newUser4.name = @"Alpha";
         newUser4.onlineStatus = @NO;
-        newUser1.lastUploadDate = [NSDate dateWithTimeIntervalSinceNow:-40]; //Forty Seconds ago and offline #4 by date
+        newUser4.lastUploadDate = [NSDate dateWithTimeIntervalSinceNow:-40]; //Forty Seconds ago and offline #4 by date
         
     }];
 
@@ -73,6 +74,20 @@
         }
         [self.context save:nil];
     }];
+}
+
+- (void)testChangeUserStatus
+{
+    [User changeStatusOf:self.user1 inContext:self.context];
+    
+    NSError *error;
+    NSArray *user = [self.context executeFetchRequest:[User requestUserWithName:self.user1.name] error:&error];
+    
+    XCTAssert(error == nil, @"Error requesting users = %@",[error localizedDescription]);
+    
+    User *userInContext = user[0];
+    XCTAssert([userInContext.name isEqualToString:@"testA"], @"User name should be UserName");
+    XCTAssert([userInContext.onlineStatus  isEqualToNumber:[NSNumber numberWithBool:NO]], @"OnlineStatus should be NO");
 }
 
 - (void)testUserNameFetchRequest

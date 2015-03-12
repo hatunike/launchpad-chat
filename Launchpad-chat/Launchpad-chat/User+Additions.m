@@ -25,6 +25,22 @@
     
 }
 
++ (void)changeStatusOf:(User *)currentUser inContext:(NSManagedObjectContext *)context;
+{
+    [context performBlockAndWait:^{
+        
+        if (currentUser.onlineStatus == [NSNumber numberWithBool:NO])
+        {
+            currentUser.onlineStatus = [NSNumber numberWithBool:YES];
+        }
+        else
+        {
+            currentUser.onlineStatus = [NSNumber numberWithBool:NO];
+        }
+        [context save:nil];
+    }];
+}
+
 + (NSFetchRequest *)requestUsersWithRecentUploads
 {
     // NSSortDescriptor
