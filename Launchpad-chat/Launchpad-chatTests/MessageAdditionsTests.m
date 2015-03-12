@@ -86,10 +86,11 @@
 {
     NSError *error = nil;
     
-    NSArray *messages = [self.context executeFetchRequest:[Message requestMessagesFromUser:self.user1] error:&error];
+    NSArray *messages = [Message requestMessagesFromUser:self.user1 inContext:self.context];
     
     XCTAssert(error == nil, @"Error requesting Message = %@",[error localizedDescription]);
     XCTAssert(messages.count == 2, @"Messages should be equal to 2");
+    
 }
 
 - (void)testMessageFetchRequestLatestMessageFromUser
@@ -105,6 +106,7 @@
     Message *message0 = messages[0];
     XCTAssert([message0 isKindOfClass:[Message class]], @"Message should be of class Message");
     XCTAssert([message0.text isEqualToString:@"a message"], @"Message Should contain 'Testing'"); //Mesage was created last
+
 }
 
 - (void)testMessageFetchRequestByConversationSortedByDate

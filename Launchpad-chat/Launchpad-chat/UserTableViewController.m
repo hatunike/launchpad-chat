@@ -54,7 +54,18 @@
     //Conversation* conversation = [Conversation getConversationWithName:ownID andOtherName:user.name];
 
     //Message* message = [Message getLatestMessageWithUsername:userName];
-    cell.latestMessageTextLabel.text = @"";
+    NSArray *messages = [Message requestMessagesFromUser:user inContext:self.context];
+    NSString *latestText;
+    if (messages.count == 0)
+    {
+        latestText = @"";
+    }
+    else
+    {
+        Message *latestMessage = messages[0];
+        latestText = latestMessage.text;
+    }
+    cell.latestMessageTextLabel.text = latestText;
     
     //NSDate* latestMessageDate = message.date;
     //UIImage* userAvatar = user.avatar; //outlet must be made somewhere
