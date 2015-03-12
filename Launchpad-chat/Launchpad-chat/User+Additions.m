@@ -60,7 +60,7 @@
     return fetchRequest;
 }
 
-+ (NSFetchRequest *)requestUserWithName:(NSString*)name
++ (User *)requestUserWithName:(NSString*)name inContext:(NSManagedObjectContext *)context
 {
     // NSPredicate
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@", name];
@@ -70,7 +70,11 @@
 
     fetchRequest.predicate = predicate;
     
-    return fetchRequest;
+    NSArray *result = [context executeFetchRequest:fetchRequest error:nil];
+    
+    User *user = result[0];
+    
+    return user;
 }
 
 + (NSFetchRequest *)requestUsersOrderedByStatusAndNameWithoutCurrentUser:(NSString *)currentUser

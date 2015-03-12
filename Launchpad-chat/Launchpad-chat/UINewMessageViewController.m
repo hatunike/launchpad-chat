@@ -26,9 +26,9 @@
 - (BOOL)sendNewMessage:(NSString*)newMessage toUser:(NSString *)username
 {
     //Create User (if doesn't exist)
-    User* me = [[self.context executeFetchRequest:[User requestUserWithName:[[NSUserDefaults standardUserDefaults] valueForKey:@"currentUserName"]] error:nil] lastObject];
+    User* me = [[self.context executeFetchRequest:[User requestUserWithName:[[NSUserDefaults standardUserDefaults] valueForKey:@"currentUserName"] inContext:self.context] error:nil] lastObject];
     
-    User* otherGuy = [[self.context executeFetchRequest:[User requestUserWithName:username] error:nil] lastObject];
+    User* otherGuy = [[self.context executeFetchRequest:[User requestUserWithName:username inContext:self.context] error:nil] lastObject];
     if (otherGuy == nil)
     {
         otherGuy = [User createUserWithName:username onlineStatus:NO inContext:self.context];

@@ -80,25 +80,17 @@
 {
     [User changeStatusOf:self.user1 inContext:self.context];
     
-    NSError *error;
-    NSArray *user = [self.context executeFetchRequest:[User requestUserWithName:self.user1.name] error:&error];
+    User *user = [User requestUserWithName:self.user1.name inContext:self.context];
     
-    XCTAssert(error == nil, @"Error requesting users = %@",[error localizedDescription]);
-    
-    User *userInContext = user[0];
-    XCTAssert([userInContext.name isEqualToString:@"testA"], @"User name should be UserName");
-    XCTAssert([userInContext.onlineStatus  isEqualToNumber:[NSNumber numberWithBool:NO]], @"OnlineStatus should be NO");
+    XCTAssert([user.name isEqualToString:@"testA"], @"User name should be UserName");
+    XCTAssert([user.onlineStatus  isEqualToNumber:[NSNumber numberWithBool:NO]], @"OnlineStatus should be NO");
 }
 
 - (void)testUserNameFetchRequest
 {
+    User *user = [User requestUserWithName:@"testA" inContext:self.context];
     
-    NSError* error = nil;
-    
-    NSArray* users = [self.context executeFetchRequest:[User requestUserWithName:@"testA"] error:&error];
-    
-    XCTAssert(error == nil, @"Error requesting users = %@",[error localizedDescription]);
-    XCTAssert(users.count == 1, @"Users should be equal to 1");
+    XCTAssert([user isKindOfClass:[User class]], @"User should be of class User");
 }
 
 - (void)testCurrentUserNotIncluded //Same fetch request as testUserSortByOnlineStatusAndLastUploadDate but passing testA as current user
