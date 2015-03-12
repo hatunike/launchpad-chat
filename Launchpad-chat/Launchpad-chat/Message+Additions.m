@@ -28,22 +28,24 @@
     
 }
 
-+ (NSFetchRequest *)requestMessagesFromUser:(NSString *)userName
++ (NSArray *)requestMessagesFromUser:(User *)userName inContext:(NSManagedObjectContext*)context
 {
     // NSSortDescriptor
-    //NSSortDescriptor *sortByDate = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES];
+    NSSortDescriptor *sortByDate = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES];
     
     // NSPredicate
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"fromWho.name == %@", userName];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"fromWho == %@", userName];
     
     // NSFetchRequest
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Message"];
 //    fetchRequest.fetchBatchSize = 20;
 //    fetchRequest.fetchLimit = 100;
-    //fetchRequest.sortDescriptors = [NSArray arrayWithObject:sortByDate];
+    fetchRequest.sortDescriptors = [NSArray arrayWithObject:sortByDate];
     fetchRequest.predicate = predicate;
     
-    return fetchRequest;
+    NSArray * result = [context executeFetchRequest:fetchRequest error:nil];
+    
+    return result;
 }
 
 + (NSFetchRequest *)requestMessagesOrderedByDateFromConversation:(Conversation *)conversation

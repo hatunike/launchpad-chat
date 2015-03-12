@@ -22,6 +22,10 @@
 @property (nonatomic, strong) Message *message1;
 @property (nonatomic, strong) Message *message2;
 
+@property (nonatomic, strong) User *user1;
+@property (nonatomic, strong) User *user2;
+
+
 @end
 
 @implementation MessageAdditionsTests
@@ -35,15 +39,15 @@
     
     NSLog(@"Context = %@",self.context);
 
-    User *newUser1 = [User createUserWithName:@"User1" onlineStatus:YES inContext:self.context];
+    self.user1 = [User createUserWithName:@"User1" onlineStatus:YES inContext:self.context];
     
-    User *newUser2 = [User createUserWithName:@"User2" onlineStatus:YES inContext:self.context];
+    self.user2 = [User createUserWithName:@"User2" onlineStatus:YES inContext:self.context];
     
-    self.conversation1 = [Conversation createConvertationWithUser1:newUser1 AndUser2:newUser2 lastMessage:[NSDate dateWithTimeIntervalSince1970:0] inContext:self.context];
+    self.conversation1 = [Conversation createConvertationWithUser1:self.user1 AndUser2:self.user2 lastMessage:[NSDate dateWithTimeIntervalSince1970:0] inContext:self.context];
     
-    self.message1 = [Message createMessageWithText:@"testing" onDate:[NSDate dateWithTimeIntervalSince1970:0] fromUser:newUser1 inConversation:self.conversation1 withState:YES inContext:self.context];
+    self.message1 = [Message createMessageWithText:@"testing" onDate:[NSDate dateWithTimeIntervalSince1970:0] fromUser:self.user1 inConversation:self.conversation1 withState:YES inContext:self.context];
     
-    self.message2 = [Message createMessageWithText:@"a message" onDate:[NSDate dateWithTimeIntervalSince1970:30] fromUser:newUser1 inConversation:self.conversation1 withState:YES inContext:self.context];
+    self.message2 = [Message createMessageWithText:@"a message" onDate:[NSDate dateWithTimeIntervalSince1970:30] fromUser:self.user1 inConversation:self.conversation1 withState:YES inContext:self.context];
 
     [self.context save:nil];
     
@@ -84,10 +88,10 @@
 {
     NSError *error = nil;
     
-    NSArray *messages = [self.context executeFetchRequest:[Message requestMessagesFromUser:@"User1"] error:&error];
+    NSArray *messages = [Message requestMessagesFromUser:self.user1 inContext:self.context];
     
     XCTAssert(error == nil, @"Error requesting Message = %@",[error localizedDescription]);
-    XCTAssert(messages.count == 2, @"Messages should be equal to 1");
+    XCTAssert(messages.count == 2, @"Messages should be equal to 2");
     
 }
 
