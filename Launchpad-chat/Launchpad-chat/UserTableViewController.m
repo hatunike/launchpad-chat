@@ -47,7 +47,7 @@
     UIUserTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"user" forIndexPath:indexPath];
 
     User* user = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.userProfileImageView.image = [UIImage imageNamed:@"placeholder-md"];
+    cell.userProfileImageView.image = [UIImage imageNamed:@"person.png"];
     NSString* userName = user.name;
     
     cell.userNameTextLabel.text = userName;
