@@ -62,7 +62,7 @@
     }
     else
     {
-        Message *latestMessage = messages[0];
+        Message *latestMessage = [messages lastObject];
         latestText = latestMessage.text;
     }
     cell.latestMessageTextLabel.text = latestText;

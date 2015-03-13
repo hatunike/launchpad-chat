@@ -7,8 +7,12 @@
 //
 
 #import "UIMessageListViewController.h"
+#import "User+Additions.h"
+#import "AppDelegate.h"
 
 @interface UIMessageListViewController ()
+
+@property (nonatomic, strong) NSManagedObjectContext* context;
 
 @end
 
@@ -17,7 +21,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.context = [(AppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
+
     NSLog(@"userName: %@", self.userName);
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,6 +36,7 @@
 {
     //[[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"currentUserName"];
     //[[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"password"];
+    [User changeStatusOf:[User requestUserWithName:[[NSUserDefaults standardUserDefaults] objectForKey:@"currentUserName"] inContext:self.context] inContext:self.context];
     [self.navigationController popViewControllerAnimated:YES];
     //self.usernameField.text = nil;
     //self.passwordField.text = nil;
