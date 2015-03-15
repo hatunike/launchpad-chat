@@ -34,6 +34,14 @@
     
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.textLabel.text = message.text;
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"dd/mm/yyyy"];
+    
+    NSString *stringFromDate = [formatter stringFromDate:message.date];
+    
+    cell.detailTextLabel.text = stringFromDate;
+    
     return cell;
 }
 
