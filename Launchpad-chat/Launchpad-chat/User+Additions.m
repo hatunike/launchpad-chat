@@ -85,6 +85,9 @@
 
 + (User *)requestUserWithName:(NSString*)name inContext:(NSManagedObjectContext *)context
 {
+    //NSError
+    NSError *error = nil;
+    
     // NSPredicate
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@", name];
     
@@ -93,9 +96,18 @@
 
     fetchRequest.predicate = predicate;
     
-    NSArray *result = [context executeFetchRequest:fetchRequest error:nil];
+    NSArray *result = [context executeFetchRequest:fetchRequest error:&error];
     
-    User *user = result[0];
+    User *user;
+    
+    if (result.count == 0)
+    {
+        user = nil;
+    }
+    else
+    {
+        user = result[0];
+    }
     
     return user;
 }
