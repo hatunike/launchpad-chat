@@ -625,6 +625,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="cancelButtonPressed:" destination="cD5-ya-yR0" eventType="touchUpInside" id="PhA-y1-UuE"/>
                                     <action selector="cancelButtonpressed:" destination="cD5-ya-yR0" eventType="touchUpInside" id="YJo-yQ-xfy"/>
                                 </connections>
                             </button>

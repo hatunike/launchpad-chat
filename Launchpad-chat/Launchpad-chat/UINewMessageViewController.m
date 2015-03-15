@@ -42,6 +42,11 @@
     return 0;
 }
 
+- (IBAction)cancelButtonPressed:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

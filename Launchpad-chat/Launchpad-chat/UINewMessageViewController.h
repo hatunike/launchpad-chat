@@ -19,5 +19,4 @@
 
 - (BOOL)sendNewMessage:(NSString*)newMessage toUser:(NSString *)username;
 
-
 @end
