@@ -76,6 +76,16 @@
     }];
 }
 
+- (void)testSetLastUploadDate
+{
+    [User setLastUploadDataAsNowForUser:self.user1 inContext:self.context];
+    
+    User *user = [User requestUserWithName:self.user1.name inContext:self.context];
+    
+    XCTAssert(self.user1 == user, @"user should be user1");
+    XCTAssert([self.user1.lastUploadDate isEqualToDate:user.lastUploadDate], @"lastUploadDate's should be equal");
+}
+
 - (void)testSetAvatar
 {
     [User setAvatar:[UIImage imageNamed:@"avatar-generator.JPG"] forUser:self.user1 inContext:self.context];

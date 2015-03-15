@@ -26,5 +26,6 @@
 + (User *)createUserWithName:(NSString*)name onlineStatus:(BOOL)status inContext:(NSManagedObjectContext*)context;
 + (void)changeStatusOf:(User *)currentUser inContext:(NSManagedObjectContext *)context;
 + (void)setAvatar:(UIImage *)image forUser:(User *)user inContext:(NSManagedObjectContext *)context;
++ (void)setLastUploadDataAsNowForUser:(User *)User inContext:(NSManagedObjectContext *)context;
 
 @end

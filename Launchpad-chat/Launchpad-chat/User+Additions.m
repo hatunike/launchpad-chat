@@ -53,6 +53,16 @@
     }];
 }
 
++ (void)setLastUploadDataAsNowForUser:(User *)user inContext:(NSManagedObjectContext *)context
+{
+    [context performBlockAndWait:^{
+        
+        user.lastUploadDate = [NSDate dateWithTimeIntervalSinceNow:0];
+        
+        [context save:nil];
+    }];
+}
+
 + (NSFetchRequest *)requestUsersWithRecentUploads
 {
     // NSSortDescriptor
