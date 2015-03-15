@@ -18,6 +18,7 @@
         newUser1 = [[User alloc] initWithEntity:[NSEntityDescription entityForName:@"User" inManagedObjectContext:context] insertIntoManagedObjectContext:context];
         newUser1.name = name;
         newUser1.onlineStatus = [NSNumber numberWithBool:status];
+        newUser1.avatar = nil;
         [context save:nil];
     }];
     

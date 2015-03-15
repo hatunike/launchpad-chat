@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 lernu. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "UserTableViewController.h"
 #import "ConversationTableViewController.h"
 #import "User.h"
@@ -13,6 +14,7 @@
 #import "User+Additions.h"
 #import "AppDelegate.h"
 #import "UIUserTableViewCell.h"
+
 @interface UserTableViewController ()
 
 @property (nonatomic, strong) NSManagedObjectContext* context;
@@ -47,7 +49,19 @@
     UIUserTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"user" forIndexPath:indexPath];
 
     User* user = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.userProfileImageView.image = [UIImage imageNamed:@"person.png"];
+    
+    //Check to see if the user has an avater
+    if (user.avatar == nil)
+    {
+        //If not set placeholder image
+        cell.userProfileImageView.image = [UIImage imageNamed:@"person.png"];
+    }
+    else
+    {
+        //Set user avater image
+        cell.userProfileImageView.image = [UIImage imageWithData:user.avatar];
+    }
+    
     NSString* userName = user.name;
     
     cell.userNameTextLabel.text = userName;
