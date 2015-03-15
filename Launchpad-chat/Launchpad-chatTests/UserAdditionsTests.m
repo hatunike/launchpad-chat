@@ -76,6 +76,20 @@
     }];
 }
 
+- (void)testSetAvatar
+{
+    [User setAvatar:[UIImage imageNamed:@"avatar-generator.JPG"] forUser:self.user1 inContext:self.context];
+    
+    User *user = [User requestUserWithName:self.user1.name inContext:self.context];
+    
+    //Compare images as NSData to compare actual image data instead of pointers to the images (NSData is binary data)
+    NSData *imageData0 = user.avatar;
+    NSData *imageData1 = UIImageJPEGRepresentation([UIImage imageNamed:@"avatar-generator.JPG"], 0.0);
+    
+    XCTAssert(user == self.user1, @"user should be user1");
+    XCTAssert([imageData0 isEqual:imageData1], @"User1's avater should be avatar-generator.JPG");
+}
+
 - (void)testChangeUserStatus
 {
     [User changeStatusOf:self.user1 inContext:self.context];

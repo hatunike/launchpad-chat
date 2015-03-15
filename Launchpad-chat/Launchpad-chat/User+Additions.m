@@ -41,6 +41,18 @@
     }];
 }
 
++ (void)setAvatar:(UIImage *)image forUser:(User *)user inContext:(NSManagedObjectContext *)context
+{
+    NSData *dataImage = UIImageJPEGRepresentation(image, 0.0);
+    
+    [context performBlockAndWait:^{
+        
+        user.avatar = dataImage;
+        
+        [context save:nil];
+    }];
+}
+
 + (NSFetchRequest *)requestUsersWithRecentUploads
 {
     // NSSortDescriptor
