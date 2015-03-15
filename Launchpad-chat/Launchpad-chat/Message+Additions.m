@@ -28,6 +28,23 @@
     
 }
 
++ (void)changeMessagereadOrUnreadState:(Message *)message inContext:(NSManagedObjectContext *)context
+{
+    [context performBlockAndWait:^{
+       
+        if ([message.readOrUnreadState isEqual:[NSNumber numberWithBool:NO]])
+        {
+            
+            message.readOrUnreadState = [NSNumber numberWithBool:YES];
+        
+        }
+        else
+        {
+            message.readOrUnreadState = [NSNumber numberWithBool:NO];
+        }
+    }];
+}
+
 + (NSArray *)requestMessagesFromUser:(User *)userName inContext:(NSManagedObjectContext*)context
 {
     // NSSortDescriptor

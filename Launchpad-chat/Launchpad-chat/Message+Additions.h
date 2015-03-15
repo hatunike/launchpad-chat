@@ -16,5 +16,6 @@
 + (NSFetchRequest *)requestMessagesOrderedByDateFromConversation:(Conversation *)Conversation;
 
 + (Message *)createMessageWithText:(NSString*)text onDate:(NSDate*)date fromUser:(User*)user inConversation:(Conversation*)conversation withState:(BOOL)readOrUnreadState inContext:(NSManagedObjectContext*)context;
++ (void)changeMessagereadOrUnreadState:(Message *)message inContext:(NSManagedObjectContext *)context;
 
 @end

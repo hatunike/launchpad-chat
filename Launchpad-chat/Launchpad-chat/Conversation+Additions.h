@@ -10,8 +10,12 @@
 
 @interface Conversation (Additions)
 
-+ (Conversation *)createConvertationWithUser1:(User*)user1 AndUser2:(User*)user2 lastMessage:(NSDate*)lastMessageDate inContext:(NSManagedObjectContext*)context;
+//Request methods
 + (NSFetchRequest *)requestConversationWithTwoUsers:(User*)user1 AndUser2:(User*)user2;
 + (NSFetchRequest *)requestConversationsForUser:(User*)user;
+
+//Create/Modify methods
++ (Conversation *)createConvertationWithUser1:(User*)user1 AndUser2:(User*)user2 lastMessage:(NSDate*)lastMessageDate inContext:(NSManagedObjectContext*)context;
++ (void)setLastMessageDateForConversation:(Conversation *)Conversation inContext:(NSManagedObjectContext *)context;
 
 @end

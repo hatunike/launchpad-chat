@@ -43,7 +43,7 @@
     
     self.conversation1 = [Conversation createConvertationWithUser1:self.user1 AndUser2:self.user2 lastMessage:[NSDate dateWithTimeIntervalSince1970:0] inContext:self.context];
     
-    self.message1 = [Message createMessageWithText:@"testing" onDate:[NSDate dateWithTimeIntervalSince1970:0] fromUser:self.user1 inConversation:self.conversation1 withState:YES inContext:self.context];
+    self.message1 = [Message createMessageWithText:@"testing" onDate:[NSDate dateWithTimeIntervalSince1970:0] fromUser:self.user1 inConversation:self.conversation1 withState:NO inContext:self.context];
     
     self.message2 = [Message createMessageWithText:@"a message" onDate:[NSDate dateWithTimeIntervalSince1970:30] fromUser:self.user1 inConversation:self.conversation1 withState:YES inContext:self.context];
 
@@ -80,6 +80,16 @@
         }
         [self.context save:nil];
     }];
+}
+
+- (void)testChangeMessageReadOrUnreadState
+{
+    XCTAssert([self.message1.readOrUnreadState isEqualToNumber:[NSNumber numberWithBool:NO]], @"Message read state before change should be NO");
+    
+    [Message changeMessagereadOrUnreadState:self.message1 inContext:self.context];
+    
+    XCTAssert([self.message1.readOrUnreadState isEqualToNumber:[NSNumber numberWithBool:YES]], @"Message read state should be YES after change");
+    
 }
 
 - (void)testMessageFetchRequest
