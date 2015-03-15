@@ -16,16 +16,16 @@
 //fetchRequestAllOnline
 //fetchRequestAllOffline
 
+//Creating AND modifying
++ (User *)createUserWithName:(NSString*)name onlineStatus:(BOOL)status inContext:(NSManagedObjectContext*)context;
++ (void)changeStatusOf:(User *)currentUser inContext:(NSManagedObjectContext *)context;
++ (void)setAvatar:(UIImage *)image forUser:(User *)user inContext:(NSManagedObjectContext *)context;
++ (void)setLastUploadDataAsNowForUser:(User *)User inContext:(NSManagedObjectContext *)context;
+
 //Requests
 + (NSFetchRequest *)requestUsersWithRecentUploads;
 + (User *)requestUserWithName:(NSString*)name inContext:(NSManagedObjectContext *)context;
 + (NSFetchRequest *)requestUsersOrderedByStatusAndNameWithoutCurrentUser:(NSString *)currentUser;
 + (NSFetchRequest *)requestUsersOrderedByStatusAndLastUploadDateWithoutCurrentUser:(NSString *)currentUser;
-
-//Creating OR modifying
-+ (User *)createUserWithName:(NSString*)name onlineStatus:(BOOL)status inContext:(NSManagedObjectContext*)context;
-+ (void)changeStatusOf:(User *)currentUser inContext:(NSManagedObjectContext *)context;
-+ (void)setAvatar:(UIImage *)image forUser:(User *)user inContext:(NSManagedObjectContext *)context;
-+ (void)setLastUploadDataAsNowForUser:(User *)User inContext:(NSManagedObjectContext *)context;
 
 @end
