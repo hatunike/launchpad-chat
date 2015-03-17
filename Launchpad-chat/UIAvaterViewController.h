@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User+Additions.h"
 
 @interface UIAvaterViewController : UIViewController
 
