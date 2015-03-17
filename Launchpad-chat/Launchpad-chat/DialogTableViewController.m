@@ -41,8 +41,18 @@
     NSString *stringFromDate = [formatter stringFromDate:message.date];
     
     cell.detailTextLabel.text = stringFromDate;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
+}
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
+    if(cell.selectionStyle == UITableViewCellSelectionStyleNone)
+    {
+        return nil;
+    }
+    return indexPath;
 }
 
 

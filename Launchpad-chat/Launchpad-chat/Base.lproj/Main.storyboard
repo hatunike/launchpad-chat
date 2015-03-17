@@ -358,7 +358,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cD5-ya-yR0" kind="show" id="CYd-ZV-of1"/>
+                                    <segue destination="cD5-ya-yR0" kind="presentation" id="CYd-ZV-of1"/>
                                 </connections>
                             </button>
                         </subviews>
