@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		000028731AB8664700099B45 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000028721AB8664700099B45 /* CloudKit.framework */; };
+		0021A1C11AB86A8F00DA7114 /* CloudModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0021A1C01AB86A8F00DA7114 /* CloudModel.m */; };
+		0021A1C41AB86BA900DA7114 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0021A1C31AB86BA900DA7114 /* UserInfo.m */; };
+		0021A1C71AB8AE7B00DA7114 /* ImportOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0021A1C61AB8AE7B00DA7114 /* ImportOperation.m */; };
+		0021A1CD1AB8D1EA00DA7114 /* PendingOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 0021A1CC1AB8D1EA00DA7114 /* PendingOperations.m */; };
 		007A4B301A8D775D00559027 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 007A4B2F1A8D775D00559027 /* main.m */; };
 		007A4B331A8D775D00559027 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 007A4B321A8D775D00559027 /* AppDelegate.m */; };
 		007A4B391A8D775D00559027 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 007A4B371A8D775D00559027 /* Main.storyboard */; };
@@ -50,6 +55,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		000028711AB8663F00099B45 /* Launchpad-chat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Launchpad-chat.entitlements"; sourceTree = "<group>"; };
+		000028721AB8664700099B45 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		0021A1BF1AB86A8F00DA7114 /* CloudModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloudModel.h; sourceTree = "<group>"; };
+		0021A1C01AB86A8F00DA7114 /* CloudModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloudModel.m; sourceTree = "<group>"; };
+		0021A1C21AB86BA900DA7114 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		0021A1C31AB86BA900DA7114 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
+		0021A1C51AB8AE7B00DA7114 /* ImportOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportOperation.h; sourceTree = "<group>"; };
+		0021A1C61AB8AE7B00DA7114 /* ImportOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportOperation.m; sourceTree = "<group>"; };
+		0021A1CB1AB8D1EA00DA7114 /* PendingOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PendingOperations.h; sourceTree = "<group>"; };
+		0021A1CC1AB8D1EA00DA7114 /* PendingOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PendingOperations.m; sourceTree = "<group>"; };
 		007A4B2A1A8D775D00559027 /* Launchpad-chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Launchpad-chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		007A4B2E1A8D775D00559027 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		007A4B2F1A8D775D00559027 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -112,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				000028731AB8664700099B45 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +144,7 @@
 		007A4B211A8D775D00559027 = {
 			isa = PBXGroup;
 			children = (
+				000028721AB8664700099B45 /* CloudKit.framework */,
 				007A4B2C1A8D775D00559027 /* Launchpad-chat */,
 				007A4B461A8D775D00559027 /* Launchpad-chatTests */,
 				007A4B2B1A8D775D00559027 /* Products */,
@@ -146,6 +163,7 @@
 		007A4B2C1A8D775D00559027 /* Launchpad-chat */ = {
 			isa = PBXGroup;
 			children = (
+				000028711AB8663F00099B45 /* Launchpad-chat.entitlements */,
 				EF411DD61A96F97800BA14B9 /* Controller */,
 				EF411DD41A96F92700BA14B9 /* Model */,
 				007A4B311A8D775D00559027 /* AppDelegate.h */,
@@ -227,6 +245,14 @@
 				E703FEE61A9D4BC60073FE56 /* Message+Additions.m */,
 				E77F1E231A9FEA320012534A /* Conversation.h */,
 				E77F1E241A9FEA320012534A /* Conversation.m */,
+				0021A1C21AB86BA900DA7114 /* UserInfo.h */,
+				0021A1C31AB86BA900DA7114 /* UserInfo.m */,
+				0021A1BF1AB86A8F00DA7114 /* CloudModel.h */,
+				0021A1C01AB86A8F00DA7114 /* CloudModel.m */,
+				0021A1C51AB8AE7B00DA7114 /* ImportOperation.h */,
+				0021A1C61AB8AE7B00DA7114 /* ImportOperation.m */,
+				0021A1CB1AB8D1EA00DA7114 /* PendingOperations.h */,
+				0021A1CC1AB8D1EA00DA7114 /* PendingOperations.m */,
 			);
 			name = Messages;
 			sourceTree = "<group>";
@@ -307,6 +333,12 @@
 				TargetAttributes = {
 					007A4B291A8D775D00559027 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = ZG5E53AF2K;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					007A4B421A8D775D00559027 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -361,6 +393,7 @@
 				E783207F1A96C031000E3ABC /* Conversation+Additions.m in Sources */,
 				E77ED7501A9FF67F00D1B227 /* OnlineStatusView.m in Sources */,
 				E796D2991A96B7ED00FBC9E0 /* UINewUserViewController.m in Sources */,
+				0021A1C41AB86BA900DA7114 /* UserInfo.m in Sources */,
 				E78320821A96C031000E3ABC /* Sent.xcdatamodeld in Sources */,
 				E78320861A96C031000E3ABC /* User+Additions.m in Sources */,
 				E703FEE71A9D4BC60073FE56 /* Message+Additions.m in Sources */,
@@ -375,12 +408,15 @@
 				007A4B331A8D775D00559027 /* AppDelegate.m in Sources */,
 				E78320871A96C031000E3ABC /* UserTableViewController.m in Sources */,
 				3D3178831AA67C7A0072EC26 /* UIUserTableViewCell.m in Sources */,
+				0021A1C71AB8AE7B00DA7114 /* ImportOperation.m in Sources */,
 				E796D2961A96B78100FBC9E0 /* UINewMessageViewController.m in Sources */,
+				0021A1CD1AB8D1EA00DA7114 /* PendingOperations.m in Sources */,
 				E77F1E281A9FF7970012534A /* User.m in Sources */,
 				00F9DA6E1AAFA5B000E691D7 /* DialogTableViewController.m in Sources */,
 				E79D13EE1A9D57A600D9E880 /* LoginTextField.m in Sources */,
 				E78320811A96C031000E3ABC /* Message.m in Sources */,
 				007A4B301A8D775D00559027 /* main.m in Sources */,
+				0021A1C11AB86A8F00DA7114 /* CloudModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,9 +543,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Launchpad-chat/Launchpad-chat.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Launchpad-chat/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -517,9 +557,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Launchpad-chat/Launchpad-chat.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Launchpad-chat/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
