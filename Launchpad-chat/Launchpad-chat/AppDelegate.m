@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "PendingOperations.h"
+#import "ImportOperation.h"
+
 
 @interface AppDelegate ()
 
@@ -17,7 +20,25 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [[CloudModel sharedCloudManager] setDelegate:self];
+    [[CloudModel sharedCloudManager] requestUsers];
+    
     return YES;
+}
+
+- (void)modelUpdated:(NSArray *)recordsUpdated dataType:(NSString *)type
+{
+    NSLog(@"recordsUpdated = %@",recordsUpdated);
+    
+    PendingOperations* operations = [[PendingOperations alloc] init];
+    ImportOperation* importOperation = [[ImportOperation alloc] initWithRecordsToImport:recordsUpdated forEntityType:@"User" parentContext:self.managedObjectContext];
+    [operations startImportOperation:importOperation withIdentifier:@"Import User"];
+    
+}
+
+- (void)errorUpdating:(NSError *)error dataType:(NSString *)type
+{
+    NSLog(@"Error = %@",error.localizedDescription);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
