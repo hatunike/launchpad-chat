@@ -60,10 +60,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)cancelButtonpressed:(id)sender
-{
-    [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
-}
+
 /*
 #pragma mark - Navigation
 
