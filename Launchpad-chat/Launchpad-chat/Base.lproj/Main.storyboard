@@ -691,7 +691,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="Confirm:" destination="S6y-TB-D8y" eventType="touchUpInside" id="sPZ-DM-GP0"/>
+                                    <action selector="Confirm:" destination="S6y-TB-D8y" eventType="touchUpInside" id="ixk-JU-5tG"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9B4-ic-6Mr">

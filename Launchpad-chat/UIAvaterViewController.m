@@ -24,6 +24,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)Confirm:(id)sender
+{
+    UIImagePickerController *pickerLibrary = [[UIImagePickerController alloc] init];
+    pickerLibrary.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    pickerLibrary.delegate = self;
+    [self presentModalViewController:pickerLibrary animated:YES];
+}
+
+- (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo
+{
+    UIImage *myImage = image;
+    
+    [User setAvatar:myImage forUser:<#(User *)#> inContext:<#(NSManagedObjectContext *)#>]
+}
+
 /*
 #pragma mark - Navigation
 
