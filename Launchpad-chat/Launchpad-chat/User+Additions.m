@@ -18,11 +18,50 @@
         newUser1 = [[User alloc] initWithEntity:[NSEntityDescription entityForName:@"User" inManagedObjectContext:context] insertIntoManagedObjectContext:context];
         newUser1.name = name;
         newUser1.onlineStatus = [NSNumber numberWithBool:status];
+        newUser1.avatar = nil;
         [context save:nil];
     }];
     
     return newUser1;
     
+}
+
++ (void)changeStatusOf:(User *)currentUser inContext:(NSManagedObjectContext *)context;
+{
+    [context performBlockAndWait:^{
+        
+        if (currentUser.onlineStatus == [NSNumber numberWithBool:NO])
+        {
+            currentUser.onlineStatus = [NSNumber numberWithBool:YES];
+        }
+        else
+        {
+            currentUser.onlineStatus = [NSNumber numberWithBool:NO];
+        }
+        [context save:nil];
+    }];
+}
+
++ (void)setAvatar:(UIImage *)image forUser:(User *)user inContext:(NSManagedObjectContext *)context
+{
+    NSData *dataImage = UIImageJPEGRepresentation(image, 0.0);
+    
+    [context performBlockAndWait:^{
+        
+        user.avatar = dataImage;
+        
+        [context save:nil];
+    }];
+}
+
++ (void)setLastUploadDataAsNowForUser:(User *)user inContext:(NSManagedObjectContext *)context
+{
+    [context performBlockAndWait:^{
+        
+        user.lastUploadDate = [NSDate dateWithTimeIntervalSinceNow:0];
+        
+        [context save:nil];
+    }];
 }
 
 + (NSFetchRequest *)requestUsersWithRecentUploads
@@ -44,8 +83,11 @@
     return fetchRequest;
 }
 
-+ (NSFetchRequest *)requestUserWithName:(NSString*)name
++ (User *)requestUserWithName:(NSString*)name inContext:(NSManagedObjectContext *)context
 {
+    //NSError
+    NSError *error = nil;
+    
     // NSPredicate
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@", name];
     
@@ -54,7 +96,20 @@
 
     fetchRequest.predicate = predicate;
     
-    return fetchRequest;
+    NSArray *result = [context executeFetchRequest:fetchRequest error:&error];
+    
+    User *user;
+    
+    if (result.count == 0)
+    {
+        user = nil;
+    }
+    else
+    {
+        user = result[0];
+    }
+    
+    return user;
 }
 
 + (NSFetchRequest *)requestUsersOrderedByStatusAndNameWithoutCurrentUser:(NSString *)currentUser

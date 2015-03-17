@@ -21,6 +21,8 @@
 @property (nonatomic, strong) Conversation *conversation1;
 @property (nonatomic, strong) Message *message1;
 @property (nonatomic, strong) Message *message2;
+@property (nonatomic, strong) User *user1;
+@property (nonatomic, strong) User *user2;
 
 @end
 
@@ -35,15 +37,15 @@
     
     NSLog(@"Context = %@",self.context);
 
-    User *newUser1 = [User createUserWithName:@"User1" onlineStatus:YES inContext:self.context];
+    self.user1 = [User createUserWithName:@"User1" onlineStatus:YES inContext:self.context];
     
-    User *newUser2 = [User createUserWithName:@"User2" onlineStatus:YES inContext:self.context];
+    self.user2 = [User createUserWithName:@"User2" onlineStatus:YES inContext:self.context];
     
-    self.conversation1 = [Conversation createConvertationWithUser1:newUser1 AndUser2:newUser2 lastMessage:[NSDate dateWithTimeIntervalSince1970:0] inContext:self.context];
+    self.conversation1 = [Conversation createConvertationWithUser1:self.user1 AndUser2:self.user2 lastMessage:[NSDate dateWithTimeIntervalSince1970:0] inContext:self.context];
     
-    self.message1 = [Message createMessageWithText:@"testing" onDate:[NSDate dateWithTimeIntervalSince1970:0] fromUser:newUser1 inConversation:self.conversation1 withState:YES inContext:self.context];
+    self.message1 = [Message createMessageWithText:@"testing" onDate:[NSDate dateWithTimeIntervalSince1970:0] fromUser:self.user1 inConversation:self.conversation1 withState:NO inContext:self.context];
     
-    self.message2 = [Message createMessageWithText:@"a message" onDate:[NSDate dateWithTimeIntervalSince1970:30] fromUser:newUser1 inConversation:self.conversation1 withState:YES inContext:self.context];
+    self.message2 = [Message createMessageWithText:@"a message" onDate:[NSDate dateWithTimeIntervalSince1970:30] fromUser:self.user1 inConversation:self.conversation1 withState:YES inContext:self.context];
 
     [self.context save:nil];
     
@@ -80,15 +82,41 @@
     }];
 }
 
+- (void)testChangeMessageReadOrUnreadState
+{
+    XCTAssert([self.message1.readOrUnreadState isEqualToNumber:[NSNumber numberWithBool:NO]], @"Message read state before change should be NO");
+    
+    [Message changeMessagereadOrUnreadState:self.message1 inContext:self.context];
+    
+    XCTAssert([self.message1.readOrUnreadState isEqualToNumber:[NSNumber numberWithBool:YES]], @"Message read state should be YES after change");
+    
+}
+
 - (void)testMessageFetchRequest
 {
     NSError *error = nil;
     
-    NSArray *messages = [self.context executeFetchRequest:[Message requestMessagesFromUser:@"User1"] error:&error];
+    NSArray *messages = [Message requestMessagesFromUser:self.user1 inContext:self.context];
     
     XCTAssert(error == nil, @"Error requesting Message = %@",[error localizedDescription]);
-    XCTAssert(messages.count == 2, @"Messages should be equal to 1");
+    XCTAssert(messages.count == 2, @"Messages should be equal to 2");
     
+}
+
+- (void)testMessageFetchRequestLatestMessageFromUser
+{
+    NSError *error = nil;
+    
+    NSArray *messages = [self.context executeFetchRequest:[Message requestLastestMessageFromUser:self.user1] error:&error];
+    
+    XCTAssert(error == nil, @"Error requesting Message = %@",[error localizedDescription]);
+    XCTAssert(messages.count == 1, @"Messages count should be 1");
+    
+    //Test Message
+    Message *message0 = messages[0];
+    XCTAssert([message0 isKindOfClass:[Message class]], @"Message should be of class Message");
+    XCTAssert([message0.text isEqualToString:@"a message"], @"Message Should contain 'Testing'"); //Mesage was created last
+
 }
 
 - (void)testMessageFetchRequestByConversationSortedByDate

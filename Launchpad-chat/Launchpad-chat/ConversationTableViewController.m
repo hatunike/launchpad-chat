@@ -37,7 +37,7 @@
 }
 - (IBAction)sendMessageButtonPressed:(id)sender
 {
-    User* currentUser = [[self.context executeFetchRequest:[User requestUserWithName:self.userName] error:nil] lastObject];
+    User* currentUser = [User requestUserWithName:self.userName inContext:self.context];
     
     [Message createMessageWithText:self.messageTextField.text onDate:[NSDate date] fromUser:currentUser inConversation:nil withState:YES inContext:self.context];
     self.messageTextField.text = @"";
