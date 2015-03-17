@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kFl-62-tBC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kFl-62-tBC">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -24,9 +24,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sent" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6x-fD-AFj">
-                                <rect key="frame" x="41" y="124" width="293" height="76"/>
+                                <rect key="frame" x="41" y="118" width="293" height="83"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="76" id="Kkg-g6-J9i"/>
+                                    <constraint firstAttribute="height" constant="83" id="Kkg-g6-J9i"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="122"/>
                                 <color key="textColor" red="0.66274509803921566" green="0.0039215686274509803" blue="0.58823529411764708" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -114,8 +114,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="DJN-Nu-dLY" firstAttribute="top" secondItem="rag-qa-was" secondAttribute="bottom" constant="8" id="0eT-Xr-q9f"/>
-                            <constraint firstItem="R6x-fD-AFj" firstAttribute="top" secondItem="PXr-2V-QOd" secondAttribute="bottom" constant="8" id="2i7-Hh-565"/>
-                            <constraint firstItem="ti4-KE-VgG" firstAttribute="top" secondItem="L0K-a0-gSB" secondAttribute="bottom" constant="31" id="37C-P0-BbW"/>
+                            <constraint firstItem="R6x-fD-AFj" firstAttribute="top" secondItem="PXr-2V-QOd" secondAttribute="bottom" constant="2" id="2i7-Hh-565"/>
                             <constraint firstAttribute="centerX" secondItem="R6x-fD-AFj" secondAttribute="centerX" id="6FA-EM-h1F"/>
                             <constraint firstItem="ti4-KE-VgG" firstAttribute="leading" secondItem="mqc-ve-dup" secondAttribute="leadingMargin" constant="22" id="72W-ct-De7"/>
                             <constraint firstItem="L0K-a0-gSB" firstAttribute="top" secondItem="NS4-tr-jbQ" secondAttribute="bottom" constant="25" id="9pr-oI-CqD"/>
@@ -125,9 +124,10 @@
                             <constraint firstAttribute="centerX" secondItem="NS4-tr-jbQ" secondAttribute="centerX" id="Vpy-o2-QWG"/>
                             <constraint firstItem="PXr-2V-QOd" firstAttribute="top" secondItem="DJN-Nu-dLY" secondAttribute="bottom" constant="8" id="Vso-Th-GR1"/>
                             <constraint firstItem="BSv-NA-kWD" firstAttribute="top" secondItem="L0K-a0-gSB" secondAttribute="bottom" constant="31" id="Wxb-nb-FVB"/>
-                            <constraint firstItem="NS4-tr-jbQ" firstAttribute="top" secondItem="R6x-fD-AFj" secondAttribute="bottom" constant="83" id="XDE-5Z-XSQ"/>
                             <constraint firstAttribute="centerX" secondItem="DJN-Nu-dLY" secondAttribute="centerX" id="Z99-FQ-PZy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BSv-NA-kWD" secondAttribute="trailing" constant="23" id="kbE-n9-8hH"/>
+                            <constraint firstItem="NS4-tr-jbQ" firstAttribute="top" secondItem="R6x-fD-AFj" secondAttribute="bottom" constant="82" id="sj6-5R-NgU"/>
+                            <constraint firstItem="ti4-KE-VgG" firstAttribute="top" secondItem="L0K-a0-gSB" secondAttribute="bottom" constant="31" id="wAk-ox-Rw8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="v7g-ai-Swi"/>
@@ -224,10 +224,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="setAvatarButtonPressed:" destination="2sr-sH-Ggk" eventType="touchUpInside" id="rhW-GZ-kjd"/>
-                                    <segue destination="S6y-TB-D8y" kind="show" id="MxO-pM-Tpm"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -242,7 +238,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EDt-uW-sue" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="299.5" y="1371.5"/>
+            <point key="canvasLocation" x="174.5" y="1379.5"/>
         </scene>
         <!--User Table View Controller-->
         <scene sceneID="eiE-sD-y68">
@@ -420,7 +416,7 @@
                                     <action selector="sendMessageButtonPressed:" destination="0IR-z2-mo3" eventType="touchUpInside" id="bhB-Ln-ljK"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Bill Gates" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MtB-TN-nXl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bill Gates" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MtB-TN-nXl">
                                 <rect key="frame" x="136" y="23" width="102" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="102" id="Ds6-dg-cN0"/>
@@ -446,7 +442,7 @@
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="MtB-TN-nXl" secondAttribute="centerX" id="PIf-dS-0rl"/>
                             <constraint firstAttribute="centerX" secondItem="MtB-TN-nXl" secondAttribute="centerX" id="RfV-mg-D2G"/>
-                            <constraint firstItem="MtB-TN-nXl" firstAttribute="top" secondItem="6mR-qH-GPp" secondAttribute="bottom" constant="3" id="sap-rX-ICt"/>
+                            <constraint firstItem="MtB-TN-nXl" firstAttribute="top" secondItem="6mR-qH-GPp" secondAttribute="bottom" constant="23" id="tBu-mC-uuc"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -674,10 +670,10 @@
             </objects>
             <point key="canvasLocation" x="168" y="235"/>
         </scene>
-        <!--View Controller-->
+        <!--Avater View Controller-->
         <scene sceneID="MSm-qE-MVH">
             <objects>
-                <viewController id="S6y-TB-D8y" sceneMemberID="viewController">
+                <viewController id="S6y-TB-D8y" customClass="UIAvaterViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wGa-HV-ZE9"/>
                         <viewControllerLayoutGuide type="bottom" id="cP6-xz-v1y"/>
@@ -690,11 +686,17 @@
                                 <rect key="frame" x="16" y="420" width="343" height="36"/>
                                 <color key="backgroundColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="19"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Confirm">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="Confirm:" destination="S6y-TB-D8y" eventType="touchUpInside" id="sPZ-DM-GP0"/>
+                                </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9B4-ic-6Mr">
+                                <rect key="frame" x="16" y="20" width="343" height="343"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -709,6 +711,6 @@
         <image name="person" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Izg-Yf-HxJ"/>
+        <segue reference="YFe-UD-0so"/>
     </inferredMetricsTieBreakers>
 </document>
