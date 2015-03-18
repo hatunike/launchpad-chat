@@ -6,13 +6,15 @@
 //  Copyright (c) 2015 lernu. All rights reserved.
 //
 
-#import "UIAvaterViewController.h"
+#import "UIAvatarViewController.h"
 
-@interface UIAvaterViewController ()
+@interface UIAvatarViewController ()
+
+@property (nonatomic, strong) NSManagedObjectContext *context;
 
 @end
 
-@implementation UIAvaterViewController
+@implementation UIAvatarViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,7 +38,7 @@
 {
     UIImage *myImage = image;
     
-    [User setAvatar:myImage forUser:<#(User *)#> inContext:<#(NSManagedObjectContext *)#>]
+    [User setAvatar:myImage forUser:<#(User *)#> inContext:self.contexy];
 }
 
 /*

@@ -670,10 +670,10 @@
             </objects>
             <point key="canvasLocation" x="168" y="235"/>
         </scene>
-        <!--Avater View Controller-->
+        <!--Avatar View Controller-->
         <scene sceneID="MSm-qE-MVH">
             <objects>
-                <viewController id="S6y-TB-D8y" customClass="UIAvaterViewController" sceneMemberID="viewController">
+                <viewController id="S6y-TB-D8y" customClass="UIAvatarViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wGa-HV-ZE9"/>
                         <viewControllerLayoutGuide type="bottom" id="cP6-xz-v1y"/>
