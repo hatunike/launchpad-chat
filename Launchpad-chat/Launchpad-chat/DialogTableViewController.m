@@ -33,7 +33,12 @@
     Message* message = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    cell.textLabel.text = message.text;
+    
+    User *userWhoSentMessage = message.fromWho;
+    NSString *userString = [NSString stringWithFormat:@"%@: ", userWhoSentMessage.name];
+    cell.textLabel.text = [userString stringByAppendingString:[NSString stringWithFormat:@"%@", message.text]];
+    
+    //cell.textLabel.text = message.text;
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"dd/mm/yyyy"];
