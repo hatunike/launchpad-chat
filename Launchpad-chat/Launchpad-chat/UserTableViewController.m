@@ -146,9 +146,11 @@
         
         //Get user of selected row
         User* selectedUser = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
-        
+        User* me = [User requestUserWithName:[[NSUserDefaults standardUserDefaults] objectForKey:@"currentUserName"] inContext:self.context];
         //vc.view = selectedUser.name;
         vc.userName = selectedUser.name;
+        vc.conversation = [[self.context executeFetchRequest:[Conversation requestConversationWithTwoUsers:selectedUser AndUser2:me] error:nil] lastObject];
+        
     }
     
     // Pass the selected object to the new view controller.

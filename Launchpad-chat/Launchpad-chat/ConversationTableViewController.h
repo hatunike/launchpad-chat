@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Conversation+Additions.h"
 
 @interface ConversationTableViewController : UIViewController < UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *userNameHeader;
 @property (nonatomic, strong) NSString *userName;
 @property (nonatomic, strong) NSManagedObjectContext* context;
-
+@property (nonatomic, strong) Conversation* conversation;
 
 @end

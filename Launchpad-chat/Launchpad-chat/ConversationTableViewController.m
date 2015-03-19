@@ -37,9 +37,9 @@
 }
 - (IBAction)sendMessageButtonPressed:(id)sender
 {
-    User* currentUser = [User requestUserWithName:self.userName inContext:self.context];
+    User* currentUser = [User requestUserWithName:[[NSUserDefaults standardUserDefaults] objectForKey:@"currentUserName"] inContext:self.context];
     
-    [Message createMessageWithText:self.messageTextField.text onDate:[NSDate date] fromUser:currentUser inConversation:nil withState:YES inContext:self.context];
+    [Message createMessageWithText:self.messageTextField.text onDate:[NSDate date] fromUser:currentUser inConversation:self.conversation withState:YES inContext:self.context];
     self.messageTextField.text = @"";
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -80,7 +80,7 @@
         self.context = [(AppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
         DialogTableViewController* vc = [segue destinationViewController];
         NSFetchRequest* fr = [NSFetchRequest fetchRequestWithEntityName:@"Message"];
-        fr.predicate = [NSPredicate predicateWithFormat:@"fromWho.name == %@", self.userName];
+        fr.predicate = [NSPredicate predicateWithFormat:@"fromWhat == %@", self.conversation];
         fr.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES]];
         
         NSFetchedResultsController *frc = [[NSFetchedResultsController alloc] initWithFetchRequest:fr managedObjectContext:self.context sectionNameKeyPath:nil cacheName:nil];

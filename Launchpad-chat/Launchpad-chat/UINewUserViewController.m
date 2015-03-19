@@ -42,9 +42,6 @@ static NSString * const reuseIdentifier = @"Cell";
     [self performSegueWithIdentifier:@"SetAvatar" sender:self];
 }
 
-
-
-
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 0;
 }

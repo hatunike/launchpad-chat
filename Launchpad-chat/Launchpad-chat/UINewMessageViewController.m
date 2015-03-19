@@ -45,6 +45,7 @@
 - (IBAction)cancelButtonPressed:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
+    [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)viewDidLoad
