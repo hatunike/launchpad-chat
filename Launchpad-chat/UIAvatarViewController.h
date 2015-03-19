@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "User+Additions.h"
 
-@interface UIAvatarViewController : UIViewController
+@interface UIAvatarViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+
+- (IBAction)takePhoto:  (UIButton *)sender;
+- (IBAction)selectPhoto:(UIButton *)sender;
 
 @end

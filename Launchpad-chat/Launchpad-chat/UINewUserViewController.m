@@ -37,9 +37,6 @@ static NSString * const reuseIdentifier = @"Cell";
     [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
 }
 
-
-
-
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 0;
 }
