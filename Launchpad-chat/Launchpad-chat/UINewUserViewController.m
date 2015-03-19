@@ -7,7 +7,7 @@
 //
 
 #import "UINewUserViewController.h"
-#import "UISetAvatarViewController.h"
+#import "UIAvatarViewController.h"
 #import "AppDelegate.h"
 #import "User+Additions.h"
 
@@ -96,7 +96,7 @@ static NSString * const reuseIdentifier = @"Cell";
 {
     if ([[segue identifier] isEqualToString:@"SetAvatar"])
     {
-        UISetAvatarViewController* vc = [segue destinationViewController];
+        UIAvatarViewController* vc = [segue destinationViewController];
     }
 }
 

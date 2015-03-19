@@ -38,7 +38,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)takePhoto:(UIButton *)sender {
+- (IBAction)takePhoto:(UIButton *)sender
+{
     
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
@@ -49,7 +50,8 @@
     
 }
 
-- (IBAction)selectPhoto:(UIButton *)sender {
+- (IBAction)selectPhoto:(UIButton *)sender
+{
     
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
@@ -57,11 +59,16 @@
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     
     [self presentViewController:picker animated:YES completion:NULL];
-    
-    
 }
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+- (IBAction)confirmButtonPressed:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
     
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
     self.imageView.image = chosenImage;
@@ -70,7 +77,8 @@
     
 }
 
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
