@@ -42,7 +42,6 @@
 		E796D2991A96B7ED00FBC9E0 /* UINewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E796D2981A96B7ED00FBC9E0 /* UINewUserViewController.m */; };
 		E79D13EE1A9D57A600D9E880 /* LoginTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E79D13ED1A9D57A600D9E880 /* LoginTextField.m */; };
 		EF17FCDD1AA92413006D236D /* ConversationAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF17FCDC1AA92413006D236D /* ConversationAdditionsTests.m */; };
-		F0ADD8FB1AB8F31A00369B59 /* UISetAvatarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ADD8FA1AB8F31A00369B59 /* UISetAvatarViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,8 +120,6 @@
 		E79D13EC1A9D57A600D9E880 /* LoginTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginTextField.h; sourceTree = "<group>"; };
 		E79D13ED1A9D57A600D9E880 /* LoginTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTextField.m; sourceTree = "<group>"; };
 		EF17FCDC1AA92413006D236D /* ConversationAdditionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConversationAdditionsTests.m; path = "Launchpad-chatTests/ConversationAdditionsTests.m"; sourceTree = SOURCE_ROOT; };
-		F0ADD8F91AB8F31A00369B59 /* UISetAvatarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UISetAvatarViewController.h; sourceTree = "<group>"; };
-		F0ADD8FA1AB8F31A00369B59 /* UISetAvatarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UISetAvatarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,8 +280,6 @@
 				E783206F1A96C031000E3ABC /* CoreDataTableViewController.m */,
 				E703FEE11A9D4B730073FE56 /* UIMessageListViewController.h */,
 				E703FEE21A9D4B730073FE56 /* UIMessageListViewController.m */,
-				F0ADD8F91AB8F31A00369B59 /* UISetAvatarViewController.h */,
-				F0ADD8FA1AB8F31A00369B59 /* UISetAvatarViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -421,7 +416,6 @@
 				E79D13EE1A9D57A600D9E880 /* LoginTextField.m in Sources */,
 				E78320811A96C031000E3ABC /* Message.m in Sources */,
 				007A4B301A8D775D00559027 /* main.m in Sources */,
-				F0ADD8FB1AB8F31A00369B59 /* UISetAvatarViewController.m in Sources */,
 				0021A1C11AB86A8F00DA7114 /* CloudModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
